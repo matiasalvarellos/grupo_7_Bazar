@@ -18,8 +18,8 @@ Wireframe + Boceto
 * Walmart USA (Estetica) - [Walmart](https://www.walmart.com/)
 * Buenos Aires Bazar - [BsAsBazar](https://www.buenosairesbazar.com.ar)
 * San Isidro (Bazar) - [SanIsidroBazar](https://www.bazarsanisidro.com.ar)
-* Bazar Sale - [BazarSale] (https://www.bazarsale.com.ar)
-* Williams Sonoma - [WilliamsSonoma] (https://www.williams-sonoma.com)
+* Bazar Sale - [BazarSale](https://www.bazarsale.com.ar)
+* Williams Sonoma - [WilliamsSonoma](https://www.williams-sonoma.com)
 
 Estos sitios fueron seleccionados ya que presentaban muchas de las ideas y diseños
 de páginas web que estuvimos investigando, ademas de presentar similitudes en cuanto
