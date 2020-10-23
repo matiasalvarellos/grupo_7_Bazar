@@ -65,4 +65,52 @@ width:100%;}
  .navHeaderBottom ul li:hover{transform:scale(1.1);} 
 .navHeaderBottom ul li a{ text-decoration:none;color:white; }
 
+.main-footer { position:relative;
+display:flex;
+flex-direction:column;
+margin:0;
+padding:0;
+width:100%;
+background-color:#5A4E4D;}
+.footer-top{
+  display:flex; width:100%;
+  padding:1%;
+  border-bottom:  1px solid black;
 
+}
+.footer-menu1{ 
+  position:relative;
+  display:flex;
+  width: 80%;}
+  .footer-menu1 ul{ position:relative;
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+width:100%;
+}
+
+.footer-menu1 ul li { list-style:none; 
+  color:white;
+cursor:pointer;}
+.footer-menu1 ul li a{ text-decoration:none; color:white;}
+
+.giftcard{ display:flex;
+  align-items:center;
+  text-align:center;
+  color:white; width:20%; 
+cursor:pointer;}
+
+.footer-menu2{
+  display:flex;
+  width:100%;
+}
+.giftcard{display:flex; justify-content: center;}
+
+.footer-menu2 ul{ 
+  display:flex;
+  width:100%;
+   justify-content: space-around; align-items:center;}
+   .footer-menu2 ul li{ list-style:none; color:white;
+  cursor:pointer;}
+   .footer-menu2 ul li a{ text-decoration:none; color:white;}
+   .footer-icon{ font-size:1em; color:white; margin: 0 5px;}
