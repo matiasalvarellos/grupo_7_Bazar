@@ -52,7 +52,7 @@ align-items:flex-end;}
    align-items:flex-start;
    justify-content:space-around;
    width:10%;}  
-   .icon{ color:#5A4E4D; font-size:1.5em; font-weight:600;}
+   .icon{ color:  #331a00; font-size:1.5em; font-weight:600;}
    .icon:hover{color:#8593AE;cursor:pointer;}
    .navHeaderBottom{ position:relative;
   display:flex;
@@ -114,3 +114,33 @@ cursor:pointer;}
   cursor:pointer;}
    .footer-menu2 ul li a{ text-decoration:none; color:white;}
    .footer-icon{ font-size:1em; color:white; margin: 0 5px;}
+   .mobile-menu{ display:none;}
+
+   @media (max-width:768px)
+   { .navHeaderTop {display:none;}
+   .navHeaderBottom{display:none;}
+     .boxAcces{flex-direction:column;
+    align-items:flex-end; 
+  width:30%;}
+     .searchProducts{ position:relative; top:10vh;}
+     .boxHeader1{ display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:space-around;
+       width: 30%; }
+       .boxHeader1 img{width:30%; margin:5px;}
+       
+
+  .mobile-menu{ display:block; padding:5px;}
+  .searchProducts label{ color:#5A4E4D;}
+  .top-header{ height: 25vh;}
+  .footer-menu1{ display:flex;
+  justify-content:flex-start;}
+   .footer-menu1 ul{ display:flex; 
+    flex-direction:column;
+  align-items: flex-start;}
+
+
+    }
+
+   
