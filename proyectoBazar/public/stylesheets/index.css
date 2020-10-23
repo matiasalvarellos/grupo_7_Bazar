@@ -1,8 +1,68 @@
+
+*{box-sizing:border-box;}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 0;
+  margin:0;
+  }
+header{width:100%;
+font-family: 'Roboto', sans-serif;
+
 }
 
-a {
-  color: #00B7FF;
-}
+.top-header{ position:relative;
+display:flex;
+flex-direction:row;
+background-color:#7E675E;
+width:100%;
+padding:2%;
+color:white;
+height:18vh;}
+.boxHeader1{
+  position:relative;
+   width: 10%;}
+
+ .navHeaderTop{
+   position:relative;
+   width:30%;
+  display:flex;
+align-items:flex-start; padding:0;}
+   .navHeaderTop ul { display:flex; width:100%; justify-content:space-around;margin:0;}
+   .navHeaderTop ul li{ display:block;}
+   .navHeaderTop ul li a:hover{color:#8593AE;}
+   .navHeaderTop ul li a{ text-decoration:none; color:white;}
+
+ .searchProducts{ width:55%;
+position:relative;
+display:flex;
+justify-content:center;
+align-items:flex-end;}
+.searchProducts input{ margin:5px;
+  background: #D4DAD8;
+  border: 1.01363px solid #D4DAD8;
+  box-sizing: border-box;
+  border-radius: 50.6817px;}
+.searchProducts label{ margin:5px;}
+.searchProducts .iconSearch{ margin:5px;color:#5A4E4D;}
+
+
+ .boxAcces{
+   position:relative;
+   display:flex;
+   align-items:flex-start;
+   justify-content:space-around;
+   width:10%;}  
+   .icon{ color:#5A4E4D; font-size:1.5em; font-weight:600;}
+   .icon:hover{color:#8593AE;cursor:pointer;}
+   .navHeaderBottom{ position:relative;
+  display:flex;
+width:100%;}
+.navHeaderBottom ul{ width:100%; padding:1em 5%; display:flex; justify-content:space-around;}
+.navHeaderBottom ul li{ background-color: #8593AE;
+   list-style: none; padding:12px 10px;
+  border-radius:5px;}
+
+ .navHeaderBottom ul li:hover{transform:scale(1.1);} 
+.navHeaderBottom ul li a{ text-decoration:none;color:white; }
+
+
