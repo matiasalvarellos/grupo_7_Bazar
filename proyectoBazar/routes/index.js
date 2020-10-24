@@ -17,5 +17,8 @@ router.get('/register', function(req, res, next) {
 router.get('/productAdd', function(req, res, next) {
   res.render('productAdd');
 });
+router.get('/login', function(req, res, next) {
+  res.render('login');
+});
 
 module.exports = router;

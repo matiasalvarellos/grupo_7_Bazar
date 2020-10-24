@@ -1,273 +1,271 @@
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html>
-<head>
- 
-<meta charset="UTF-8">
-<title>Bazar e commerce </title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!--<link rel='stylesheet' href='/stylesheets/style.css' />-->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-<link rel="stylesheet" href="/stylesheets/index.css">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-<link rel='stylesheet' href="/stylesheets/productCart.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+<head>
+  <meta charset="UTF-8">
+  <title>Bazar e commerce </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--<link rel='stylesheet' href='/stylesheets/style.css' />-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <link rel="stylesheet" href="/stylesheets/index.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <link rel='stylesheet' href="/stylesheets/productCart.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 
 </head>
 
 <body>
-    <header>
-        <div class="top-header"> 
-       <div class="boxHeader1">
-         
-       <img src="images/logo.png" alt="logo" width="40%" class="headerLogo">   
-       <i class="fas fa-bars icon mobile-menu"></i>
-       
-       </div>
-       
-       <nav class="navHeaderTop">
-       <ul>
-       <li> <a href=#> Inicio </a> </li>
-       <li>  <a href=#>  Pickup & Delivery </a></li> </ul> 
-       </nav>
-       
-       <div class="searchProducts">
-         <input type="text" id="search" name="product"> <label for="search"> Buscar </label><i class=" iconSearch fas fa-search"></i>
-          </div>
-        
-       
-         <div class="boxAcces">
-       
-         <i class="fas fa-cart-plus icon"></i>
-       
-       <i class="far fa-user icon"></i>
-        </div>
-       
-       </div>
-       <nav class="navHeaderBottom">
-       <ul>
-         <li> <a href=#> Cristalería
-       
-         </a>
-       
-         </li>
-         <li> <a href=#>
-           Herramientas de cocina
-         </a>
-       
-         </li>
-         <li> <a href=#>
-           Cubiertos
-           
-         </a>
-       
-         </li>
-         <li> <a href=#>
-           Porcelana
-         </a>
-       
-         </li>
-       
-       
-         <li> <a href=#>
-           Porcelana 2
-           
-         </a>
-       
-         </li>     
-       
-       
-       
-       </ul>
-       
-       </nav>
-       
-       
-       </header>
-       
-    <main>
-        <h1 div class="nombre">   
-          MI CARRITO 
-        </h1>
-  
-        <hr class="titulo1">
-  
-        <div class="containerCart">
-          <div class="box1">
-            <i class="fas fa-times"></i>
-            <image src="/images/dish1.jpg"></image>
-          <div class="nomProducto">
-            <p>Nombre de producto</p>
-          </div>
-          </div>
-  
-          <div class="numberCart">
-            <input type="number">
-            <label for="">Cantidad</label>
-            <div class="disponibles">
-              <input type="number">
-              <label for="">Disponibles</label>
-              </div>
-            <p><small>No hay suficientes unidades en stock</small></p>         
-          </div>
-          <div class="unidad">
-            <p>Precio por unidad</p>
-            <p>$500</p>
-          </div>
-          <div class="precioCart">
-            <p>$3500</p>
-          </div>
-        </div>
-          <!--  fin fila cart  -->
-        
-          <hr>
-          
-        <div class="subtotal">
-          <div class="subt">
-            <p>Subtotal</p>
-          </div>
-          <div class="subprecio">
-            <p>$3500</p>
-          </div>        
-        </div>
-  
-            <!--  fin fila subtotal  -->
-  
-          <hr>
-  
-        <div class="descuento">
-          <p>Cupón de descuento:<p>
-          <div class="desc">
-          <input type="number">
-          <label for=""> Validar </label>
-          </div>
-        </div>
-  
-            <!--  fin fila descuento  -->
-  
-          <hr>
-  
-        <div class="envio">
-  
-          <div class="costoenvio1">
-            <p>Costo de Envío<p>
-          </div>
-  
-          <div class="costoenvio2">
-  
-          <div class="cp">
-              <form action="primeras_etiquetas.html" method="get">
-              <label for="nombre">Código Postal:</label>
-              <input type="text" id="nombre" name="nombre" placeholder="">
-            </form>
-          </div>
-          
-          <div class="calcular">
-            <a class="calculo" href ="calcular.html">CALCULAR</a>
-            <a class="buscarcp" href ="https://www.correoargentino.com.ar/formularios/cpa">Buscar código</a>
-          </div>
-  
-          
-          <div class= "titulo1">
-            <span>Envío:</span>
-              <div class="titulo">
-                <p>Forma de Envío</p>
-                <p>Costo</p>
-                <p>Entrega estimada</p>
-            </div>  
-          </div>
-  
-          <div class="domicilio1">
-            <div class="radio1">
-              <input type="radio" name="envio" value="domicilio">
-              <label for="">Envio a Domicilio</label>
-            </div>
-            <div>
-              <p class="precioenvio">$300</p>
-            </div>
-            <div>
-              <p>Viernes 24 de Octubre</p>
-            </div>
-          </div>
-  
-          <div class="domicilio2">
-            <input type="radio" name="envio" value="domicilio">
-            <label for="">A convenir</label>
-            <div class="nota">
-              <p class="precioenvio">Acuerdas la forma de entrega del producto después de la compra.</p>
-            </div>
-          </div>
-  
-          </div>
-  
-        </div>
-  
-          <!--  fin fila Envio  -->
-  
-        <hr>
-  
-        <div class="container2">
-          <div class="box6">
-           <h2>TOTAL A PAGAR</h4>
-          </div>
-          <div class="box7">
-            <p>$7000</p>            
-          </div>
-        </div>
-        
-            <!--  fin fila Total a Pagar  -->
-        
-            
-        <div class="container3">
-            <div class="box8">
-              <p>Pagar</p>
-            </div>
-            <div class="box9">
-              <p> Seguí comprando</p> 
-            </div>
-        </div>
-  
-         <!--  fin fila Abonar or seguir comprando -->
-  
-          
-      </main> 
+  <header>
+    <div class="top-header">
+      <div class="boxHeader1">
+        <img src="images/logo.png" alt="logo" width="40%" class="headerLogo">
+        <i class="fas fa-bars icon mobile-menu"></i>
+      </div>
 
-      <footer class="main-footer">
+      <nav class="navHeaderTop">
+        <ul>
+          <li> <a href=#> Inicio </a> </li>
+          <li> <a href=#> Pickup & Delivery </a></li>
+        </ul>
+      </nav>
 
-        <div class="footer-top">
-      <nav class="footer-menu1">
+      <div class="searchProducts">
+        <input type="text" id="search" name="product"> <label for="search"> Buscar </label><i
+          class=" iconSearch fas fa-search"></i>
+      </div>
+
+
+      <div class="boxAcces">
+
+        <i class="fas fa-cart-plus icon"></i>
+
+        <i class="far fa-user icon"></i>
+      </div>
+
+    </div>
+    <nav class="navHeaderBottom">
       <ul>
-        <li> <a href=#> Formas de pago</a></li>
-        <li> <a href=#> Formas de entrega </a></li>
-        <li> <a href=#> Retiro en sucursal</a></li>
-        <li> <a href=#> Contacto</a></li> </ul>
+        <li> <a href=#> Cristalería
+
+          </a>
+
+        </li>
+        <li> <a href=#>
+            Herramientas de cocina
+          </a>
+
+        </li>
+        <li> <a href=#>
+            Cubiertos
+
+          </a>
+
+        </li>
+        <li> <a href=#>
+            Porcelana
+          </a>
+
+        </li>
+
+
+        <li> <a href=#>
+            Porcelana 2
+
+          </a>
+
+        </li>
+
+
+
+      </ul>
+
+    </nav>
+
+
+  </header>
+
+  <main>
+    <h1 div class="nombre">
+      MI CARRITO
+    </h1>
+
+    <hr class="titulo1">
+
+    <div class="containerCart">
+      <div class="box1">
+        <i class="fas fa-times"></i>
+        <image src="/images/dish1.jpg"></image>
+        <div class="nomProducto">
+          <p>Nombre de producto</p>
+        </div>
+      </div>
+
+      <div class="numberCart">
+        <input type="number">
+        <label for="">Cantidad</label>
+        <div class="disponibles">
+          <input type="number">
+          <label for="">Disponibles</label>
+        </div>
+        <p><small>No hay suficientes unidades en stock</small></p>
+      </div>
+      <div class="unidad">
+        <p>Precio por unidad</p>
+        <p>$500</p>
+      </div>
+      <div class="precioCart">
+        <p>$3500</p>
+      </div>
+    </div>
+    <!--  fin fila cart  -->
+
+    <hr>
+
+    <div class="subtotal">
+      <div class="subt">
+        <p>Subtotal</p>
+      </div>
+      <div class="subprecio">
+        <p>$3500</p>
+      </div>
+    </div>
+
+    <!--  fin fila subtotal  -->
+
+    <hr>
+
+    <div class="descuento">
+      <p>Cupón de descuento:
+      <p>
+      <div class="desc">
+        <input type="number">
+        <label for=""> Validar </label>
+      </div>
+    </div>
+
+    <!--  fin fila descuento  -->
+
+    <hr>
+
+    <div class="envio">
+
+      <div class="costoenvio1">
+        <p>Costo de Envío
+        <p>
+      </div>
+
+      <div class="costoenvio2">
+
+        <div class="cp">
+          <form action="primeras_etiquetas.html" method="get">
+            <label for="nombre">Código Postal:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="">
+          </form>
+        </div>
+
+        <div class="calcular">
+          <a class="calculo" href="calcular.html">CALCULAR</a>
+          <a class="buscarcp" href="https://www.correoargentino.com.ar/formularios/cpa">Buscar código</a>
+        </div>
+
+
+        <div class="titulo1">
+          <span>Envío:</span>
+          <div class="titulo">
+            <p>Forma de Envío</p>
+            <p>Costo</p>
+            <p>Entrega estimada</p>
+          </div>
+        </div>
+
+        <div class="domicilio1">
+          <div class="radio1">
+            <input type="radio" name="envio" value="domicilio">
+            <label for="">Envio a Domicilio</label>
+          </div>
+          <div>
+            <p class="precioenvio">$300</p>
+          </div>
+          <div>
+            <p>Viernes 24 de Octubre</p>
+          </div>
+        </div>
+
+        <div class="domicilio2">
+          <input type="radio" name="envio" value="domicilio">
+          <label for="">A convenir</label>
+          <div class="nota">
+            <p class="precioenvio">Acuerdas la forma de entrega del producto después de la compra.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!--  fin fila Envio  -->
+
+    <hr>
+
+    <div class="container2">
+      <div class="box6">
+        <h2>TOTAL A PAGAR</h4>
+      </div>
+      <div class="box7">
+        <p>$7000</p>
+      </div>
+    </div>
+
+    <!--  fin fila Total a Pagar  -->
+
+
+    <div class="container3">
+      <div class="box8">
+        <p>Pagar</p>
+      </div>
+      <div class="box9">
+        <p> Seguí comprando</p>
+      </div>
+    </div>
+
+    <!--  fin fila Abonar or seguir comprando -->
+
+
+  </main>
+
+  <footer class="main-footer">
+
+    <div class="footer-top">
+      <nav class="footer-menu1">
+        <ul>
+          <li> <a href=#> Formas de pago</a></li>
+          <li> <a href=#> Formas de entrega </a></li>
+          <li> <a href=#> Retiro en sucursal</a></li>
+          <li> <a href=#> Contacto</a></li>
+        </ul>
       </nav>
       <p class="giftcard"> <strong> Giftcard</strong> </p>
-      
-        </div>
-        <nav class="footer-menu2">
-      
+
+    </div>
+    <nav class="footer-menu2">
+
       <ul>
         <li> <a href=#>Categorías </a></li>
         <li> <a href=#>Nosotros </a></li>
-        
-        <li> Seguínos en <a href=#> <i class=" footer-icon fab fa-instagram"></i></a> <a href=#><i class=" footer-icon fab fa-facebook-f"></i>
-         
+
+        <li> Seguínos en <a href=#> <i class=" footer-icon fab fa-instagram"></i></a> <a href=#><i
+              class=" footer-icon fab fa-facebook-f"></i>
+
           </a></li>
-          <li class="chat">  <i class="footer-icon chat-icon far fa-comments"></i> Chateá
-          </li>
-      
+        <li class="chat"> <i class="footer-icon chat-icon far fa-comments"></i> Chateá
+        </li>
+
       </ul>
-        </div>
-      
-      </footer>
-      
-      
-      </body>
-      
-      
-     </html> 
-  
+      </div>
 
+  </footer>
+</body>
 
+</html>
