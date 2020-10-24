@@ -44,7 +44,7 @@ align-items:flex-start; padding:0;}
    .navHeaderTop ul { display:flex; width:100%; justify-content:space-around;margin:0;}
    .navHeaderTop ul li{ display:block;}
    .navHeaderTop ul li a:hover{color:#8593AE;}
-   .navHeaderTop ul li a{ text-decoration:none; color:white;}
+   .navHeaderTop ul li a{ text-decoration:none; color:white; font-weight:700;}
 
  .searchProducts{ width:55%;
 position:relative;
@@ -55,9 +55,12 @@ align-items:flex-end;}
   background: #D4DAD8;
   border: 1.01363px solid #D4DAD8;
   box-sizing: border-box;
-  border-radius: 50.6817px;}
-.searchProducts label{ margin:5px;}
-.searchProducts .iconSearch{ margin:5px;color:#5A4E4D;}
+  border-radius: 50.6817px;
+width:40%;
+height:2em;}
+.searchProducts label{ margin:5px; font-weight:700;}
+.searchProducts .iconSearch{ margin:5px;color:black;}
+.searchInput {width:150px;}
 
 
  .boxAcces{
@@ -128,9 +131,9 @@ cursor:pointer;}
   cursor:pointer;}
    .footer-menu2 ul li a{ text-decoration:none; color:white;}
    .footer-icon{ font-size:1em; color:white; margin: 0 5px;}
-   .mobile-menu{ display:none;}
+   .mobile-menu{ display:none!important;}
 
-   @media (max-width:768px)
+   @media (max-width:770px)
    { .navHeaderTop {display:none;}
    .navHeaderBottom{display:none;}
      .boxAcces{flex-direction:column;
@@ -145,7 +148,7 @@ cursor:pointer;}
        .boxHeader1 img{width:30%; margin:5px;}
        
 
-  .mobile-menu{ display:block; padding:5px;}
+  .mobile-menu{ display:block!important; padding:5px;}
   .searchProducts label{ color:#5A4E4D;}
   .top-header{ height: 25vh;}
   .footer-menu1{ display:flex;
@@ -156,5 +159,13 @@ cursor:pointer;}
 
 
     }
+@media (max-width:468px)
+{ .searchProducts{width:100%; }
+  .searchProducts input{width:100%;}
+  .boxAcces{align-items:center;}
+  .top-header{height:16vh;}
+  .boxHeader1{width:40%;}
+  }
+  
 
    

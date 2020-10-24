@@ -10,6 +10,7 @@ body {
     padding: 10px;
      width: 60%;
     margin: auto;
+    
     }
   
 .nombre{
@@ -255,6 +256,20 @@ body {
   
       
    /*fin fila Abonar or seguir comprando*/
+
+
+
+   @media (max-width:770px) 
+   {
+
+    main{ position:relative;
+      top: 6vh;
+    width:90%;}
+     .numberCart{margin:10px;}
+     .containerCart{flex-direction:column;}
+     .precioCart{ justify-content:flex-end;}
+     
+   }
   
   
   
