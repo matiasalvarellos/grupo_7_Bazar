@@ -10,6 +10,20 @@ font-family: 'Roboto', sans-serif;
 
 }
 
+.chat{ position:fixed;
+  font-size:1.3em;
+  font-weight:600;
+  display:flex;
+  flex-direction:column-reverse;
+top:30vh;
+right:0;
+margin:0;
+padding:0;
+width:70px;
+border-radius:10px;
+background-color:orange; 
+}
+.chat-icon{ font-size:2em!important;}
 .top-header{ position:relative;
 display:flex;
 flex-direction:row;
