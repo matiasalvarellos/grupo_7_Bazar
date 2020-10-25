@@ -6,61 +6,198 @@
   <!--<link rel='stylesheet' href='/stylesheets/style.css' />-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
   <link rel="stylesheet" href="/stylesheets/index.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
- </head>
+  <link rel="stylesheet" href="/stylesheets/footer-menu.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+   </head>
  <body>
   <header>
-    <div class="top-header">
+ 
       <div class="boxHeader1">
 
         <img src="images/logo.png" alt="logo" width="40%" class="headerLogo">
         <i class="fas fa-bars icon mobile-menu"></i>
 
       </div>
+     <div class="boxHeader2">
 
       <nav class="navHeaderTop">
         <ul>
-          <li> <a href=#> Inicio </a> </li>
-          <li> <a href=#> Pickup & Delivery </a></li>
+          <li> <a href=#> Pickup & Delivery </a> </li>
+          <li> <a href=#> Tracking </a></li>
+          <li> <a href=#> Formas de pago </a></li>
+          <li> <a href=#> Mi cuenta </a></li>
+          <li> <a href=#> Gift Card </a></li>
         </ul>
       </nav>
 
       <div class="searchProducts">
-        <input type="text" id="search" name="product">
+        <select id="search" name="product">
+          <option value="categoria1">  </option>
+          <option value="categoria2"> opcion2</option>
+          <option value="categoria3"> opcion3</option>
+          </select>
         <label for="search"> Buscar </label><i
           class=" iconSearch fas fa-search"></i>
       </div>
       <div class="boxAcces">
-        <i class="fas fa-cart-plus icon"></i>
-        <i class="far fa-user icon"></i>
+        <i class="fas fa-cart-arrow-down icon"></i>
+         <i class="far fa-user icon"></i>
       </div>
     </div>
-    <nav class="navHeaderBottom">
-      <ul>
-        <li> <a href=#> Cristalería
-          </a>
-        </li>
-        <li> <a href=#>
-            Herramientas de cocina
-          </a>
-        </li>
-        <li> <a href=#>
-            Cubiertos
-          </a>
-        </li>
-        <li> <a href=#>
-            Porcelana
-          </a>
-        </li>
-        <li> <a href=#>
-            Porcelana 2
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </header>
+    </header>
 
 
+    <!--FLEX DIRECTION COLUMN-->
+    <section class="principal">
+      <!--FLEX DIRECTION ROW-->
+  <div class="principalfotos">
+          <!--FLEX DIRECTION COLUMN-->
+          <div class="principal1 imgSlider"> </div>
+          <div class="principal2 imgSlider"> </div>
+          <div class="principal3 imgSlider"> </div> 
+          
+  </div>
+</section>
+
+
+<div class="banner1">
+  <p> "Ofrecemos la mejor calidad en productos para el hogar" </p>
+</div>
+
+<!--FLEX DIRECTION COLUMN-->
+<section class="mas-vendidos">
+  <div class="titular-masvendidos">
+      <!--FLEX DIRECTION ROW-->
+      <h2>Los mas vendidos</h2>
+      <a href="">Ver todas</a>                       
+  </div>
+
+  <div class="productos-masvendidos">
+      <!--FLEX DIRECTION ROW-->
+    
+        
+          <div class="detalle-masvendidos">
+            <div class="producto-imagen" id="producto1"> </div>
+              <h3>5000</h3>
+              <h4>40%</h4>
+              <p>Lorem ipsum dolor sit, amet.</p>
+          </div>
+
+          <div class="detalle-masvendidos">
+            <div class="producto-imagen" id="producto2"> </div>
+              <h3>5000</h3>
+              <h4>40%</h4>
+              <p>Lorem ipsum dolor sit, amet.</p>
+          </div>
+
+          <div class="detalle-masvendidos">
+            <div class="producto-imagen" id="producto3"> </div>
+              <h3>5000</h3>
+              <h4>40%</h4>
+              <p>Lorem ipsum dolor sit, amet.</p>
+          </div>
+      
+  </div>
+</section>
+<section class="mas-vendidos">
+  <div class="titular-masvendidos">
+      <!--FLEX DIRECTION ROW-->
+      <h2>Ofertas</h2>
+      <a href="">Ver todas</a>                       
+  </div>
+
+  <div class="productos-masvendidos">
+      <!--FLEX DIRECTION ROW-->
+    
+        
+          <div class="detalle-masvendidos">
+            <div class="producto-imagen" id="producto1"> </div>
+              <h3>5000</h3>
+              <h4>40%</h4>
+              <p>Lorem ipsum dolor sit, amet.</p>
+          </div>
+
+          <div class="detalle-masvendidos">
+            <div class="producto-imagen" id="producto2"> </div>
+              <h3>5000</h3>
+              <h4>40%</h4>
+              <p>Lorem ipsum dolor sit, amet.</p>
+          </div>
+
+          <div class="detalle-masvendidos">
+            <div class="producto-imagen" id="producto3"> </div>
+              <h3>5000</h3>
+              <h4>40%</h4>
+              <p>Lorem ipsum dolor sit, amet.</p>
+          </div>
+          <div class="detalle-masvendidos">
+            <div class="producto-imagen" id="producto4"> </div>
+              <h3>5000</h3>
+              <h4>40%</h4>
+              <p>Lorem ipsum dolor sit, amet.</p>
+          </div>
+      
+  </div>
+
+
+</section>
+
+<div class="banner">
+  </div>
+
+  <section class="mas-vendidos">
+    <div class="titular-masvendidos">
+        <!--FLEX DIRECTION ROW-->
+        <h2>Ofertas</h2>
+        <a href="">Ver todas</a>                       
+    </div>
+  
+    <div class="productos-masvendidos">
+        <!--FLEX DIRECTION ROW-->
+      
+          
+            <div class="detalle-masvendidos">
+              <div class="producto-imagen" id="producto1"> </div>
+                <h3>5000</h3>
+                <h4>40%</h4>
+                <p>Lorem ipsum dolor sit, amet.</p>
+            </div>
+  
+            <div class="detalle-masvendidos">
+              <div class="producto-imagen" id="producto2"> </div>
+                <h3>5000</h3>
+                <h4>40%</h4>
+                <p>Lorem ipsum dolor sit, amet.</p>
+            </div>
+  
+            <div class="detalle-masvendidos">
+              <div class="producto-imagen" id="producto3"> </div>
+                <h3>5000</h3>
+                <h4>40%</h4>
+                <p>Lorem ipsum dolor sit, amet.</p>
+            </div>
+            <div class="detalle-masvendidos">
+              <div class="producto-imagen" id="producto4"> </div>
+                <h3>5000</h3>
+                <h4>40%</h4>
+                <p>Lorem ipsum dolor sit, amet.</p>
+            </div>
+        
+    </div>
+  
+  
+  </section>
+
+  <div class="videos">
+
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0" allow="accelerometer;   picture-in-picture" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0" allow="accelerometer;  encrypted-media; picture-in-picture" allowfullscreen></iframe>
+</div>
+<!--VIDEOS-->
+<!--<iframe></iframe>-->
+<!--<iframe></iframe>-->
+    
   <br>
   <br>
   <br>
@@ -70,28 +207,25 @@
     <div class="footer-top">
       <nav class="footer-menu1">
         <ul>
-          <li> <a href=#> Formas de pago</a></li>
-          <li> <a href=#> Formas de entrega </a></li>
-          <li> <a href=#> Retiro en sucursal</a></li>
-          <li> <a href=#> Contacto</a></li>
+          <li> <a href=#>Categorías </a></li>
+          <li> <a href=#>Nosotros </a></li>
+  
+          <li> Seguínos en <a href=#> <i class=" footer-icon fab fa-instagram"></i></a> <a href=#><i
+                class=" footer-icon fab fa-facebook-f"></i>
+  
+            </a></li>
+          <li class="chat"> <i class="footer-icon chat-icon far fa-comments"></i> Chateá
+          </li>
         </ul>
+       
       </nav>
-      <p class="giftcard"> <strong> Giftcard</strong> </p>
+ 
 
     </div>
-    <nav class="footer-menu2">
+    <div class="footer-menu2">
+      ©copyright
+    </div>
 
-      <ul>
-        <li> <a href=#>Categorías </a></li>
-        <li> <a href=#>Nosotros </a></li>
-
-        <li> Seguínos en <a href=#> <i class=" footer-icon fab fa-instagram"></i></a> <a href=#><i
-              class=" footer-icon fab fa-facebook-f"></i>
-
-          </a></li>
-        <li class="chat"> <i class="footer-icon chat-icon far fa-comments"></i> Chateá
-        </li>
-      </ul>
     </footer>
  </body>
 </html>

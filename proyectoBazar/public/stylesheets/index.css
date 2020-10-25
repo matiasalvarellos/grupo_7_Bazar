@@ -2,266 +2,74 @@
 *{box-sizing:border-box;}
 
 body{
-  padding: 0;
+  padding:0;
   margin:0;
-}
-header{
-  width:100%;
   font-family: 'Roboto', sans-serif;
 }
-.chat{ 
-  position:fixed;
-  font-size:1.3em;
-  font-weight:600;
-  display:flex;
-  flex-direction:column-reverse;
-  top:30vh;
-  right:0;
-  margin:0;
-  padding:0;
-  width:70px;
-  border-radius:10px;
-  background-color:orange; 
-}
-.chat-icon{ 
-  font-size:2em!important;
-}
-.top-header{ 
-  position:relative;
-  display:flex;
-  flex-direction:row;
-  background-color:#7E675E;
+
+.principal{ 
   width:100%;
-  padding:2%;
-  color:white;
-  height:18vh;
-}
-.boxHeader1{
-  position:relative;
-  width: 10%;
-}
-.navHeaderTop{
-  position:relative;
-  width:30%;
-  display:flex;
-  align-items:flex-start; 
-  padding:0;
-}
-.navHeaderTop ul {
-  display:flex;
-  width:100%;
-  justify-content:space-around;
-  margin:0;
-}
-.navHeaderTop ul li{ 
-  display:block;
-}
-.navHeaderTop ul li a:hover{
- color:#8593AE;
-}
-.navHeaderTop ul li a{
-  text-decoration:none;
-  color:white;
-  font-weight:700;
-}
-.searchProducts{
-  width:55%;
-  position:relative;
-  display:flex;
-  justify-content:center;
-  align-items:flex-end;
-}
-.searchProducts input{
-  margin:5px;
-  background: #D4DAD8;
-  border: 1.01363px solid #D4DAD8;
-  box-sizing: border-box;
-  border-radius: 50.6817px;
-  width:40%;
-  height:2em;
-}
-.searchProducts label{
-  margin:5px; 
-  font-weight:700;
-}
-.searchProducts .iconSearch{
-  margin:5px;
-  color:black;
-}
-.searchInput {
-  width:150px;
-}
-.boxAcces{
-  position:relative;
-  display:flex;
-  align-items:flex-start;
-  justify-content:space-around;
-  width:10%;}  
-.icon{ 
-  color:  #331a00; 
-  font-size:1.5em; 
-  font-weight:600;
-}
-.icon:hover{
-  color:#8593AE;
-  cursor:pointer;
-}
-.navHeaderBottom{
-  position:relative;
-  display:flex;
-  width:100%;
-}
-.navHeaderBottom ul{ width:100%;
-  padding:1em 5%;
-  display:flex;
-  justify-content:space-around;
-}
-.navHeaderBottom ul li{
-  background-color: #8593AE;
-  list-style: none;
-  padding:12px 10px;
-  border-radius:5px;
-} 
-.navHeaderBottom ul li:hover{
-  transform:scale(1.1);
-} 
-.navHeaderBottom ul li a{
-  text-decoration:none;
-  color:white; 
-}
-.main-footer{
-  position:relative;
-  display:flex;
-  flex-direction:column;
-  margin:0;
-  padding:0;
-  width:100%;
-  background-color:#5A4E4D;
-}
-.footer-top{
-  display:flex; width:100%;
-  padding:1%;
-  border-bottom:  1px solid black;
-}
-.footer-menu1{ 
-  position:relative;
-  display:flex;
-  width: 80%;
-}
-.footer-menu1 ul{
-  position:relative;
-  display:flex;
-  justify-content:space-around;
-  align-items:center;
-  width:100%;
-}
-.footer-menu1 ul li{
-  list-style:none; 
-  color:white;
-  cursor:pointer;
-}
-.footer-menu1 ul li a{ 
-  text-decoration:none;
-  color:white;
-}
-.giftcard{ 
-  display:flex;
-  align-items:center;
-  text-align:center;
-  color:white; width:20%; 
-  cursor:pointer;
-}
-.footer-menu2{
-  display:flex;
-  width:100%;
-}
-.giftcard{
-  display:flex; 
-  justify-content: center;
-}
-.footer-menu2 ul{ 
-  display:flex;
-  width:100%;
-  justify-content: space-around; align-items:center;
-}
-.footer-menu2 ul li{
-  list-style:none; color:white;
-  cursor:pointer;
-}
-.footer-menu2 ul li a{
-  text-decoration:none; color:white;
-}
-.footer-icon{
-  font-size:1em;
-  color:white; 
-  margin: 0 5px;
-}
-.mobile-menu{
-  display:none!important;
-}
-@media (max-width:770px){
-  .navHeaderTop {
-    display:none;
-  }
-  .navHeaderBottom{
-  display:none;
-  }
-  .boxAcces{
-  flex-direction:column;
-  align-items:flex-end; 
-  width:30%;
-  }
-  .searchProducts{ 
-    position:relative; 
-    top:10vh;
-  }
-  .boxHeader1{
+margin:15vh 0;
+padding:0;}
+  .principalfotos {
+    position:relative;
     display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:space-around;
-    width: 30%;
+    width:100%; 
+    margin:0;
+     padding:0;
   }
-  .boxHeader1 img{
-    width:30%; margin:5px;
+.imgSlider { position:relative; margin:0; padding:0; width:34%; height:40vh;
+   background-size:cover; background-repeat:no-repeat; background-position:center;}
+  .principal1 {background-image:url("../images/cocina1.jpeg");}
+  .principal2 {background-image:url("../images/cristaleria1.jpg"); }
+  .principal3 {background-image:url("../images/porcelana1.jpg"); }
+
+  .mas-vendidos{ position:relative;
+    width:100%; display:flex; 
+    flex-direction:column;}
+  .titular-masvendidos{position:relative;
+  display:flex; 
+  justify-content:center;
+  align-items:center;
   }
-  .mobile-menu{
-  display:block!important;
-  padding:5px;
-  }
-  .searchProducts label{
-    color:#5A4E4D;
-  }
-  .top-header{
-    height: 25vh;
-  }
-  .footer-menu1{
-   display:flex;
-  justify-content:flex-start;
-  }
-  .footer-menu1 ul{ 
-    display:flex; 
-    flex-direction:column;
-    align-items: flex-start;
-  }
+  .titular-masvendidos h2{ color:#97b8c2; 
+    font-size:2.2em;
+  font-weight:700; 
+margin: 2%;}
+.titular-masvendidos a{text-decoration:none; color:black;}
+
+.productos-masvendidos {
+ width:100%;
+ margin:0;
+ padding:0;
+ display:flex;
+ justify-content: space-around; 
 }
-@media (max-width:468px){
-  .searchProducts{
-    width:100%;
-  }
-  .searchProducts input{
-    width:100%;
-  }
-  .boxAcces{
-    align-items:center;
-  }
-  .top-header{
-    height:16vh;
-  }
-  .boxHeader1{
-    width:40%;
-  }
-  .chat{
-    display: none;
-  }
-}
+.detalle-masvendidos{width:35vh;
+background-color: #7E675E;
+color:#97B8C2;
+display:flex;
+flex-direction:column;
+align-items: center;
+justify-content: flex-start; }
+.detalle-masvendidos :nth-child(2){margin:0; padding:0; font-weight:500;}
+.detalle-masvendidos :nth-child(3) {margin:0; padding:0; font-weight:400;}
+.detalle-masvendidos p{ color:white; font-weight:400; font-size:12px;
+margin-top:0;}
+.producto-imagen {width:100%; height:24vh; 
+  background-size:cover; 
+  background-repeat: no-repeat;
+  background-position:center;}
+  #producto1{background-image:url("../images/fuentes.jpg");}
+  #producto2{background-image:url("../images/porcelana2.jpg");}
+  #producto3{ background-image:url("../images/olla1.jpg");}
+  #producto4{ background-image:url("../images/olla1.jpg");}
+ 
+ 
+  .banner{width:100%; height: 22vh; background-color: #DDA288; margin: 6% 0 2% 0;}
+  .banner1{width:70%; height: 15vh; background-color: #DDA288; margin: 2% auto 2% auto;
+  display:flex; justify-content: center; align-items: center;}
+  .banner1 p{ font-size:2em; color:black; font-weight:700; 
+  font-style:italic;}
+
+  .videos { display:flex; justify-content: space-between; width:100%; margin: 5% 0;}
