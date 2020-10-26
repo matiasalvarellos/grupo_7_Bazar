@@ -4,6 +4,7 @@
 body{
   padding: 0;
   margin:0;
+  background-color:#E5E5E5;
 }
 header{
   width:100%;
@@ -45,7 +46,7 @@ header{
   width: 10%;
   display:flex;
   justify-content:space-between;
-  align-items:flex-end;
+  align-items:center;
 }
 .boxHeader2{
   width:90%;
@@ -84,7 +85,7 @@ header{
   justify-content:center;
   align-items:flex-end;
 }
-.searchProducts select{
+.searchProducts input{
   margin:5px;
   background: #D4DAD8;
   border: 1.01363px solid #D4DAD8;
@@ -160,12 +161,13 @@ header{
 .footer-menu1{ 
   position:relative;
   display:flex;
-  width: 80%;
+  width: 100%;
 }
 .footer-menu1 ul{
   position:relative;
   display:flex;
-  justify-content:space-around;
+  justify-content:space-between;
+  padding:0 2%;
   align-items:center;
   width:100%;
 }
