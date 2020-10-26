@@ -56,7 +56,8 @@ align-items:flex-end;}
    .icon:hover{color:#8593AE;cursor:pointer;}
    .navHeaderBottom{ position:relative;
   display:flex;
-width:100%;}
+width:100%;
+background: white;}
 .navHeaderBottom ul{ width:100%; padding:1em 5%; display:flex; justify-content:space-around;}
 .navHeaderBottom ul li{ background-color: #8593AE;
    list-style: none; padding:12px 10px;
