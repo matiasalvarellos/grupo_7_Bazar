@@ -1,0 +1,106 @@
+*{
+    box-sizing: border-box;
+    font-family:sans-serif;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+}
+main{
+    width:100%;
+    height: 80vh;
+    background-color: rgba(229, 229, 229, 0.51);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.ventanaFormulario{
+    background-image:url(https://image.freepik.com/vector-gratis/fondo-transparente-patron-cubiertos-contorno-patron-vertical-cubiertos-contorno-fondo-utensilios-cocina-estilo-contorno-papel-pintado-cubiertos-cocina_171580-112.jpg);
+    width: 40%;
+    height: 430px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+    border: 3px solid #8593AE;
+    border-radius: 5px;
+    outline: none;
+    font-size: 15px;
+}
+form{
+    width: 100%; 
+    padding: 5px;
+    text-align: center;
+}
+form .titulo{
+    font-size: 30px;
+    text-align: center;
+}
+.datos{
+    margin: 10px;
+}
+.datos input, .datos select{
+    width: 200px;
+    height: 40px;
+    background-color:rgba(229, 229, 229, 0.80) ;
+    border: 3px solid #8593AE;
+    text-align: center;
+    border-radius: 7px;
+    outline: none;
+    cursor: pointer;
+    transition: 0.25s;     
+}
+.datos input:focus{
+    width: 300px;
+    border-color:green;
+}
+.link {
+    width: 200px;
+    height: 40px;
+    border-radius:50px;
+    border:3px solid #8593AE ;
+    font-weight: bold;
+    color:#DDA288;
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.25s;
+    background-color:#7E675E;
+    outline: none;
+}
+.link:hover{
+    border-color: green;
+}
+.primerButton{
+    background-color:#7E675E;
+    color:#DDA288;
+    border:3px solid #8593AE;
+    width:200px;
+    height:40px;
+    border-radius:50px;
+    cursor: pointer;
+    outline: none;
+    font-size: 16px;
+}
+.primerButton:focus{
+    border-color:green;
+}
+.ventanaFormulario em{
+    text-decoration:underline;
+}
+.titulo mark{
+    background-color: rgba(229, 229, 229, 0.30);
+    border-radius: 5px;
+}
+form p,
+form a .link p{
+    margin: 10px;
+    font-size: 16px;
+}
+@media (max-width: 750px){
+    .ventanaFormulario{    
+       width: 100%;
+       margin-top: 40px;
+    }
+}

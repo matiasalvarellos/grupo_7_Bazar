@@ -1,10 +1,10 @@
 <html>
     <head>
         <link rel="stylesheet" href="stylesheets/loginRegistro.css">
-        <link rel="stylesheet" href="/stylesheets/footer-menu.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/stylesheets/footer-menu.css">
     </head>
     <body>
       <header>
@@ -43,80 +43,73 @@
       </div>
       </header>
 
-        <div class="login1">
-
-         
-
 
             <main>
                 <div class="ventanaFormulario">
                     <form action="" method="get">
                         <div class="titulo">
-                            <label for="name">
+                            <label for="email">
                                 <em>
-                                   <mark>Registrate:</mark>
+                                    <mark>
+                                     Iniciar sesíon en tu cuenta:
+                                    </mark>
                                 </em>
                             </label>
                         </div>
                         <div class="datos">
-                            <input type="text" id="name" name="nombre" placeholder="Nombre"></div>
-                        <div class="datos">
-                            <input type="text" name="apellido" placeholder="Apellido">
+                             <input type="email" id="email" name="email" placeholder="Email Adress (required)">
                         </div>
                         <div class="datos">
-                            <input type="email" name="email" placeholder="Dirc.Correo Electronico">
+                             <input type="password" name="password" placeholder="Password (required)"><br>
+                             <a href="">¿Olvidaste tu contraseña?</a>
                         </div>
-                        <div class="datos">
-                            <input type="password" name="password" placeholder="Crea una contraseña">
-                        </div>    
-                        <div class="datos">
-                            <select name="cliente">
-                                 <option>-Tipo de Cliente-</option>
-                                 <option value="mayorista">Mayorista</option>
-                                 <option value="C.f">Minorista</option>
-                            </select>
-                        </div>
-                        <button class="primerButton" type="submit">
-                            Crear Cuenta    
-                        </button>
                         <p>
-                         <em>¿Tenes cuenta?</em>
+                            <button class="primerButton" type="submit">
+                                Iniciar sesión
+                            </button>
                         </p>
-                        <a href="/login">
-                         <div class="link">
-                            <p>Iniciar Sesión</p>
-                         </div>
-                        </a>
+                        <p>
+                            <em>
+                             ¿No tenes cuenta?
+                            </em>
+                        </p>
+                        <a href="/register">
+                            <div class="link">
+                                <p>
+                                 Registrate Ya!
+                                </p>
+                            </div>
+                        </a>          
                     </form>
                 </div>
             </main>
-        
 
-  <footer class="main-footer">
-    <div class="footer-top">
-      <nav class="footer-menu1">
-        <ul>
-          <li> <a href=#>Categorías </a></li>
-          <li> <a href=#>Nosotros </a></li>
-  
-          <li> Seguínos en <a href=#> <i class=" footer-icon fab fa-instagram"></i></a> <a href=#><i
-                class=" footer-icon fab fa-facebook-f"></i>
-  
-            </a></li>
-          <li class="chat"> <i class="footer-icon chat-icon far fa-comments"></i> Chateá
-          </li>
-        </ul>
-       
-      </nav>
- 
 
-    </div>
-    <div class="footer-menu2">
-      ©copyright
-    </div>
-
-    </footer>
+            <footer class="main-footer">
+              <div class="footer-top">
+                <nav class="footer-menu1">
+                  <ul>
+                    <li> <a href=#>Categorías </a></li>
+                    <li> <a href=#>Nosotros </a></li>
             
+                    <li> Seguínos en <a href=#> <i class=" footer-icon fab fa-instagram"></i></a> <a href=#><i
+                          class=" footer-icon fab fa-facebook-f"></i>
+            
+                      </a></li>
+                    <li class="chat"> <i class="footer-icon chat-icon far fa-comments"></i> Chateá
+                    </li>
+                  </ul>
+                 
+                </nav>
+           
+          
+              </div>
+              <div class="footer-menu2">
+                ©copyright
+              </div>
+          
+              </footer>
+
         </div>
     </body>
 </html>

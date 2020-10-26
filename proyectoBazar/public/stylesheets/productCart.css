@@ -1,0 +1,275 @@
+body {
+    font: 12px "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
+  
+  /**/
+    
+  /**/
+  
+  main{
+    padding: 10px;
+     width: 60%;
+    margin: auto;
+    
+    }
+  
+.nombre{
+    color: #8593AE;
+}
+  
+  a {
+    color: #00B7FF;
+  }
+  .precioCart,
+  .subprecio,
+  .box7{
+   font-size: 16px;
+   font-weight: bolder;
+  
+  }
+  
+  .titulo1{
+    border-color: #8593AE;
+  }
+  
+  /*-----*/
+  
+  
+  .containerCart{
+    display: flex;
+    justify-content: space-between
+  }
+  
+  .containerCart .box1 img{
+    width: 80px;
+    padding-left: 30px;
+    
+  }
+  
+  .containerCart .box1,
+  .numberCart,
+  .precioCart,
+  .disponibles{
+    display: flex;
+    position: relative;
+    align-items: flex-start;
+    }
+  
+  .disponibles{
+    margin-left:5px;
+  }
+  
+  
+  .box1 p,
+  .numberCart p,
+  .precioCart p{
+    margin: 0;
+    padding:0;
+  }
+  
+  .numberCart{
+  flex-wrap: wrap;
+  width: 280px;
+  margin-left: 50px;  
+  font-size: 10px;
+  }
+  
+  .nomProducto{
+    margin-left:10px;
+  }
+  
+  .numberCart input{
+   width: 20px;
+   margin-right: 10px;
+   }
+  
+   
+  .fas.fa-times{
+    position: absolute;
+    font-size: 15px;
+    top: 30px;
+  }
+  
+  /* Fin fila producto*/
+  
+  .subtotal{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+   .descuento{
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+   }
+  
+   .desc{
+      margin-left: 10px;
+   
+   }
+  
+   .box1{
+    flex-grow: 1;
+  }
+  
+  .unidad{
+    flex-grow:0.5;
+    display:flex;
+    }
+  
+    .unidad p{
+     margin-top:0;
+     margin-right:40px;
+      }
+  
+   .titulo1{
+     margin-top:10px;
+   }
+  
+  
+  
+   /* Fin fila subtotal y descuentos*/
+  
+   .envio{
+    font-size: 10px ;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    }
+  
+   .costoenvio1{
+     font-size: 12px;
+   }
+  
+   .costoenvio2{
+     margin-right:60px;
+     border: 1px solid #BCBABE;
+     padding-top:0;
+     padding-left: 10px;
+     padding-right: 10px;
+     background-color:#f9f9f9;
+   
+   }
+  
+  
+  
+    .calcular{
+    display:flex;
+    flex-wrap: wrap;
+    padding-top: 5px;
+   }
+  
+   .calculo :hover{
+     color:white;
+   }
+  
+   .calculo{
+     background-color: #1f1f1f;
+     color: white;  quotes: 21px;
+     font-weight: bold;
+     text-decoration: none;
+   }
+  
+   .buscarcp{
+     margin-left:10px;
+     text-decoration: none;
+     color: black;
+    }
+  
+    
+    .buscarcp :hover{
+      color: white ;
+    }
+  
+   .precioenvio{  
+    color: #900;
+    font-weight: bolder;
+   }
+  
+   .titulo{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+     }
+  
+     .radio1 input{
+       vertical-align: middle;
+     }
+  
+     .cp input{
+       width: 70px;
+     }
+  
+    .domicilio1{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #f4f4f4;
+    align-items: center;
+     }
+  
+    
+    .domicilio2{
+      display:flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      background-color: #f4f4f4;
+        }
+  
+  .domicilio2 p,
+  .nota p
+  {
+    margin: 0;
+    padding:0;
+  }
+  .nota{
+  flex-wrap: wrap;
+  width: 150px;
+  margin-left: 30px;
+    
+  }
+    
+   /* fin costo envio*/
+  
+   .container2{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+   }
+     
+  
+   /*fin fila Total a Pagar*/
+  
+   .container3{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:flex-end ;
+    }
+  
+    .box9{
+      margin-left: 10px;
+      
+     }
+  
+      
+   /*fin fila Abonar or seguir comprando*/
+
+
+
+   @media (max-width:770px) 
+   {
+
+    main{ position:relative;
+      top: 6vh;
+    width:90%;}
+     .numberCart{margin:10px;}
+     .containerCart{flex-direction:column;}
+     .precioCart{ justify-content:flex-end;}
+     
+   }
+  
+  
+  
