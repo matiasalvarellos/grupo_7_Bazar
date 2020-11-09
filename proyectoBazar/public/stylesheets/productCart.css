@@ -8,7 +8,7 @@ body {
   
   main{
     padding: 10px;
-     width: 60%;
+    width: 60%;
     margin: auto;
     
     }
@@ -16,10 +16,23 @@ body {
 .nombre{
     color: #8593AE;
 }
-  
-  a {
-    color: #00B7FF;
+
+.titulos{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;  
+    }
+
+  .unitario {
+    padding-left: 40%;
   }
+
+  .unitario,
+  .total{
+    padding-top:50px;
+   }
+    
+
   .precioCart,
   .subprecio,
   .box7{
@@ -48,18 +61,13 @@ body {
   
   .containerCart .box1,
   .numberCart,
-  .precioCart,
-  .disponibles{
+  .precioCart{
     display: flex;
     position: relative;
     align-items: flex-start;
     }
   
-  .disponibles{
-    margin-left:5px;
-  }
-  
-  
+   
   .box1 p,
   .numberCart p,
   .precioCart p{
@@ -141,95 +149,8 @@ body {
    .costoenvio1{
      font-size: 12px;
    }
-  
-   .costoenvio2{
-     margin-right:60px;
-     border: 1px solid #BCBABE;
-     padding-top:0;
-     padding-left: 10px;
-     padding-right: 10px;
-     background-color:#f9f9f9;
-   
-   }
-  
-  
-  
-    .calcular{
-    display:flex;
-    flex-wrap: wrap;
-    padding-top: 5px;
-   }
-  
-   .calculo :hover{
-     color:white;
-   }
-  
-   .calculo{
-     background-color: #1f1f1f;
-     color: white;  quotes: 21px;
-     font-weight: bold;
-     text-decoration: none;
-   }
-  
-   .buscarcp{
-     margin-left:10px;
-     text-decoration: none;
-     color: black;
-    }
-  
-    
-    .buscarcp :hover{
-      color: white ;
-    }
-  
-   .precioenvio{  
-    color: #900;
-    font-weight: bolder;
-   }
-  
-   .titulo{
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-     }
-  
-     .radio1 input{
-       vertical-align: middle;
-     }
-  
-     .cp input{
-       width: 70px;
-     }
-  
-    .domicilio1{
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    background-color: #f4f4f4;
-    align-items: center;
-     }
-  
-    
-    .domicilio2{
-      display:flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      background-color: #f4f4f4;
-        }
-  
-  .domicilio2 p,
-  .nota p
-  {
-    margin: 0;
-    padding:0;
-  }
-  .nota{
-  flex-wrap: wrap;
-  width: 150px;
-  margin-left: 30px;
-    
-  }
+       
+ 
     
    /* fin costo envio*/
   
@@ -251,9 +172,28 @@ body {
   
     .box9{
       margin-left: 10px;
-      
-     }
+      }
+
+     a {
+      color: #00B7FF;
+      text-decoration: none;
+          }   
+
+     .box8 a{
+      color: black;
+      font-size: 20px
+        }
   
+    .box9 a{
+      color: black
+    }
+
+    button{
+      height: 50px;
+      width: 80px;
+    }
+  
+
       
    /*fin fila Abonar or seguir comprando*/
 
@@ -261,15 +201,54 @@ body {
 
    @media (max-width:770px) 
    {
-
     main{ position:relative;
-      top: 6vh;
-    width:90%;}
-     .numberCart{margin:10px;}
+    top: 1vh;
+    width:95%;}
+     .numberCart{margin:10px; flex-direction: column;padding-left: 60%;}
      .containerCart{flex-direction:column;}
      .precioCart{ justify-content:flex-end;}
+     .unitario, 
+     .total,
+     .unidad{
+       display: none}
+    }
      
-   }
+     
+    @media (max-width:468px) 
+   {
+    main{ position:relative;
+    top: 1vh;
+    width:95%;}
+     .numberCart{margin:10px;flex-direction:column; padding-left: 30%;}
+     .containerCart{flex-direction:column;}
+     .precioCart{ justify-content:flex-end;}
+     .unitario, 
+     .total
+     .unidad{
+       display: none
+     }
+
+     .nombre{
+       margin-bottom:5px;
+       font-size:15px;
+     }
+
+     p{
+       font-size: 11px;
+     }
+
+     h2{
+       font-size: 13px;
+     }
+
+     button{
+      height: 40px;
+      width: 65px;
+      font-size: 9px;}  
+    }
+
+    
+
   
   
   
