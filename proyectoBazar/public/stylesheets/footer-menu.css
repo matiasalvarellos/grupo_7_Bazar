@@ -1,6 +1,7 @@
 
-*{box-sizing:border-box;}
-
+*{
+  box-sizing:border-box;
+}
 body{
   padding: 0;
   margin:0;
@@ -154,7 +155,8 @@ header{
   background-color:#5A4E4D;
 }
 .footer-top{
-  display:flex; width:100%;
+  display:flex; 
+  width:100%;
   padding:1%;
   border-bottom:  1px solid black;
 }
@@ -230,45 +232,44 @@ header{
   display:none;
   }
   .boxAcces{
-  flex-direction:column;
-  align-items:flex-end; 
-  width:30%;
+   flex-direction:column;
+   align-items:flex-end; 
+   width:30%;
   }
   .searchProducts{ 
-    position:relative; 
-    align-items:center;
-    
+   position:relative; 
+   align-items:center; 
   }
   .boxHeader1{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:space-around;
-    width: 30%;
+   display:flex;
+   flex-direction:column;
+   align-items:center;
+   justify-content:space-around;
+   width: 30%;
   }
   .boxHeader1 img{
-    width:30%; margin:5px;
+   width:30%;
+   margin:5px;
   }
   .mobile-menu{
-  display:block!important;
-  padding:5px;
+   display:block!important;
+   padding:5px;
   }
   .searchProducts label{
-    color:#5A4E4D;
+   color:#5A4E4D;
   }
   .top-header{
-    height: 25vh;
+   height: 25vh;
   }
   .footer-menu1{
    display:flex;
-  justify-content:flex-start;
-  align-items:center;
+   justify-content:flex-start;
+   align-items:center;
   }
   .footer-menu1 ul{ 
     display:flex; 
     flex-direction:column;
     align-items: flex-start;
-
   }
 }
 @media (max-width:468px){
