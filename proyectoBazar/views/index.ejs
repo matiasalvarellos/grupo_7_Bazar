@@ -1,5 +1,6 @@
 <html>
- <head>
+
+<head>
   <meta charset="UTF-8">
   <title>Bazar e commerce </title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,229 +8,179 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
   <link rel="stylesheet" href="/stylesheets/index.css">
   <link rel="stylesheet" href="/stylesheets/footer-menu.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+</head>
 
-   </head>
- <body>
-
-  <header>
- 
-    <div class="boxHeader1">
-      <a href="/">
-
-      <img src="images/logo.png" alt="logo" width="90%" class="headerLogo"> </a>
-      <i class="fas fa-bars icon mobile-menu"></i> 
+<body>
+  <%- include("partials/header") %>   
+  <!--FLEX DIRECTION COLUMN-->
+  <section class="principal">
+    <!--FLEX DIRECTION ROW-->
+    <div class="principalfotos">
+      <!--FLEX DIRECTION COLUMN-->
+      <div class="principal1 imgSlider"> </div>
+      <div class="principal2 imgSlider"> </div>
+      <div class="principal3 imgSlider"> </div>
 
     </div>
-   <div class="boxHeader2">
+  </section>
 
-    <nav class="navHeaderTop">
-      <ul>
-        <li> <a href=#> Pickup & Delivery </a> </li>
-        <li> <a href=#> Tracking </a></li>
-        <li> <a href=#> Formas de pago </a></li>
-        <li> <a href=#> Mi cuenta </a></li>
-        <li> <a href=#> Gift Card </a></li>
-      </ul>
-    </nav>
 
-    <div class="searchProducts">
-      <input type="text" id="search" name="product">
-      <label for="search"> Buscar </label><i
-        class=" iconSearch fas fa-search"></i>
-    </div>
-    <div class="boxAcces">
-      <i class="fas fa-cart-arrow-down icon"></i>
-       <i class="far fa-user icon"></i>
-    </div>
+  <div class="banner1">
+    <p> Pago hasta en 10 cuotas con 10% de interés </p>
   </div>
-  </header>
 
-    <!--FLEX DIRECTION COLUMN-->
-    <section class="principal">
-      <!--FLEX DIRECTION ROW-->
-  <div class="principalfotos">
-          <!--FLEX DIRECTION COLUMN-->
-          <div class="principal1 imgSlider"> </div>
-          <div class="principal2 imgSlider"> </div>
-          <div class="principal3 imgSlider"> </div> 
-          
-  </div>
-</section>
-
-
-<div class="banner1">
-  <p> Pago hasta en 10 cuotas con 10% de interés </p>
-</div>
-
-<!--FLEX DIRECTION COLUMN-->
-<section class="mas-vendidos">
-  <div class="titular-masvendidos">
+  <!--FLEX DIRECTION COLUMN-->
+  <section class="mas-vendidos">
+    <div class="titular-masvendidos">
       <!--FLEX DIRECTION ROW-->
       <h2>Los mas vendidos</h2>
-      <a href="">Ver todas</a>                       
-  </div>
+      <a href="">Ver todas</a>
+    </div>
 
-  <div class="productos-masvendidos">
+    <div class="productos-masvendidos">
       <!--FLEX DIRECTION ROW-->
-    
-        
-          <div class="detalle-masvendidos">
-            <div class="producto-imagen" id="producto1"> </div>
-              <h3>5000</h3>
-              <h4>40%</h4>
-              <p>Lorem ipsum dolor sit, amet.</p>
-          </div>
 
-          <div class="detalle-masvendidos">
-            <div class="producto-imagen" id="producto2"> </div>
-              <h3>5000</h3>
-              <h4>40%</h4>
-              <p>Lorem ipsum dolor sit, amet.</p>
-          </div>
 
-          <div class="detalle-masvendidos">
-            <div class="producto-imagen" id="producto3"> </div>
-              <h3>5000</h3>
-              <h4>40%</h4>
-              <p>Lorem ipsum dolor sit, amet.</p>
-          </div>
-      
-  </div>
-</section>
-<section class="mas-vendidos">
-  <div class="titular-masvendidos">
+      <div class="detalle-masvendidos">
+        <div class="producto-imagen" id="producto1"> </div>
+        <h3>5000</h3>
+        <h4>40%</h4>
+        <p>Lorem ipsum dolor sit, amet.</p>
+      </div>
+
+      <div class="detalle-masvendidos">
+        <div class="producto-imagen" id="producto2"> </div>
+        <h3>5000</h3>
+        <h4>40%</h4>
+        <p>Lorem ipsum dolor sit, amet.</p>
+      </div>
+
+      <div class="detalle-masvendidos">
+        <div class="producto-imagen" id="producto3"> </div>
+        <h3>5000</h3>
+        <h4>40%</h4>
+        <p>Lorem ipsum dolor sit, amet.</p>
+      </div>
+
+    </div>
+  </section>
+  <section class="mas-vendidos">
+    <div class="titular-masvendidos">
       <!--FLEX DIRECTION ROW-->
       <h2>Ofertas</h2>
-      <a href="">Ver todas</a>                       
-  </div>
+      <a href="">Ver todas</a>
+    </div>
 
-  <div class="productos-masvendidos">
+    <div class="productos-masvendidos">
       <!--FLEX DIRECTION ROW-->
-    
-        
-          <div class="detalle-masvendidos">
-            <div class="producto-imagen" id="producto1"> </div>
-              <h3>5000</h3>
-              <h4>40%</h4>
-              <p>Lorem ipsum dolor sit, amet.</p>
-          </div>
-
-          <div class="detalle-masvendidos">
-            <div class="producto-imagen" id="producto2"> </div>
-              <h3>5000</h3>
-              <h4>40%</h4>
-              <p>Lorem ipsum dolor sit, amet.</p>
-          </div>
-
-          <div class="detalle-masvendidos">
-            <div class="producto-imagen" id="producto3"> </div>
-              <h3>5000</h3>
-              <h4>40%</h4>
-              <p>Lorem ipsum dolor sit, amet.</p>
-          </div>
-          <div class="detalle-masvendidos">
-            <div class="producto-imagen" id="producto4"> </div>
-              <h3>5000</h3>
-              <h4>40%</h4>
-              <p>Lorem ipsum dolor sit, amet.</p>
-          </div>
-      
-  </div>
 
 
-</section>
+      <div class="detalle-masvendidos">
+        <div class="producto-imagen" id="producto1"> </div>
+        <h3>5000</h3>
+        <h4>40%</h4>
+        <p>Lorem ipsum dolor sit, amet.</p>
+      </div>
 
-<div class="banner">
+      <div class="detalle-masvendidos">
+        <div class="producto-imagen" id="producto2"> </div>
+        <h3>5000</h3>
+        <h4>40%</h4>
+        <p>Lorem ipsum dolor sit, amet.</p>
+      </div>
+
+      <div class="detalle-masvendidos">
+        <div class="producto-imagen" id="producto3"> </div>
+        <h3>5000</h3>
+        <h4>40%</h4>
+        <p>Lorem ipsum dolor sit, amet.</p>
+      </div>
+      <div class="detalle-masvendidos">
+        <div class="producto-imagen" id="producto4"> </div>
+        <h3>5000</h3>
+        <h4>40%</h4>
+        <p>Lorem ipsum dolor sit, amet.</p>
+      </div>
+
+    </div>
+
+
+  </section>
+
+  <div class="banner">
   </div>
 
   <section class="mas-vendidos">
     <div class="titular-masvendidos">
-        <!--FLEX DIRECTION ROW-->
-        <h2>Novedades</h2>
-        <a href="">Ver todas</a>                       
+      <!--FLEX DIRECTION ROW-->
+      <h2>Novedades</h2>
+      <a href="">Ver todas</a>
     </div>
-  
+
     <div class="productos-masvendidos">
-        <!--FLEX DIRECTION ROW-->
-      
-          
-            <div class="detalle-masvendidos">
-              <div class="producto-imagen" id="producto1"> </div>
-                <h3>5000</h3>
-                <h4>40%</h4>
-                <p>Lorem ipsum dolor sit, amet.</p>
-            </div>
-  
-            <div class="detalle-masvendidos">
-              <div class="producto-imagen" id="producto2"> </div>
-                <h3>5000</h3>
-                <h4>40%</h4>
-                <p>Lorem ipsum dolor sit, amet.</p>
-            </div>
-  
-            <div class="detalle-masvendidos">
-              <div class="producto-imagen" id="producto3"> </div>
-                <h3>5000</h3>
-                <h4>40%</h4>
-                <p>Lorem ipsum dolor sit, amet.</p>
-            </div>
-            <div class="detalle-masvendidos">
-              <div class="producto-imagen" id="producto4"> </div>
-                <h3>5000</h3>
-                <h4>40%</h4>
-                <p>Lorem ipsum dolor sit, amet.</p>
-            </div>
-        
+      <!--FLEX DIRECTION ROW-->
+
+
+      <div class="detalle-masvendidos">
+        <div class="producto-imagen" id="producto1"> </div>
+        <h3>5000</h3>
+        <h4>40%</h4>
+        <p>Lorem ipsum dolor sit, amet.</p>
+      </div>
+
+      <div class="detalle-masvendidos">
+        <div class="producto-imagen" id="producto2"> </div>
+        <h3>5000</h3>
+        <h4>40%</h4>
+        <p>Lorem ipsum dolor sit, amet.</p>
+      </div>
+
+      <div class="detalle-masvendidos">
+        <div class="producto-imagen" id="producto3"> </div>
+        <h3>5000</h3>
+        <h4>40%</h4>
+        <p>Lorem ipsum dolor sit, amet.</p>
+      </div>
+      <div class="detalle-masvendidos">
+        <div class="producto-imagen" id="producto4"> </div>
+        <h3>5000</h3>
+        <h4>40%</h4>
+        <p>Lorem ipsum dolor sit, amet.</p>
+      </div>
+
     </div>
-  
-  
+
+
     <section class="novedades">
       <div class="titular-masvendidos">
-          <!--FLEX DIRECTION ROW-->
-          <h2>Videos</h2>
-          <a href="">Ver todas</a>                       
+        <!--FLEX DIRECTION ROW-->
+        <h2>Videos</h2>
+        <a href="">Ver todas</a>
       </div>
-    
+
       <div class="productos-masvendidos">
-  </section>
+    </section>
 
-  <div class="videos">
+    <div class="videos">
 
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0" allow="accelerometer;   picture-in-picture" allowfullscreen></iframe>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0" allow="accelerometer;  encrypted-media; picture-in-picture" allowfullscreen></iframe>
-</div>
-<!--VIDEOS-->
-<!--<iframe></iframe>-->
-<!--<iframe></iframe>-->
-    
-  <br>
-  <br>
-  <br>
-
-
-  <footer class="main-footer">
-    <div class="footer-top">
-      <nav class="footer-menu1">
-        <ul>
-          <li> <a href=#>Categorías </a></li>
-          <li> <a href=#>Nosotros </a></li>
-          <li>  <a href=#> Contacto</a></li>
-  
-          <li> Seguínos en <a href=#> <i class=" footer-icon fab fa-instagram"></i></a> <a href=#><i
-                class=" footer-icon fab fa-facebook-f"></i>
-  
-            </a></li>
-                 </ul>
-       
-      </nav>
- 
-
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0"
+        allow="accelerometer;   picture-in-picture" allowfullscreen></iframe>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0"
+        allow="accelerometer;  encrypted-media; picture-in-picture" allowfullscreen></iframe>
     </div>
-    <div class="footer-menu2">
-      ©copyright
-    </div>
+    <!--VIDEOS-->
+    <!--<iframe></iframe>-->
+    <!--<iframe></iframe>-->
 
-    </footer>
- </body>
+    <br>
+    <br>
+    <br>
+
+    <%- include("partials/footer") %>
+
+</body>
+
 </html>

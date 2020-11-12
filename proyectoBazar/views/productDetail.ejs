@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Detalle del producto</title>
     <!--ICONOS-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
@@ -12,151 +12,90 @@
     <!--ESTILOS-->
     <link rel="stylesheet" href="/stylesheets/productDetail.css">
     <link rel="stylesheet" href="/stylesheets/footer-menu.css">
+  </head>
+  <body>
+    <%- include("artials/header") %>
+    <div class="container">
+      <aside>
+        <div id="content-wrapper">
+          <div class="column">
+            <img id=featured src="images/productos/p1/mug-roja.jpg">
+            <div id="slide-wrapper">
+              <img id="slideLeft" class="arrow" src="images/arrow-left.png">
+              <div id="slider">
+                <img class="thumbnail active" src="images/productos/p1/mug-amarilla.jpg">
+                <img class="thumbnail" src="images/productos/p1/mug-azul.jpg">
+                <img class="thumbnail" src="images/productos/p1/mug-blanca.jpg">
+                <img class="thumbnail" src="images/productos/p1/mug-negra.jpg">
+                <img class="thumbnail" src="images/productos/p1/mug-roja.jpg">
+                <img class="thumbnail" src="images/productos/p1/mug-verde.jpg">
+              </div>
 
-</head>
-<body>
-  <header>
- 
-    <div class="boxHeader1">
-      <a href="/">
-  
-      <img src="images/logo.png" alt="logo" width="90%" class="headerLogo"> </a>
-      <i class="fas fa-bars icon mobile-menu"></i> 
-  
-    </div>
-   <div class="boxHeader2">
-  
-    <nav class="navHeaderTop">
-      <ul>
-        <li> <a href=#> Pickup & Delivery </a> </li>
-        <li> <a href=#> Tracking </a></li>
-        <li> <a href=#> Formas de pago </a></li>
-        <li> <a href=#> Mi cuenta </a></li>
-        <li> <a href=#> Gift Card </a></li>
-      </ul>
-    </nav>
-  
-    <div class="searchProducts">
-      <input type="text" id="search" name="product">
-      <label for="search"> Buscar </label><i
-        class=" iconSearch fas fa-search"></i>
-    </div>
-    <div class="boxAcces">
-      <i class="fas fa-cart-arrow-down icon"></i>
-       <i class="far fa-user icon"></i>
-    </div>
-  </div>
-  </header>
-
-<div class="container">
-       
-
-
-
-        <aside>
-            <div id="content-wrapper">
-                <div class="column">
-                    <img id=featured src="images/productos/p1/mug-roja.jpg">
-                    
-                    <div id="slide-wrapper" >
-                        <img id="slideLeft" class="arrow" src="images/arrow-left.png">
-        
-                        <div id="slider">
-                            <img class="thumbnail active" src="images/productos/p1/mug-amarilla.jpg">
-                            <img class="thumbnail" src="images/productos/p1/mug-azul.jpg">
-                            <img class="thumbnail" src="images/productos/p1/mug-blanca.jpg">
-                            <img class="thumbnail" src="images/productos/p1/mug-negra.jpg">
-                            <img class="thumbnail" src="images/productos/p1/mug-roja.jpg">
-                            <img class="thumbnail" src="images/productos/p1/mug-verde.jpg">
-                        </div>
-        
-                        <img id="slideRight" class="arrow" src="images/arrow-right.png">
-                    </div>
-                </div>
+              <img id="slideRight" class="arrow" src="images/arrow-right.png">
             </div>
-            <script type="text/javascript">
-                let thumbnails = document.getElementsByClassName('thumbnail')
-        
-                let activeImages = document.getElementsByClassName('active')
-        
-                for (var i=0; i < thumbnails.length; i++){
-        
-                    thumbnails[i].addEventListener('mouseover', function(){
-                        console.log(activeImages)
-                        
-                        if (activeImages.length > 0){
-                            activeImages[0].classList.remove('active')
-                        }
-                        
-        
-                        this.classList.add('active')
-                        document.getElementById('featured').src = this.src
-                    })
-                }
-        
-        
-                let buttonRight = document.getElementById('slideRight');
-                let buttonLeft = document.getElementById('slideLeft');
-        
-                buttonLeft.addEventListener('click', function(){
-                    document.getElementById('slider').scrollLeft -= 180
-                })
-        
-                buttonRight.addEventListener('click', function(){
-                    document.getElementById('slider').scrollLeft += 180
-                })
-        
-        
-            </script>
-        </aside>
-        <main>
-            <form action="" id="formulario">
-                <h1>TAZA MUG</h1>
-                <p class="label"><label for="compra"></label>Cantidad</p>
-                <input type="number" name="cantidad" id="compra">
-                <p class="label"><label for="color"></label>Color</p>
-                <select name="Color" id="compra">
-                    <option value="Rojo">Rojo</option>
-                    <option value="Azul">Azul</option>
-                    <option value="Blanca">Blanca</option>
-                    <option value="Negra">Negra</option>
-                    <option value="Amarilla">Amarilla</option>
-                    <option value="Verde">Verde</option>
-                </select><br>
-                <button type="submit">AGREGAR AL CARRITO</button>
-                <button type="submit">COMPRAR AHORA</button>
-            </form>
-            <div id="descripcion"><h3>Descripción</h3><br>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus voluptatem ut dolorem illum. Quae, doloremque, quisquam dolorum pariatur est quas perferendis tempora rerum quo ea dolore voluptatum optio aspernatur vero.</p>
-            </div>
-            
-        </main>
-</div>
+          </div>
+        </div>
+        <script type="text/javascript">
+          let thumbnails = document.getElementsByClassName('thumbnail')
 
-<footer class="main-footer">
-  <div class="footer-top">
-    <nav class="footer-menu1">
-      <ul>
-        <li> <a href=#>Categorías </a></li>
-        <li> <a href=#>Nosotros </a></li>
-        <li>  <a href=#> Contacto</a></li>
+          let activeImages = document.getElementsByClassName('active')
 
-        <li> Seguínos en <a href=#> <i class=" footer-icon fab fa-instagram"></i></a> <a href=#><i
-              class=" footer-icon fab fa-facebook-f"></i>
+          for (var i = 0; i < thumbnails.length; i++) {
 
-          </a></li>
-       
-      </ul>
-     
-    </nav>
+            thumbnails[i].addEventListener('mouseover', function () {
+              console.log(activeImages)
+
+              if (activeImages.length > 0) {
+                activeImages[0].classList.remove('active')
+              }
 
 
-  </div>
-  <div class="footer-menu2">
-    ©copyright
-  </div>
+              this.classList.add('active')
+              document.getElementById('featured').src = this.src
+            })
+          }
 
-  </footer>
 
-</body>
+          let buttonRight = document.getElementById('slideRight');
+          let buttonLeft = document.getElementById('slideLeft');
+
+          buttonLeft.addEventListener('click', function () {
+            document.getElementById('slider').scrollLeft -= 180
+          })
+
+          buttonRight.addEventListener('click', function () {
+            document.getElementById('slider').scrollLeft += 180
+          })
+
+
+        </script>
+      </aside>
+      <main>
+        <form action="" id="formulario">
+          <h1>TAZA MUG</h1>
+          <p class="label"><label for="compra"></label>Cantidad</p>
+          <input type="number" name="cantidad" id="compra">
+          <p class="label"><label for="color"></label>Color</p>
+          <select name="Color" id="compra">
+            <option value="Rojo">Rojo</option>
+            <option value="Azul">Azul</option>
+            <option value="Blanca">Blanca</option>
+            <option value="Negra">Negra</option>
+            <option value="Amarilla">Amarilla</option>
+            <option value="Verde">Verde</option>
+          </select><br>
+          <button type="submit">AGREGAR AL CARRITO</button>
+          <button type="submit">COMPRAR AHORA</button>
+        </form>
+        <div id="descripcion">
+          <h3>Descripción</h3><br>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus voluptatem ut dolorem illum. Quae,
+            doloremque, quisquam dolorum pariatur est quas perferendis tempora rerum quo ea dolore voluptatum optio
+            aspernatur vero.</p>
+        </div>
+
+      </main>
+    </div>
+    <%- include("partials/footer") %>
+  </body>
 </html>
