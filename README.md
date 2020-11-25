@@ -9,7 +9,7 @@ a empresas o grupos gastronómicos los cuales quieran comprar productos al por m
 
 ## Etapa de desarrollo ⚙️
 
-Wireframe + Boceto
+JSON + Metodos HTTP
 
 
 
@@ -38,6 +38,6 @@ a la venta de productos que estas empresas presentan.
 
 
 
-## Trello 🖇️
+## Git 🖇️
 
-[Proyecto Integrador](https://trello.com/b/Z1a12qsZ/proyecto-integrador)
+[Proyecto Integrador](https://github.com/matiasalvarellos/grupo_7_Bazar/projects/1)

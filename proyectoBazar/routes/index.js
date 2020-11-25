@@ -11,4 +11,5 @@ router.get('/giftCard', indexController.giftCard);
 router.get('/categorias', indexController.categorias);
 router.get('/nosotros', indexController.nosotros);
 router.get('/contacto', indexController.contacto);
+
 module.exports = router;
