@@ -5,7 +5,7 @@
         <div class="login1">
             <main>
                 <div class="ventanaFormulario">
-                    <form action="" method="get">
+                    <form action="/users/register" method="POST">
                         <div class="titulo">
                             <label for="name">
                                 <em>
@@ -26,7 +26,7 @@
                         </div>    
                         <div class="datos">
                             <select name="cliente">
-                                 <option>-Tipo de Cliente-</option>
+                                 <option disabled>-Tipo de Cliente-</option>
                                  <option value="mayorista">Mayorista</option>
                                  <option value="C.f">Minorista</option>
                             </select>
@@ -42,6 +42,15 @@
                             <p>Iniciar Sesión</p>
                          </div>
                         </a>
+                        <% if(typeof errores != "undefined"){ %>
+                        <ul>
+                            <% errores.forEach(function(error){ %>
+                            <li>
+                                <%= error.msg %>
+                            </li>
+                            <% }) %>
+                        </ul>
+                        <% } %>
                     </form>
                 </div>
             </main>

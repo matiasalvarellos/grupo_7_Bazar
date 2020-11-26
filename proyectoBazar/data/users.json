@@ -1,0 +1,42 @@
+[
+  {
+    "nombre": "gender",
+    "apellido": "alvarellos",
+    "email": "matias@gmail.com",
+    "password": "$2a$10$4bxIh3qoHyLSYLEGZ0iPo.4N5ZYHniiJ1.AFmOJWMLuJ2rkvzG.O6",
+    "cliente": "mayorista",
+    "id": 1
+  },
+  {
+    "nombre": "matias",
+    "apellido": "alvarellos",
+    "email": "gender@gmail.com",
+    "password": "$2a$10$MSVn8R1V6Wjxs2Bz42uaUe45.DAn/FiUlGX/TOnO4WRhMvrQTJXdO",
+    "cliente": "mayorista",
+    "id": 2
+  },
+  {
+    "nombre": "Gender3",
+    "apellido": "alva",
+    "email": "gender3@gmail.com",
+    "password": "$2a$10$CjJ12Hc9LZ4uXAaZDCi7JOUdthJN72IioTm4nu1SLOOTE.q4v2yK2",
+    "cliente": "C.f",
+    "id": 3
+  },
+  {
+    "nombre": "toby",
+    "apellido": "alvarellos",
+    "email": "toby@gmail.com",
+    "password": "$2a$10$17H8VH1Wkisg/By32lXVuOAT9CKGc8PGhQa.ekRph4ZhzOilWy71y",
+    "cliente": "mayorista",
+    "id": 4
+  },
+  {
+    "nombre": "flopy",
+    "apellido": "alvarellos",
+    "email": "flopy@gmail.com",
+    "password": "$2a$10$gB4v1pGNyCBzjEWOdeq/K.WRFcIq9RR0o04G.6hmrG.tVp7BzzEV.",
+    "cliente": "C.f",
+    "id": 5
+  }
+]

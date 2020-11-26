@@ -17,7 +17,6 @@ main{
 .ventanaFormulario{
     background-image:url(https://image.freepik.com/vector-gratis/fondo-transparente-patron-cubiertos-contorno-patron-vertical-cubiertos-contorno-fondo-utensilios-cocina-estilo-contorno-papel-pintado-cubiertos-cocina_171580-112.jpg);
     width: 40%;
-    height: 430px;
     text-align: center;
     display: flex;
     flex-wrap: wrap;
