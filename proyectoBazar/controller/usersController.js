@@ -60,7 +60,7 @@ const users={
         }
     },
     chequear: function(req, res){
-        res.send("vos sos un guachin q tiene el correo "+ req.session.usuario);
+        res.send("vos sos "+ req.session.usuario);
     }        
 }
 module.exports=users;
