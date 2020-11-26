@@ -12,37 +12,40 @@
     <%- include("partials/header") %>   
     <div>
         <div><h1>ABM DE PRODUCTO</h1></div>
-        <div class="formulario">
-            
-                <div class="producto">
-                    <p>Codigo</p> 
-                    <input type="text" name="" id="">
-                    <p>Producto</p> 
-                    <input type="text" name="" id="">
-                    <p>Cantidad de stock</p> 
-                    <input type="number" name="" id="">
-                    <p>Color</p>
-                    <input type="text" name="" id="">
-                    <p>Descripcion del producto</p>
-                    <textarea name="" id="" cols="50" rows="10"></textarea>
-                    <p>Imagenes</p>
-                    <input type="file" name="" id="">
-                    <p>habilitado</p>
-                    <input type="checkbox" name="" id="">
-                </div>
-                <div class="contable">
-                    <p>Costo</p>
-                    <input type="number" name="" id="">
-                    <p>Markup</p>
-                    <input type="number" name="" id="">
-                    <p>Descuento</p>
-                    <input type="number" name="" id="">
-                </div>
-        </div>
-        <div class="botones">
-            <button type="submit">Agregar</button>
-            <button disabled="disabled">Eliminar</button>
-        </div> 
+        <form action="/productos/create" enctype="multipart/form-data" method="POST">
+            <div class="formulario">
+                    <div class="producto">
+                        <p>Codigo</p> 
+                        <input type="text" name="id">
+                        <p>Producto</p> 
+                        <input type="text" name="name">
+                        <p>Cantidad de stock</p> 
+                        <input type="number" name="stock">
+                        <p>Color</p>
+                        <input type="text" name="color">
+                        <p>Descripcion del producto</p>
+                        <textarea name="description" cols="50" rows="10"></textarea>
+                        <p>Imagenes</p>
+                        <input type="file" name="image" >
+                        <p>habilitado</p>
+                        <input type="checkbox" name="" >
+                    </div>
+                    <div class="contable">
+                        <p>Costo</p>
+                        <input type="number" name="cost">
+                        <p>Markup</p>
+                        <input type="number" name="markup">
+                        <p>Descuento</p>
+                        <input type="number" name="discount">
+                        <p>Precio de venta</p>
+                        <input type="number" name="price">
+                    </div>    
+            </div>
+            <div class="botones">
+                <button type="submit">Agregar</button>
+                <button disabled="disabled">Eliminar</button>
+            </div>
+        </form>     
     </div>
     <%- include("partials/footer") %> 
 </body>

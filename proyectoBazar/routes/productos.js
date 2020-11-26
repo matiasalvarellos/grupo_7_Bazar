@@ -1,29 +1,40 @@
 const express= require("express");
 const router = express.Router();
 const productoController= require("../controller/productoController");
+const path = require("path");
+const multer = require("multer");
+
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, 'public/images/uploadProducts')
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+    }
+})
+var upload = multer({ storage: storage });
 
 ////*CRUDE PRODUCTOS*////
 
 /*Lista de productos-Karla*/
-router.get("/", productoController.vista);
+router.get("/", productoController.list);
 
 /*Formulario de creación de productos-Flor*/
 router.get("/create", productoController.crear);
 /*Acción de creación (a donde se envía el formulario)*/
-router.post("/create", productoController.store);
+router.post("/create", upload.any(), productoController.store);
 
-router.get("/detail/:id?", productoController.detalle );
+/*router.get("/detail/:id?", productoController.detalle )*/;
 
 /*Formulario de edición de productos-Karla*/
 router.get("/edit/:id?", productoController.edit);
 /*Acción de edición (a donde se envía el formulario)*/
-router.post("/edit/:id?", productoController.update);
+router.post("/edit/:id?", upload.any(), productoController.update);
 
 /*Formulario de borrar de productos-Flor*/
-router.get("/destroy", productoController.delete);
+router.get("/destroy/:id", productoController.delete);
 
 ////* FIN CRUDE PRODUCTOS*////
-
 
 router.get("/carrito", productoController.carrito );
 
@@ -39,3 +50,4 @@ Formulario de edición de productos
 Acción de edición (a donde se envía el formulario):
 7. /products/:id (DELETE)
 Acción de borrado
+*/

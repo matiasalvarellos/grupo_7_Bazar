@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/productAdd.css">
+    <link rel="stylesheet" href="/stylesheets/footer-menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+</head>
+
+<body>
+    <%- include("partials/header") %>
+    <div>
+        <div>
+            <h1>ABM DE PRODUCTO</h1>
+        </div>
+        <form action="/productos/edit/<%= product.id %>" enctype="multipart/form-data" method="POST">
+            <div class="formulario">
+                <div class="producto">
+                    <p>Producto</p>
+                    <input type="text" name="name" value="<%= product.name %>">
+                    <p>Cantidad de stock</p>
+                    <input type="number" name="stock" value="<%= product.stock %>">
+                    <p>Color</p>
+                    <input type="text" name="color" value="<%= product.color %> ">
+                    <p>Descripcion del producto</p>
+                    <textarea name="description" cols="50" rows="10" ><%= product.description %> </textarea>
+                    <p>Imagenes</p>
+                    <input type="file" name="image">
+                    <p>habilitado</p>
+                    <input type="checkbox" name="">
+                </div>
+                <div class="contable">
+                    <p>Costo</p>
+                    <input type="number" name="cost" value="<%=product.cost%>">
+                    <p>Markup</p>
+                    <input type="number" name="markup" value="<%= product.markup%>">
+                    <p>Descuento</p>
+                    <input type="number" name="discount" value="<%=product.discount%>"> 
+                    <p>Precio de venta</p>
+                    <input type="number" name="price" value="<%= product.price %>">
+                </div>
+            </div>
+            <div class="botones">
+                <button type="submit">Modificar</button>
+            </div>        
+        </form>
+        <form method="POST"></form>
+    </div>
+    <%- include("partials/footer") %>
+</body>
+
+</html>
