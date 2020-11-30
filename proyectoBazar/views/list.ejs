@@ -1,31 +1,45 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <h1>Lista Productos</h1>
+    <%- include("partials/head") %> 
 
 </head>
 
 <body>
+    <%- include("partials/header") %> 
+
+    <h2>Lista de Productos</h2>
+    <br>
     <ul>
         <% products.forEach(function(product){ %>
         <li>
             Name: <%= product.name %> -
+        </li>
+        <li>
             Price: <%= product.price %> -
+        </li>
+        <li>
             Marca: <%= products.marca %> -
+        </li>
+        <li>
             Stock: <%= product.stock %> -
+        </li>
+        <li>
             ID: <%= product.id %> -
+        </li>
+        <li>
             Description : <%= product.description %>- 
+        </li>
 
             <a href="/productos/edit/<%= product.id %>">EDITAR</a> - <a
                 href="/productos/destroy/<%= product.id %>">BORRAR</a>
         </li>
+        <br>
+        <hr>
         <% }); %>
     </ul>
-
+ 
     <body>
-
+    <%- include("partials/footer") %> 
 </html>

@@ -24,7 +24,7 @@ router.get("/create", productoController.crear);
 /*Acción de creación (a donde se envía el formulario)*/
 router.post("/create", upload.any(), productoController.store);
 
-/*router.get("/detail/:id?", productoController.detalle )*/;
+router.get("/detail/:id?", productoController.detalle );
 
 /*Formulario de edición de productos-Karla*/
 router.get("/edit/:id?", productoController.edit);
