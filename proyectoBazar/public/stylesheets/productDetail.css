@@ -59,6 +59,18 @@
       margin: 20px 20px 0 5px;
   }
 
+  .precioOff {
+    text-decoration: line-through;
+  }
+
+  .descuento {
+    color: rgb(4, 212, 4)
+  }
+
+  .precioOn {
+    color: rgb(4, 212, 4)
+  }
+
   /*GALERIA DE IMAGENES*/
 
   #content-wrapper{

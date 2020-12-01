@@ -19,6 +19,8 @@
         <form action="/productos/edit/<%= product.id %>" enctype="multipart/form-data" method="POST">
             <div class="formulario">
                 <div class="producto">
+                    <p>Codigo</p> 
+                    <input type="text" name="code" value="<%= product.code %>">
                     <p>Producto</p>
                     <input type="text" name="name" value="<%= product.name %>">
                     <p>Cantidad de stock</p>
@@ -29,8 +31,6 @@
                     <textarea name="description" cols="50" rows="10" ><%= product.description %> </textarea>
                     <p>Imagenes</p>
                     <input type="file" name="image">
-                    <p>habilitado</p>
-                    <input type="checkbox" name="">
                 </div>
                 <div class="contable">
                     <p>Costo</p>
@@ -39,8 +39,6 @@
                     <input type="number" name="markup" value="<%= product.markup%>">
                     <p>Descuento</p>
                     <input type="number" name="discount" value="<%=product.discount%>"> 
-                    <p>Precio de venta</p>
-                    <input type="number" name="price" value="<%= product.price %>">
                 </div>
             </div>
             <div class="botones">

@@ -1,1 +1,65 @@
-[{"id":"321","name":"milanesa","stock":"1","color":"asdasd ","description":"asdasd","image":"image-1606432567203.jpg","cost":"2","markup":"3","discount":"1","price":"200"},{"id":"1234","name":"Tasa","stock":"20","color":"Blanco","description":"Tasa de te","image":"image-1606696544187.jpg","cost":"100","markup":"25","discount":"10","price":"200"},{"id":"1235","name":"Tasa","stock":"15","color":"Negro","description":"Tasa de Cafe","image":"image-1606697962901.jpg","cost":"40","markup":"2","discount":"5","price":"70"}]
+[
+  {
+    "id": 0,
+    "code": "000000",
+    "name": "PRODUCTO",
+    "stock": "1",
+    "color": "transparente",
+    "description": "Producto de prueba",
+    "cost": "0",
+    "markup": "0",
+    "discount": "0"
+  },
+  {
+    "id": 1,
+    "code": "000001",
+    "name": "PLATO PLAYO DURAX CRISTAL",
+    "stock": "1000000",
+    "color": "Transparente",
+    "description": "sfdsfdfsdsfdsfdsfdsfd",
+    "image": "image-1606785225075.jpg",
+    "cost": "1000",
+    "markup": "100",
+    "discount": "50"
+  },
+  {
+    "id": 2,
+    "code": "000002",
+    "name": "Tenedor Mesa Tramontina",
+    "stock": "1000000",
+    "color": "marron",
+    "description": "sfdsfdfsdsfdsfdsfdsfd",
+    "image": "image-1606785409787.jpg",
+    "cost": "100",
+    "markup": "10",
+    "discount": "0"
+  },
+  {
+    "id": 3,
+    "code": "000003",
+    "name": "Cuchillo Campo Artesanal",
+    "stock": "1000000",
+    "color": "marron",
+    "description": "sfdsfdfsdsfdsfdsfdsfd",
+    "image": "image-1606785478746.jpg",
+    "cost": "150",
+    "markup": "60",
+    "discount": "30"
+  },
+  {
+    "id": 4,
+    "code": "000004",
+    "name": "Balanza Digital De Cocina",
+    "stock": "360000",
+    "color": [
+      "rojo",
+      "azul",
+      "verde"
+    ],
+    "description": "BALANZA DE COCINA ELECTRÓNICA DIGITAL 10 KG.\r\nSF - 400\r\n\r\n\r\n- Diseño Elegante.\r\n- Ideal para la Cocina o la oficina.\r\n- Precisión de 1 gramo.\r\n- Soporta hasta 10 Kg.\r\n- Apagado Automático.\r\n- Botón de Puesta a 0.\r\n- Función TARA.\r\n- Indicador de Batería Baja.\r\n- Protección contra Sobre Peso.\r\n\r\n\r\nCARACTERISTICAS:\r\n* MATERIAL: Plástico y vidrio\r\n* UNIDADES DE PESAJE: Gramos / Onzas.\r\n* CAPACIDAD MAXIMA: 10 Kg.\r\n* PRECISION: 1 gramo.\r\n* ALIMENTACION: 2 pilas AA.\r\n* MEDIDA SUPERFICIE DE PESAJE: 12 cm. de Diámetro aprox.",
+    "image": "image-1606789238440.jpg",
+    "cost": "800",
+    "markup": "30",
+    "discount": "0"
+  }
+]

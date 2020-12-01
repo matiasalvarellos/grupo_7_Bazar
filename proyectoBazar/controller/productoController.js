@@ -1,13 +1,14 @@
 const fs = require('fs');
 const path = require('path');
 
+
 function getProducts(){
     const productFilePath = path.join(__dirname, '../data/product.json');
     const product = JSON.parse(fs.readFileSync(productFilePath, 'utf-8'));
     return product
 }
 function writeJson(array){
-    let productJSON = JSON.stringify(array);
+    let productJSON = JSON.stringify(array, null, 2);
     return fs.writeFileSync(__dirname + "/../data/product.json", productJSON);
 }  
 
@@ -25,7 +26,8 @@ producto={
     store: function (req, res, next){
         const products= getProducts();
         const newProd = {
-            id: req.body.id,
+            id: products[products.length - 1].id + 1,
+            code: req.body.code,
             name: req.body.name,
             stock: req.body.stock,
             color: req.body.color,
@@ -34,14 +36,25 @@ producto={
             cost:req.body.cost,
             markup: req.body.markup,
             discount: req.body.discount,
-            price: req.body.price
         }
         let todosProductos = [...products , newProd];
         writeJson(todosProductos);
         res.send("esta todo ok!")
     },
     detalle: function (req, res, next ){
-        res.render("productDetail");
+        const products = getProducts();
+        const idproducts = req.params.id;
+        var productsFound;
+        for (var i=0; i<products.length; i++){
+            if (products[i].id == idproducts){
+                productsFound = products[i];
+                break;
+            }
+        }if (productsFound) {
+            res.render("productDetail", {productsFound});
+        }else{
+            res.send("Producto inexistente")
+        }
     },
     edit: function(req, res, next){
         const products = getProducts()
