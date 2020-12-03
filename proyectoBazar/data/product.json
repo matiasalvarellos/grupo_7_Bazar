@@ -1,1 +1,139 @@
-[{"id":"123","name":"milanesa","stock":"1","color":"que ondaaaa ","description":"que ondaaaa","cost":"2","markup":"3","discount":"1","price":"200","image":"image-1606432428714.jpg"},{"id":"321","name":"milanesa","stock":"1","color":"asdasd ","description":"asdasd","image":"image-1606432567203.jpg","cost":"2","markup":"3","discount":"1","price":"200"}]
+[
+  {
+    "id": 0,
+    "code": "000000",
+    "name": "PRODUCTO",
+    "stock": "1",
+    "color": "transparente",
+    "description": "Producto de prueba",
+    "cost": "0",
+    "markup": "0",
+    "discount": "0"
+  },
+  {
+    "id": 1,
+    "code": "000001",
+    "name": "Vaso De Whisky X2",
+    "stock": "40",
+    "color": "transparente",
+    "description": "• Vaso de whisky\r\n• Material: cristal\r\n• x2 unidades\r\n• Capacidad: 400ml\r\n• Medidas:\r\n-Alto: 10cm\r\n-Diametro de la boca: 9cm\r\n•Vaso exclusivo fabricado por artesanos\r\n•No contiene plomo\r\n•La mejor calidad\r\n•Corte en frio",
+    "image": [
+      "image-1606948204900.jpg",
+      "image-1606948204968.jpg",
+      "image-1606948204968.jpg"
+    ],
+    "cost": "1000",
+    "markup": "50",
+    "discount": "0"
+  },
+  {
+    "id": 2,
+    "code": "000002",
+    "name": "Copas De Vino Bairrada Sin Tallo Pie Vaso",
+    "stock": "60",
+    "color": "transparente",
+    "description": "•Para aquellos que se enamoran de un estilo de vida de \"menos es más\", ¿por qué no quitar el tallo? Bairrada es diseñado para tener lo mejor de ambos mundos: un diseño cómodo que cabe en la palma de la mano de su mano, así como un diseño liviano y elegante que le permite optimizar disfruta tu vino. Así que atrévete a ser diferente y elige estas copas de vino fáciles de usar.\r\n•Construido con una forma de bola redonda para dar un estilo de bebida único que impresionará a los invitados.\r\n•Copas de vino Bairrada de Royal Leerdam\r\n•set de 4 copas\r\n•capacidad:590ml",
+    "image": [
+      "image-1606948511791.jpg",
+      "image-1606948511792.jpg",
+      "image-1606948511793.jpg"
+    ],
+    "cost": "1000",
+    "markup": "100",
+    "discount": "30"
+  },
+  {
+    "id": 3,
+    "code": "000003",
+    "name": "Set Vaso Whisky Mareado + Molde Hielo En Bolas Original Wolf",
+    "stock": "2",
+    "color": "transparente",
+    "description": "Vaso de Whisky Mareado Original\r\nEl clásico del diseño argentino. Con 1 molde Iceball (hielo en bolas)\r\n\r\nNuevo pack de Presentación.\r\n\r\nCada vaso es soplado uno a uno por maestros artesanos obteniéndose así piezas únicas, diferentes, que resultan pequeñas y cotidianas obras de arte.\r\n\r\nIncluye 1 vaso mareado original Daniel Wolf con 1 molde Hielo en Bolas.\r\n\r\nPREMIOS Y DISTINCIONES\r\nColección Permanente Museo de Arte Moderno de BA. 2012\r\nDiseño Industrial. Innovar 2008\r\nPrimer Premio Diseño de Autor. Casa Foa 2005.\r\nIntegra la muestra Argentina Diseña (Tokyo 2006)\r\nSelección Diseño Industrial del Museo de Arte Moderno de Buenos Aires (2006).\r\n\r\nOriginal Daniel Wolf\r\nSoplado artesanalmente a boca y cortado en frío.\r\nMedidas: Altura 7cm. Diámetro 9cm. Volumen 225cc\r\nNo adquiera imitaciones. Marca y Modelos Registrados.\r\nVaso Mareado es Marca Registrada.\r\n\r\nEl Mareado Original de Momento Whisky de Odisea Argentina, Tanta, Verne, Kansas y Danzón.\r\n\r\nHielo en Bolas. Diseño Original Daniel Wolf\r\nMás hielo, más frío por más tiempo y EN BOLAS. Molde para hielo.\r\nSu forma esférica enfría su bebida por mayor tiempo.\r\nDiámetro del hielo 5 cm.\r\nModelo Registrado. Diseño Argentino. Industria Argentina.\r\nINNOVAR 2013.\r\n\r\nPresentado en caja con certificado de pieza original y premios y distinciones obtenidos.\r\nSe puede retirar en horario a convenir en nuestra oficina en Barrio Norte a unas cuadras del Alto Palermo.\r\n\r\nOriginal Daniel Wolf",
+    "image": [
+      "image-1606948929711.jpg",
+      "image-1606948929713.jpg",
+      "image-1606948929715.jpg",
+      "image-1606948929716.jpg",
+      "image-1606948929717.jpg",
+      "image-1606948929718.jpg",
+      "image-1606948929720.jpg",
+      "image-1606948929720.jpg"
+    ],
+    "cost": "1500",
+    "markup": "130",
+    "discount": "0"
+  },
+  {
+    "id": 4,
+    "code": "000004",
+    "name": "Sarten Antiadherente 24 Cm Ceramica 4mm Induccion Hudson",
+    "stock": "100",
+    "color": [
+      "rojo",
+      "azul",
+      "verde",
+      "amarillo",
+      "blanco",
+      "violeta",
+      "negro",
+      "marron"
+    ],
+    "description": "Sarten Antiadherente 24 Cm Ceramica 4mm Induccion Hudson\r\nColor: Azul\r\nApto: Induccion - Gas - Ceramica - Electrica - Lavavajilla\r\nSartén Anti adherente Hudson Aluminio Forjado con 2 capas de con revestimiento cerámico antiadherente\r\nMedidas: 24 cm de diámetro\r\nEspesor 4 mm\r\nNueva tecnología para cocinar con sistema de inducción\r\nSaludable forma de preparar alimentos sin utilizar grasa por sus excelentes capas antiadherentes\r\nConfiable resistencia y durabilidad por el alto nivel de espesor del aluminio\r\n",
+    "image": [
+      "image-1606949117189.jpg",
+      "image-1606949117193.jpg",
+      "image-1606949117194.jpg",
+      "image-1606949117196.jpg",
+      "image-1606949117196.jpg"
+    ],
+    "cost": "800",
+    "markup": "200",
+    "discount": "30"
+  },
+  {
+    "id": 5,
+    "code": "000005",
+    "name": "Parrilla Circular Enlozada Grande N°2 37,5 Cms Jovifel",
+    "stock": "30",
+    "color": [
+      "blanco",
+      "negro"
+    ],
+    "description": "Se te antoja asado? Esta parrilla es para vos!\r\nParrilla circular enlozada para hornalla, para preparar comidas más sanas y sin humo.\r\nIdeal para preparar todo tipo de carnes a la parrilla.\r\nEvita que la carne tome contacto con la grasa.\r\nNo deja humo ni olor.\r\nDiámetro: 37,5 cms (es la medida más grande, la Nº2)\r\nTENEMOS EN STOCK ",
+    "image": [
+      "image-1606949657627.jpg",
+      "image-1606949657629.jpg",
+      "image-1606949657631.jpg"
+    ],
+    "cost": "600",
+    "markup": "130",
+    "discount": "0"
+  },
+  {
+    "id": 6,
+    "code": "000006",
+    "name": "Sarten Antiadherente 24 Cm Ceramica 4mm Induccion Hudson",
+    "stock": "100",
+    "color": [
+      "rojo",
+      "azul",
+      "verde",
+      "amarillo",
+      "blanco",
+      "violeta",
+      "negro",
+      "marron"
+    ],
+    "description": "Sarten Antiadherente 24 Cm Ceramica 4mm Induccion Hudson\r\nColor: Azul\r\nApto: Induccion - Gas - Ceramica - Electrica - Lavavajilla\r\nSartén Anti adherente Hudson Aluminio Forjado con 2 capas de con revestimiento cerámico antiadherente\r\nMedidas: 24 cm de diámetro\r\nEspesor 4 mm\r\nNueva tecnología para cocinar con sistema de inducción\r\nSaludable forma de preparar alimentos sin utilizar grasa por sus excelentes capas antiadherentes\r\nConfiable resistencia y durabilidad por el alto nivel de espesor del aluminio\r\n",
+    "image": [
+      "image-1606949698617.jpg",
+      "image-1606949698618.jpg",
+      "image-1606949698618.jpg",
+      "image-1606949698620.jpg",
+      "image-1606949698620.jpg"
+    ],
+    "cost": "800",
+    "markup": "200",
+    "discount": "30"
+  }
+]

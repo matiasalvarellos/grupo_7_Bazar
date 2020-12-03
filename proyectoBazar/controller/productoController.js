@@ -1,13 +1,14 @@
 const fs = require('fs');
 const path = require('path');
 
+
 function getProducts(){
     const productFilePath = path.join(__dirname, '../data/product.json');
     const product = JSON.parse(fs.readFileSync(productFilePath, 'utf-8'));
     return product
 }
 function writeJson(array){
-    let productJSON = JSON.stringify(array);
+    let productJSON = JSON.stringify(array, null, 2);
     return fs.writeFileSync(__dirname + "/../data/product.json", productJSON);
 }  
 
@@ -24,24 +25,40 @@ producto={
     },
     store: function (req, res, next){
         const products= getProducts();
+        let image = []
+        for (let i=0; i<req.files.length; i++) {
+            image.push (req.files[i].filename)
+        }
         const newProd = {
-            id: req.body.id,
+            id: products[products.length - 1].id + 1,
+            code: req.body.code,
             name: req.body.name,
             stock: req.body.stock,
             color: req.body.color,
             description: req.body.description,
-            image: req.files[0].filename,
+            image,
             cost:req.body.cost,
             markup: req.body.markup,
             discount: req.body.discount,
-            price: req.body.price
         }
         let todosProductos = [...products , newProd];
         writeJson(todosProductos);
-        res.send("esta todo ok!")
+        res.render("productAdd", {alert: true});
     },
     detalle: function (req, res, next ){
-        res.render("productDetail");
+        const products = getProducts();
+        const idproducts = req.params.id;
+        var productsFound;
+        for (var i=0; i<products.length; i++){
+            if (products[i].id == idproducts){
+                productsFound = products[i];
+                break;
+            }
+        }if (productsFound) {
+            res.render("productDetail", {productsFound});
+        }else{
+            res.render("productDetail", {alert: true});
+        }
     },
     edit: function(req, res, next){
         const products = getProducts()
@@ -52,7 +69,7 @@ producto={
         if(productFound){
             res.render("productEdit", { product:productFound })
         }else{
-            res.send("Producto invalido");
+            res.render("productEdit", {alert: true});
         }
     },
     update: function(req, res, next){
@@ -71,7 +88,7 @@ producto={
             }
             return producto;
         });
-        writeJson(prodEdit);
+        writeJson(prodEdit);      
         res.send("salio todo bien!")
     },
     delete: function(req, res, next){

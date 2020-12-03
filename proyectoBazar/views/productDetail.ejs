@@ -12,89 +12,102 @@
     <!--ESTILOS-->
     <link rel="stylesheet" href="/stylesheets/productDetail.css">
     <link rel="stylesheet" href="/stylesheets/footer-menu.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   </head>
   <body>
     <%- include("partials/header") %>
     <div class="container">
-      <aside>
-        <div id="content-wrapper">
-          <div class="column">
-            <img id=featured src="/images/productos/p1/mug-roja.jpg">
-            <div id="slide-wrapper">
-              <img id="slideLeft" class="arrow" src="/images/arrow-left.png">
-              <div id="slider">
-                <img class="thumbnail active" src="/images/productos/p1/mug-amarilla.jpg">
-                <img class="thumbnail" src="/images/productos/p1/mug-azul.jpg">
-                <img class="thumbnail" src="/images/productos/p1/mug-blanca.jpg">
-                <img class="thumbnail" src="/images/productos/p1/mug-negra.jpg">
-                <img class="thumbnail" src="/images/productos/p1/mug-roja.jpg">
-                <img class="thumbnail" src="/images/productos/p1/mug-verde.jpg">
+      <% if (typeof productsFound != "undefined") { %>
+          <aside>
+            <div id="content-wrapper">
+              <div class="column">
+                <img id=featured src="/images/uploadProducts/<%= productsFound.image[0] %>">
+                <div id="slide-wrapper">
+                  <img id="slideLeft" class="arrow" src="/images/arrow-left.png">
+                  <div id="slider"> <% for (i=0; i<productsFound.image.length; i++) { %>
+                    <img class="thumbnail" src="/images/uploadProducts/<%= productsFound.image[i] %>">
+                    <% } %>
+                  </div>
+                
+
+                  <img id="slideRight" class="arrow" src="/images/arrow-right.png">
+                </div>
               </div>
-
-              <img id="slideRight" class="arrow" src="/images/arrow-right.png">
             </div>
-          </div>
-        </div>
-        <script type="text/javascript">
-          let thumbnails = document.getElementsByClassName('thumbnail')
+            <script type="text/javascript">
+              let thumbnails = document.getElementsByClassName('thumbnail')
 
-          let activeImages = document.getElementsByClassName('active')
+              let activeImages = document.getElementsByClassName('active')
 
-          for (var i = 0; i < thumbnails.length; i++) {
+              for (var i = 0; i < thumbnails.length; i++) {
 
-            thumbnails[i].addEventListener('mouseover', function () {
-              console.log(activeImages)
+                thumbnails[i].addEventListener('mouseover', function () {
+                  console.log(activeImages)
 
-              if (activeImages.length > 0) {
-                activeImages[0].classList.remove('active')
+                  if (activeImages.length > 0) {
+                    activeImages[0].classList.remove('active')
+                  }
+
+
+                  this.classList.add('active')
+                  document.getElementById('featured').src = this.src
+                })
               }
 
 
-              this.classList.add('active')
-              document.getElementById('featured').src = this.src
-            })
-          }
+              let buttonRight = document.getElementById('slideRight');
+              let buttonLeft = document.getElementById('slideLeft');
+
+              buttonLeft.addEventListener('click', function () {
+                document.getElementById('slider').scrollLeft -= 180
+              })
+
+              buttonRight.addEventListener('click', function () {
+                document.getElementById('slider').scrollLeft += 180
+              })
 
 
-          let buttonRight = document.getElementById('slideRight');
-          let buttonLeft = document.getElementById('slideLeft');
-
-          buttonLeft.addEventListener('click', function () {
-            document.getElementById('slider').scrollLeft -= 180
-          })
-
-          buttonRight.addEventListener('click', function () {
-            document.getElementById('slider').scrollLeft += 180
-          })
-
-
-        </script>
-      </aside>
-      <main>
-        <form action="" id="formulario">
-          <h1>TAZA MUG</h1>
-          <p class="label"><label for="compra"></label>Cantidad</p>
-          <input type="number" name="cantidad" id="compra">
-          <p class="label"><label for="color"></label>Color</p>
-          <select name="Color" id="compra">
-            <option value="Rojo">Rojo</option>
-            <option value="Azul">Azul</option>
-            <option value="Blanca">Blanca</option>
-            <option value="Negra">Negra</option>
-            <option value="Amarilla">Amarilla</option>
-            <option value="Verde">Verde</option>
-          </select><br>
-          <button type="submit">AGREGAR AL CARRITO</button>
-          <button type="submit">COMPRAR AHORA</button>
-        </form>
-        <div id="descripcion">
-          <h3>Descripción</h3><br>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus voluptatem ut dolorem illum. Quae,
-            doloremque, quisquam dolorum pariatur est quas perferendis tempora rerum quo ea dolore voluptatum optio
-            aspernatur vero.</p>
-        </div>
-
-      </main>
+            </script>
+          </aside>
+          <main>
+            <form action="" id="formulario">
+              <h1><%= productsFound.name %></h1>
+              <br>
+              <!--Costo por Markup = Precio Final-->
+              <% var ganancia = (productsFound.cost * productsFound.markup)/100 %>
+              <% var precio = Number(ganancia) + Number(productsFound.cost) %>
+              <!--Descuento - Precio = Precio Final con Descuento-->
+              <% var descuento = (Number(precio) * productsFound.discount)/100 %>
+              <% var precioDescuento = Math.round(Number(precio) - Number(descuento)) %>
+              <% if (productsFound.discount == "0") { %>
+                <h2><%= "$ " + precio + " " %>Precio</h2>
+              <% } else { %>
+              <h2 class = "precioOff"><%= "$ " + precio + " " %>Precio</h2><h2 class = "descuento"><%="% " + productsFound.discount + " " %>Descuento</h2><h2 class = "precioOn"><%= "$ " + precioDescuento + " " %>Precio con descuento</h2>
+              <% } %>
+              <p class="label"><label for="compra"></label>Cantidad</p>
+              <input type="number" name="cantidad" id="compra">
+              <p class="label"><label for="color"></label>Color</p>
+              <select name="Color" id="compra">
+                <% for (var  i = 0; i<productsFound.color.length; i++){ %>
+                <option value="<% productsFound.color[i] %>"><%= productsFound.color[i] %></option>
+                <% } %>
+              </select><br>
+              <button type="submit">AGREGAR AL CARRITO</button>
+            </form>
+            <div id="descripcion">
+              <h3>Descripción</h3><br>
+              <p><%= productsFound.description %></p>
+            </div>
+          </main>
+      <% } %>
+      <% if (typeof alert != "undefined") { %>
+        <script>Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'El procucto es inexistente!',
+          footer: '<a href="/">volver al home</a>'
+        })</script>
+      <% } %>
     </div>
     <%- include("partials/footer") %>
   </body>
