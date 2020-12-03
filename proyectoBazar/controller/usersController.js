@@ -28,11 +28,11 @@ const users={
             let usuarioEncontrado = usuarios.find(function(usuario){
                 return usuario.email == req.body.email;
             });
-            req.session.usuario = usuarioEncontrado.email;
-            if(req.body.recordame != undefined){
-                res.cookie("recordame", )
+            req.session.usuarioLogueado = usuarioEncontrado;
+            if(req.body.recordame){
+                res.cookie("recordame", usuarioEncontrado.id , {maxAge: 60000 * 60 * 24 })
             }
-            return res.send("logueado breo!, sos el guachin q tiene el correo "+ req.session.usuario);
+            return res.send("logueado breo!, sos el guachin q tiene el correo "+ req.session.usuarioLogueado.email);
         }else{
             return res.render("login", {errores: errores.errors, old: req.body});
         }    
@@ -60,7 +60,18 @@ const users={
         }
     },
     chequear: function(req, res){
-        res.send("vos sos "+ req.session.usuario);
+        if(req.session.usuarioLogueado){
+            res.send("vos sos " + req.session.usuarioLogueado.nombre);
+        }else{
+            res.send("No estas logueado breo")
+        } 
+    },
+    logout: function(req, res){
+        req.session.destroy();
+
+        res.clearCookie("recordame");
+        
+        res.redirect("/");
     }        
 }
 module.exports=users;

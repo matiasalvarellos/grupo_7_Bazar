@@ -25,9 +25,20 @@
         class=" iconSearch fas fa-search"></i>
     </div>
     <div class="boxAcces">
-      <a href="/carrito">
-      <i class="fas fa-cart-arrow-down icon"></i> </a>
-       <a href="/users/login"><i class="far fa-user icon"></i></a>
+      <a href="/productos/carrito">
+        <i class="fas fa-cart-arrow-down icon"></i>
+      </a>
+      <% if(usuario){ %>
+        <form method="POST" action="/users/logout">
+          <button type="submit">Log out</button>
+        </form>
+      <% }else{ %>
+      <a href="/users/login">
+        <i class="far fa-user icon"></i>
+      </a>
+      <% } %>
+      
+       
     </div>
   </div>
   </header>

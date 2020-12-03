@@ -1,16 +1,18 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var session = require("express-session");
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const session = require("express-session");
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var productoRouter = require("./routes/productos");
-/*var backOfficeRouter= require("./routes/backOffice");*/
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+const productoRouter = require("./routes/productos");
+const recordameMiddleware = require("./middlewares/recordameMiddleware");
+const log = require("./middlewares/log")
+/*const backOfficeRouter= require("./routes/backOffice");*/
 
-var app = express();
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -26,6 +28,10 @@ app.use(session({
   resave: false ,
   saveUninitialized: true 
 }));
+
+app.use(recordameMiddleware);
+app.use(log);
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

@@ -19,14 +19,16 @@ const validar = {
          .withMessage("Campo de apellido debe tener un minimo de 3 caracteres"),
         body("email")
          .isEmail()
-         .withMessage("El Email debe ser un Email valido")
+         .withMessage("El Email debe ser valido")
          .bail()
          .custom(function(value){
                 let users = getUsers();
                 return users.find(usuario => usuario.id != value);
             })
          .withMessage("Usuario ya existente"),
-        body("password").isLength({min: 4}).withMessage("La contraseña debe tener un minimo de 4 caracteres")
+        body("password")
+        .isLength({min: 4})
+        .withMessage("La contraseña debe tener un minimo de 4 caracteres")
     ],
     login:[
         body("email")
