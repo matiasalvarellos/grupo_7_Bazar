@@ -25,6 +25,10 @@ producto={
     },
     store: function (req, res, next){
         const products= getProducts();
+        let image = []
+        for (let i=0; i<req.files.length; i++) {
+            image.push (req.files[i].filename)
+        }
         const newProd = {
             id: products[products.length - 1].id + 1,
             code: req.body.code,
@@ -32,14 +36,14 @@ producto={
             stock: req.body.stock,
             color: req.body.color,
             description: req.body.description,
-            image: req.files[0].filename,
+            image,
             cost:req.body.cost,
             markup: req.body.markup,
             discount: req.body.discount,
         }
         let todosProductos = [...products , newProd];
         writeJson(todosProductos);
-        res.send("esta todo ok!")
+        res.render("productAdd", {alert: true});
     },
     detalle: function (req, res, next ){
         const products = getProducts();
@@ -53,7 +57,7 @@ producto={
         }if (productsFound) {
             res.render("productDetail", {productsFound});
         }else{
-            res.send("Producto inexistente")
+            res.render("productDetail", {alert: true});
         }
     },
     edit: function(req, res, next){
@@ -65,7 +69,7 @@ producto={
         if(productFound){
             res.render("productEdit", { product:productFound })
         }else{
-            res.send("Producto invalido");
+            res.render("productEdit", {alert: true});
         }
     },
     update: function(req, res, next){
@@ -84,7 +88,7 @@ producto={
             }
             return producto;
         });
-        writeJson(prodEdit);
+        writeJson(prodEdit);      
         res.send("salio todo bien!")
     },
     delete: function(req, res, next){

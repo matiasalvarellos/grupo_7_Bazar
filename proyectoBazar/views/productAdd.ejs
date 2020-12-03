@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/stylesheets/productAdd.css">
     <link rel="stylesheet" href="/stylesheets/footer-menu.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
 <body>
     <%- include("partials/header") %>   
@@ -36,7 +37,7 @@
                         <p>Descripcion del producto</p>
                         <textarea name="description" cols="50" rows="10"></textarea>
                         <p>Imagenes</p>
-                        <input type="file" name="image" >
+                        <input type="file" name="image" multiple>
                     </div>
                     <div class="contable">
                         <p>Costo</p>
@@ -52,6 +53,15 @@
             </div>
         </form>     
     </div>
+    <% if (typeof alert != "undefined") { %>
+        <script>Swal.fire({
+            position: 'top-middle',
+            icon: 'success',
+            title: 'Producto cargado con exito!',
+            showConfirmButton: false,
+            timer: 1500
+          })</script>
+    <% } %>
     <%- include("partials/footer") %> 
 </body>
 </html>
