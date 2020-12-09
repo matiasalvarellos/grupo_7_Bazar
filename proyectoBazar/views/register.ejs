@@ -5,7 +5,7 @@
         <div class="login1">
             <main>
                 <div class="ventanaFormulario">
-                    <form action="/users/register" method="POST">
+                    <form action="/users/register" enctype="multipart/form-data" method="POST">
                         <div class="titulo">
                             <label for="name">
                                 <em>
@@ -30,6 +30,9 @@
                                  <option value="mayorista">Mayorista</option>
                                  <option value="C.f">Minorista</option>
                             </select>
+                        </div>
+                        <div class="datos">
+                            <input type="file" name="avatar">
                         </div>
                         <button class="primerButton" type="submit">
                             Crear Cuenta    

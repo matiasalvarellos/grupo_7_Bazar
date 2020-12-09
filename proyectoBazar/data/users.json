@@ -38,5 +38,14 @@
     "password": "$2a$10$gB4v1pGNyCBzjEWOdeq/K.WRFcIq9RR0o04G.6hmrG.tVp7BzzEV.",
     "cliente": "C.f",
     "id": 5
+  },
+  {
+    "nombre": "perro",
+    "apellido": "perruno",
+    "email": "perro@gmail.com",
+    "password": "$2a$10$2rdO7IOGRctmXB596fn8GuAqverXTKOL9cGXl7YTc3Zwg4NgXwwfu",
+    "cliente": "C.f",
+    "id": 6,
+    "avatar": "avatar-1607366156439.jpg"
   }
 ]

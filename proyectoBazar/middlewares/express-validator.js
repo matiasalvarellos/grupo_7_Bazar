@@ -28,7 +28,19 @@ const validar = {
          .withMessage("Usuario ya existente"),
         body("password")
         .isLength({min: 4})
-        .withMessage("La contraseña debe tener un minimo de 4 caracteres")
+        .withMessage("La contraseña debe tener un minimo de 4 caracteres"),
+        body("avatar")
+            .custom(function(value, {req}){
+                return req.files[0]
+            })
+            .withMessage("Imagen Obligatoria")
+            .bail()
+            .custom(function(value, {req} ){
+                const imagenesValidas = [".jpg", ".jpeg", ".png"]
+                const extencion = path.extname(req.files[0].originalname);
+                return imagenesValidas.includes(extencion);               
+            })
+            .withMessage("archivo no valido")
     ],
     login:[
         body("email")

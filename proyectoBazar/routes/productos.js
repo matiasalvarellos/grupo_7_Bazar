@@ -8,4 +8,4 @@ router.get("/carrito", autMiddlewares ,productoController.carrito );
 router.get("/create", productoController.crear );
 router.get("/detail/:id?", productoController.detalle );
 
-module.exports=router;
+module.exports = router;

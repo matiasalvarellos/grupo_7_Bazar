@@ -50,7 +50,8 @@ const users={
                 email: req.body.email,
                 password: bcrypt.hashSync(req.body.password),
                 cliente: req.body.cliente,
-                id: crearId()
+                id: crearId(),
+                avatar: req.files[0].filename
             }
             let UsuersAdd = [...users , nuevoUsers];
             writeJson(UsuersAdd);
