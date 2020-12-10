@@ -23,7 +23,12 @@ const validar = {
          .bail()
          .custom(function(value){
                 let users = getUsers();
-                return users.find(usuario => usuario.id != value);
+                let usersEmail = users.find(usuario => usuario.email == value);
+                if(usersEmail){
+                    return false;
+                }else{
+                    return true;
+                }
             })
          .withMessage("Usuario ya existente"),
         body("password")

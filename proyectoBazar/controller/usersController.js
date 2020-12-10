@@ -32,7 +32,7 @@ const users={
             if(req.body.recordame){
                 res.cookie("recordame", usuarioEncontrado.id , {maxAge: 60000 * 60 * 24 })
             }
-            return res.send("logueado breo!, sos el guachin q tiene el correo "+ req.session.usuarioLogueado.email);
+            return res.redirect("/");
         }else{
             return res.render("login", {errores: errores.errors, old: req.body});
         }    
@@ -55,20 +55,13 @@ const users={
             }
             let UsuersAdd = [...users , nuevoUsers];
             writeJson(UsuersAdd);
-           return res.send("usuario creado!!");
+           return res.redirect("/");
         }else{
            return res.render("register", {
                errores: errores.errors,
                old: req.body
             })
         }
-    },
-    chequear: function(req, res){
-        if(req.session.usuarioLogueado){
-            res.send("vos sos " + req.session.usuarioLogueado.nombre);
-        }else{
-            res.send("No estas logueado breo")
-        } 
     },
     logout: function(req, res){
         req.session.destroy();
