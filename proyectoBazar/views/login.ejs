@@ -5,7 +5,7 @@
     <%- include("partials/header") %>
             <main>
                 <div class="ventanaFormulario">
-                    <form action="" method="get">
+                    <form action="/users/login" method="POST">
                         <div class="titulo">
                             <label for="email">
                                 <em>
@@ -16,11 +16,14 @@
                             </label>
                         </div>
                         <div class="datos">
-                             <input type="email" id="email" name="email" placeholder="Email Adress (required)">
+                             <input type="email" id="email" name="email" placeholder="Email Adress (required)" value="<%= typeof old != "undefined" ? old.email : "" %>">
                         </div>
                         <div class="datos">
                              <input type="password" name="password" placeholder="Password (required)"><br>
                              <a href="">¿Olvidaste tu contraseña?</a>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="recordame" id="recordame"><label for="recordame">Recordame</label>
                         </div>
                         <p>
                             <button class="primerButton" type="submit">
@@ -38,7 +41,16 @@
                                  Registrate Ya!
                                 </p>
                             </div>
-                        </a>          
+                        </a>
+                        <% if(typeof errores != "undefined"){ %>
+                        <ul>
+                            <% errores.forEach(function(error){ %>
+                            <li>
+                                <%= error.msg %>
+                            </li>
+                            <% }) %>
+                        </ul>
+                        <% } %>
                     </form>
                 </div>
             </main>

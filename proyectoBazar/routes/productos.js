@@ -2,6 +2,7 @@ const express= require("express");
 const router = express.Router();
 const productoController= require("../controller/productoController");
 const upload = require('../middlewares/multer');
+const autMiddlewares= require("../middlewares/authMiddleware");
 
 ////*CRUDE PRODUCTOS*////
 
@@ -25,18 +26,6 @@ router.get("/destroy/:id", productoController.delete);
 
 ////* FIN CRUDE PRODUCTOS*////
 
-router.get("/carrito", productoController.carrito );
+router.get("/carrito", autMiddlewares, productoController.carrito );
 
 module.exports=router;
-
-/*
-/products (GET)
-Listado de productos
-2. /products/create (GET)
-F
-Formulario de edición de productos
-6. /products/:id (PUT)
-Acción de edición (a donde se envía el formulario):
-7. /products/:id (DELETE)
-Acción de borrado
-*/
