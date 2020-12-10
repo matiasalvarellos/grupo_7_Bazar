@@ -31,13 +31,13 @@ const validar = {
         .withMessage("La contraseña debe tener un minimo de 4 caracteres"),
         body("avatar")
             .custom(function(value, {req}){
-                return req.files[0]
+                return req.file;
             })
             .withMessage("Imagen Obligatoria")
             .bail()
             .custom(function(value, {req} ){
                 const imagenesValidas = [".jpg", ".jpeg", ".png"]
-                const extencion = path.extname(req.files[0].originalname);
+                const extencion = path.extname(req.file.originalname);
                 return imagenesValidas.includes(extencion);               
             })
             .withMessage("archivo no valido")

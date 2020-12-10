@@ -51,13 +51,16 @@ const users={
                 password: bcrypt.hashSync(req.body.password),
                 cliente: req.body.cliente,
                 id: crearId(),
-                avatar: req.files[0].filename
+                avatar: req.file.filename
             }
             let UsuersAdd = [...users , nuevoUsers];
             writeJson(UsuersAdd);
            return res.send("usuario creado!!");
         }else{
-           return res.render("register", {errores: errores.errors})
+           return res.render("register", {
+               errores: errores.errors,
+               old: req.body
+            })
         }
     },
     chequear: function(req, res){

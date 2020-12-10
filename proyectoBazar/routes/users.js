@@ -10,7 +10,7 @@ const userMulterConfig = require("../middlewares/multer/multerRegister");
 router.get('/login', guestMiddleware ,usersController.login);
 router.post("/login", validator.login , usersController.processLogin);
 router.get("/register", usersController.registro);
-router.post("/register", userMulterConfig.any(), validator.regis, usersController.processRegistro);
+router.post("/register", userMulterConfig.single("avatar"), validator.regis, usersController.processRegistro);
 router.get("/chequear", usersController.chequear);
 router.post("/logout", usersController.logout);
 

@@ -14,15 +14,15 @@
                             </label>
                         </div>
                         <div class="datos">
-                            <input type="text" id="name" name="nombre" placeholder="Nombre"></div>
+                            <input type="text" id="name" name="nombre" placeholder="Nombre" value="<%= typeof old != "undefined" ? old.nombre : "" %>"></div>
                         <div class="datos">
-                            <input type="text" name="apellido" placeholder="Apellido">
+                            <input type="text" name="apellido" placeholder="Apellido" value="<%= typeof old != "undefined" ? old.apellido : "" %>">
                         </div>
                         <div class="datos">
-                            <input type="email" name="email" placeholder="Dirc.Correo Electronico">
+                            <input type="email" name="email" placeholder="Dirc.Correo Electronico" value="<%= typeof old != "undefined" ? old.email : "" %>">
                         </div>
                         <div class="datos">
-                            <input type="password" name="password" placeholder="Crea una contraseña">
+                            <input type="password" name="password" placeholder="Crea una contraseña" value="<%= typeof old != "undefined" ? old.password : "" %>">
                         </div>    
                         <div class="datos">
                             <select name="cliente">

@@ -16,7 +16,7 @@ const upload = multer({
         const extencion = path.extname(file.originalname);
         const resultado = imagenesValidas.includes(extencion)
         if(resultado == false){
-            req.files = [...req.files ,file]
+            req.file = file;
         }
         cb(null, resultado)
     }
