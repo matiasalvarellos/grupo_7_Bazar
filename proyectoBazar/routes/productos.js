@@ -2,7 +2,8 @@ const express= require("express");
 const router = express.Router();
 const productoController= require("../controller/productoController");
 const upload = require('../middlewares/multer');
-const autMiddlewares= require("../middlewares/authMiddleware");
+const authMiddlewares = require("../middlewares/authMiddleware");
+const adminMiddleware = require("../middlewares/adminMiddleware");
 
 ////*CRUDE PRODUCTOS*////
 
@@ -10,7 +11,7 @@ const autMiddlewares= require("../middlewares/authMiddleware");
 router.get("/", productoController.list);
 
 /*Formulario de creación de productos-Flor*/
-router.get("/create", productoController.crear);
+router.get("/create", authMiddlewares, adminMiddleware  ,productoController.crear);
 /*Acción de creación (a donde se envía el formulario)*/
 router.post("/create", upload.any(), productoController.store);
 
@@ -26,6 +27,6 @@ router.get("/destroy/:id", productoController.delete);
 
 ////* FIN CRUDE PRODUCTOS*////
 
-router.get("/carrito", autMiddlewares, productoController.carrito );
+router.get("/carrito", authMiddlewares, productoController.carrito );
 
 module.exports=router;
