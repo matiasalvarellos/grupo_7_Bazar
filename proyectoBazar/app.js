@@ -9,7 +9,7 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const productoRouter = require("./routes/productos");
 const recordameMiddleware = require("./middlewares/recordameMiddleware");
-const log = require("./middlewares/log")
+const localsMiddle = require('./middlewares/localsMiddle');
 /*const backOfficeRouter= require("./routes/backOffice");*/
 
 const app = express();
@@ -30,7 +30,7 @@ app.use(session({
 }));
 
 app.use(recordameMiddleware);
-app.use(log);
+app.use(localsMiddle);
 
 
 app.use('/', indexRouter);

@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "nombre": "Matias",
+    "apellido": "Alvarellos",
+    "email": "matias@gmail.com",
+    "password": "$2a$10$VpEdwm4HO.ah9WKXONYOhuo3fwOVKo5MKE9BaRP.KTY088b/7JWLq",
+    "id": 1,
+    "admin": true
+  }
+]

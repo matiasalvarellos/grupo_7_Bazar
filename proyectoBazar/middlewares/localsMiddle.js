@@ -1,6 +1,5 @@
 module.exports = function(req, res, next){
     res.locals.usuario = false;
-    res.locals.admin = false;
     if(req.session.usuarioLogueado){
         res.locals.usuario = req.session.usuarioLogueado 
     }

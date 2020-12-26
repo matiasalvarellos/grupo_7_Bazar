@@ -1,11 +1,9 @@
 var express = require('express');
 var router = express.Router();
 const indexController= require("../controller/indexController");
-const peliculasController = require("../controller/peliculasController");
 
 /* GET home page. */
 router.get('/', indexController.inicio);
-router.get("/pelis", peliculasController.list);
 router.get('/seguimiento', indexController.seguimiento);
 router.get('/pago', indexController.pago);
 router.get('/giftCard', indexController.giftCard);
