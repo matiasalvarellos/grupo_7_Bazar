@@ -23,7 +23,7 @@ router.get("/edit/:id?", productoController.edit);
 router.post("/edit/:id?", upload.any(), productoController.update);
 
 /*Formulario de borrar de productos-Flor*/
-router.get("/destroy/:id", productoController.delete);
+router.post("/destroy/:id", productoController.delete);
 
 ////* FIN CRUDE PRODUCTOS*////
 

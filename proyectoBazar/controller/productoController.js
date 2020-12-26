@@ -98,7 +98,7 @@ producto={
             return prod.id != idProduct;
         })
         writeJson(productdestroy);
-        res.send("producto eliminado sin problemas")
+        res.redirect("/productos");
     }
 }
 

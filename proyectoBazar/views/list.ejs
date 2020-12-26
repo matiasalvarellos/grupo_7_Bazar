@@ -32,8 +32,10 @@
             Description : <%= product.description %>- 
         </li>
 
-            <a href="/productos/edit/<%= product.id %>">EDITAR</a> - <a
-                href="/productos/destroy/<%= product.id %>">BORRAR</a>
+            <a href="/productos/edit/<%= product.id %>">EDITAR</a> -
+            <form method="POST" action="/productos/destroy/<%= product.id %>">
+                <button type="submit">Borrar</button>
+            </form>
         </li>
         <br>
         <hr>

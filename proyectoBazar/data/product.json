@@ -1,16 +1,5 @@
 [
   {
-    "id": 0,
-    "code": "000000",
-    "name": "PRODUCTO",
-    "stock": "1",
-    "color": "transparente",
-    "description": "Producto de prueba",
-    "cost": "0",
-    "markup": "0",
-    "discount": "0"
-  },
-  {
     "id": 1,
     "code": "000001",
     "name": "Vaso De Whisky X2",
