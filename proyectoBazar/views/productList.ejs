@@ -1,0 +1,70 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Bazar e commerce </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel='stylesheet' href='/stylesheets/style.css' />-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="/stylesheets/productAdd.css">
+    <link rel="stylesheet" href="../stylesheets/index.css">
+    <link rel="stylesheet" href="../stylesheets/footer-menu.css">
+    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet">    
+</head>
+<body>
+<%- include("partials/header") %>   
+
+<section class="userAccount-section">
+
+ 
+
+        <%- include("partials/adminMenu") %>
+
+
+<div class="dashboard">
+
+    <h2>Lista de Productos</h2>
+    <br>
+    <ul>
+        <% products.forEach(function(product){ %>
+        <li>
+            Name: <%= product.name %> -
+        </li>
+        <li>
+            Price: <%= product.price %> -
+        </li>
+        <li>
+            Marca: <%= products.marca %> -
+        </li>
+        <li>
+            Stock: <%= product.stock %> -
+        </li>
+        <li>
+            ID: <%= product.id %> -
+        </li>
+        <li>
+            Description : <%= product.description %>- 
+        </li>
+
+            <a href="/productos/edit/<%= product.id %>">EDITAR</a> -
+            <form method="POST" action="/productos/destroy/<%= product.id %>">
+                <button type="submit">Borrar</button>
+            </form>
+        </li>
+        <br>
+        <hr>
+        <% }); %>
+    </ul>
+ 
+
+</div>
+
+
+
+
+</section>
+
+<%- include("partials/footer") %>
+
+</body>

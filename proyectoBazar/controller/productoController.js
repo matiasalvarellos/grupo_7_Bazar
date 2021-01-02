@@ -15,13 +15,13 @@ function writeJson(array){
 producto={
     list:function(req,res,next){
         const products = getProducts();
-        res.render("list" ,{products});
+        res.render("productList" ,{products});
     },
     carrito:function(req, res, next ){
         res.render("productCart");
     },
     crear: function (req, res, next ){
-        res.render("productAdd");
+        res.render("productCreate");
     },
     store: function (req, res, next){
         const products= getProducts();
@@ -43,7 +43,7 @@ producto={
         }
         let todosProductos = [...products , newProd];
         writeJson(todosProductos);
-        res.render("productAdd", {alert: true});
+        res.render("productCreate", {alert: true});
     },
     detalle: function (req, res, next ){
         const products = getProducts();
@@ -67,9 +67,9 @@ producto={
            return usuario.id == idproduct
         });
         if(productFound){
-            res.render("productEdit", { product:productFound })
+            res.render("productUpdate", { product:productFound })
         }else{
-            res.render("productEdit", {alert: true});
+            res.render("productUpdate", {alert: true});
         }
     },
     update: function(req, res, next){

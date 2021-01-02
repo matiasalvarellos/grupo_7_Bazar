@@ -6,5 +6,35 @@
     "password": "$2a$10$VpEdwm4HO.ah9WKXONYOhuo3fwOVKo5MKE9BaRP.KTY088b/7JWLq",
     "id": 1,
     "admin": true
+  },
+  {
+    "nombre": "Karla",
+    "apellido": "Aguilera",
+    "email": "lyversis@gmail.com",
+    "password": "$2a$10$XHNBZFYben36m5sbg.yL4uWN.MdCMKUmi4G0NbHTizBdMJjkRa.d6",
+    "cliente": "mayorista",
+    "id": 2,
+    "avatar": "avatar-1609532531476.png",
+    "admin": true
+  },
+  {
+    "nombre": "Karla",
+    "apellido": "Aguilera",
+    "email": "kar.aguilera.bri@gmail.com",
+    "password": "$2a$10$LYhERd5WnVFmpI.2hk2YHOGLl1CXVuVEGBRS5xem4wc7Uwb2TAIlS",
+    "cliente": "mayorista",
+    "id": 3,
+    "avatar": "avatar-1609533237327.png",
+    "admin": false
+  },
+  {
+    "nombre": "Karla",
+    "apellido": "Aguilera",
+    "email": "karla@mail.com",
+    "password": "$2a$10$NZJC5liLULHLZREu6djg3uauTR7ZOMJt9gjgWl8fhw5FVNTWy5GCm",
+    "cliente": "mayorista",
+    "id": 4,
+    "avatar": "avatar-1609533613354.png",
+    "admin": false
   }
 ]

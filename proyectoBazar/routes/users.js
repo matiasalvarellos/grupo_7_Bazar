@@ -12,5 +12,5 @@ router.post("/login", validator.login , usersController.processLogin);
 router.get("/register", usersController.registro);
 router.post("/register", userMulterConfig.single("avatar"), validator.regis, usersController.processRegistro);
 router.post("/logout", usersController.logout);
-
+router.get('/account', usersController.account);
 module.exports = router;

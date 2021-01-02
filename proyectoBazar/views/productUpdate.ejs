@@ -1,0 +1,66 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Bazar e commerce </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel='stylesheet' href='/stylesheets/style.css' />-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="/stylesheets/productAdd.css">
+    <link rel="stylesheet" href="../stylesheets/index.css">
+    <link rel="stylesheet" href="../stylesheets/footer-menu.css">
+    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet">
+
+</head>
+<body>
+<%- include("partials/header") %>   
+
+<section class="userAccount-section">
+ <%- include("partials/adminMenu") %>
+<div class="dashboard">
+
+     <h1>ABM DE PRODUCTO</h1>
+    
+    <form action="/productos/edit/<%= product.id %>" enctype="multipart/form-data" method="POST">
+        <div class="formulario">
+            <div class="producto">
+                <p>Codigo</p> 
+                <input type="text" name="code" value="<%= product.code %>">
+                <p>Producto</p>
+                <input type="text" name="name" value="<%= product.name %>">
+                <p>Cantidad de stock</p>
+                <input type="number" name="stock" value="<%= product.stock %>">
+                <p>Color</p>
+                <input type="text" name="color" value="<%= product.color %> ">
+                <p>Descripcion del producto</p>
+                <textarea name="description" cols="50" rows="10" ><%= product.description %> </textarea>
+                <p>Imagenes</p>
+                <input type="file" name="image">
+            </div>
+            <div class="contable">
+                <p>Costo</p>
+                <input type="number" name="cost" value="<%=product.cost%>">
+                <p>Markup</p>
+                <input type="number" name="markup" value="<%= product.markup%>">
+                <p>Descuento</p>
+                <input type="number" name="discount" value="<%=product.discount%>"> 
+            </div>
+        </div>
+        <div class="botones">
+            <button type="submit">Modificar</button>
+        </div>        
+    </form>
+    <form method="POST"></form>
+</div>
+
+</div>
+
+
+
+
+</section>
+
+<%- include("partials/footer") %>
+
+</body>
