@@ -211,6 +211,18 @@ header{
  font-size:2em;
  color:white;
 }
+
+.logButton{
+  color:white;
+  font-weight:600;
+  border-radius: 5px/10px;
+  background-color: #D8AC45;
+  padding: 5px 2px;
+  width:130%!important;
+}
+.userNameHeader{
+  color:white;
+}
 @media (max-width:770px){
   .navHeaderTop {
     display:none;

@@ -47,6 +47,22 @@
   .colorCheckboxContainer{
       width:30%;
   }
+ /*================================================================
+  Product Update Section*/
+  .CheckList-title{
+    margin-top:7%;
+   }
+  .CheckList{
+    margin-top:2%;
+    display:flex!important;
+    flex-direction:row!important;
+    flex-wrap: wrap;
+    width:70%;
+    justify-content:flex-start;
+  }
+  .checkLabel{
+    width:40%;
+  }
 
   @media (max-width: 600px) {
 

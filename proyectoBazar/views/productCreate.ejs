@@ -26,7 +26,7 @@
 <div class="dashboard">
 
     <div>
-        <h1>ABM DE PRODUCTO</h1>
+        <h1 class="productEdit-title dashboardTitle">ABM DE PRODUCTO</h1>
         <form action="/productos/create" enctype="multipart/form-data" method="POST">
             <div class="formulario">
                     <div class="producto">
@@ -56,6 +56,24 @@
                         <label><input type="checkbox" name="color" value="marron" id="color">Marron</label>
                         </div>
                     </div>
+                    <p> Categoría</p>
+
+                    <div class="colorCheckboxSection">
+                        <div class="colorCheckboxContainer">    
+                        <label><input type="checkbox" name="categoria" value="categoria1"> Categoría 1</label>
+                        <label><input type="checkbox" name="categoria" value="categoria2" >Categoría 2</label>
+                        <label><input type="checkbox" name="categoria" value="categoria3" >Categoría 3</label>
+                        <label><input type="checkbox" name="categoria" value="categoria4" >Categoría 4</label>
+                        </div>
+                        <div class="colorCheckboxContainer">
+                        <label><input type="checkbox" name="categoria" value="categoria5">Categoría 5</label>
+                        <label><input type="checkbox" name="categoria" value="categoria6" >Categoría 6</label>
+                        <label><input type="checkbox" name="categoria" value="categoria7" >Categoría 7</label>
+                        <label><input type="checkbox" name="categoria" value="categoria8" >Categoría 8</label>
+                        </div>
+                       
+                    </div>
+
                         <p>Descripcion del producto</p>
                         <textarea name="description" cols="50" rows="10"></textarea>
                         <p>Imagenes</p>

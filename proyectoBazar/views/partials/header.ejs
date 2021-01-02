@@ -30,9 +30,9 @@
       </a>
       <% if(usuario){ %>
         <form method="POST" action="/users/logout">
-          <button type="submit">Log out</button>
-        </form>
-        <p><%=usuario.nombre%></p>
+          <button type="submit" class="logButton">Log Out</button>
+        </form> <br>
+        <p class="userNameHeader"><%=usuario.nombre%></p>
       <% }else{ %>
       <a href="/users/login">
         <i class="far fa-user icon"></i>

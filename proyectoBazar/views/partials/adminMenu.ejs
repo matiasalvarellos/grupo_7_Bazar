@@ -1,4 +1,8 @@
 <div class="verticalMenu">
+
+    <% if(usuario.avatar!='undefined') {%> <img src="/images/avatares/<%=usuario.avatar%>" width="30%"> <% } %>
+    <span class="productsEdit-title"> Hola <%=usuario.nombre%></span>
+    
     <h3 class="productsEdit-title">Productos</h3>
         <ul class="productsOptions">
        <li class="productsEdit-option" href="/productos/create"> <a href="/productos/create"> Agregar productos </a> </li>

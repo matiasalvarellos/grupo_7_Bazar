@@ -328,5 +328,24 @@
     "cost": "500",
     "markup": "8",
     "discount": "70"
+  },
+  {
+    "id": 20,
+    "code": "0567",
+    "name": "sillón single",
+    "stock": "4",
+    "color": "amarillo",
+    "description": "Sillón single forrado en cuerina",
+    "image": [
+      "image-1609628153266.jpg"
+    ],
+    "cost": "10000",
+    "markup": "5",
+    "discount": "0",
+    "categorias": [
+      "categoria1",
+      "categoria2",
+      "categoria3"
+    ]
   }
 ]
