@@ -13,6 +13,8 @@ main{
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 .ventanaFormulario{
     background-image:url(https://image.freepik.com/vector-gratis/fondo-transparente-patron-cubiertos-contorno-patron-vertical-cubiertos-contorno-fondo-utensilios-cocina-estilo-contorno-papel-pintado-cubiertos-cocina_171580-112.jpg);
@@ -37,7 +39,7 @@ form .titulo{
     font-size: 30px;
     text-align: center;
 }
-.datos{
+.datos, .imagenArchivo{
     margin: 10px;
 }
 .datos input, .datos select{
@@ -55,6 +57,17 @@ form .titulo{
     width: 300px;
     border-color:green;
 }
+.imagenArchivo label{
+    text-align: center;
+    border-radius: 10px;
+    border: 3px solid #8593AE;
+    background-color:#7E675E;
+    margin-top: 10px;
+    padding: 5px;
+}
+.imagenArchivo input[type = "file"]{
+    opacity: 0;
+}    
 .link {
     width: 200px;
     height: 40px;
@@ -101,5 +114,8 @@ form a .link p{
     .ventanaFormulario{    
        width: 100%;
        margin-top: 40px;
+    }
+    main{
+        margin-bottom: 50px;
     }
 }
