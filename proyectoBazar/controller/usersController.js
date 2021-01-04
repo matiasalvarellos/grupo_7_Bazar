@@ -33,7 +33,9 @@ const users={
                 res.cookie("recordame", usuarioEncontrado.id , {maxAge: 60000 * 60 * 24 })
             }
             return res.redirect("/");
-        }else{
+        }
+        
+        else{
             return res.render("login", {errores: errores.errors, old: req.body});
         }    
     },
@@ -48,6 +50,9 @@ const users={
                 nombre: req.body.nombre,
                 apellido: req.body.apellido,
                 email: req.body.email,
+
+                //Poner número azar en bcrypt
+
                 password: bcrypt.hashSync(req.body.password),
                 cliente: req.body.cliente,
                 id: crearId(),
@@ -70,6 +75,22 @@ const users={
         res.clearCookie("recordame");
         
         res.redirect("/");
-    }        
-}
+    },   
+    
+    account: function(req,res) {          
+        if(req.session.usuarioLogueado)
+        {console.log(req.session.usuarioLogueado);
+           if(req.session.usuarioLogueado.admin)
+        {return res.render('admin', {usuario:req.session.usuarioLogueado})}
+        else {return res.render('userAccount', {usuario:req.session.usuarioLogueado})} }
+       
+       else{return res.redirect('/users/login')} 
+        
+    }
+        
+
+
+    }
+
+
 module.exports=users;

@@ -15,13 +15,13 @@ function writeJson(array){
 producto={
     list:function(req,res,next){
         const products = getProducts();
-        res.render("list" ,{products});
+        res.render("productList" ,{products, usuario:req.session.usuarioLogueado});
     },
     carrito:function(req, res, next ){
-        res.render("productCart");
+        res.render("productCart",{usuario:req.session.usuarioLogueado});
     },
     crear: function (req, res, next ){
-        res.render("productAdd");
+        res.render("productCreate", {usuario:req.session.usuarioLogueado});
     },
     store: function (req, res, next){
         const products= getProducts();
@@ -40,10 +40,11 @@ producto={
             cost:req.body.cost,
             markup: req.body.markup,
             discount: req.body.discount,
+            categorias: req.body.categoria
         }
         let todosProductos = [...products , newProd];
         writeJson(todosProductos);
-        res.render("productAdd", {alert: true});
+        res.render("productCreate", {alert: true, usuario:req.session.usuarioLogueado});
     },
     detalle: function (req, res, next ){
         const products = getProducts();
@@ -67,9 +68,9 @@ producto={
            return usuario.id == idproduct
         });
         if(productFound){
-            res.render("productEdit", { product:productFound })
+            res.render("productUpdate", { product:productFound, usuario:req.session.usuarioLogueado })
         }else{
-            res.render("productEdit", {alert: true});
+            res.render("productUpdate", {alert: true, usuario:req.session.usuarioLogueado});
         }
     },
     update: function(req, res, next){
@@ -80,6 +81,7 @@ producto={
                 producto.name = req.body.name;
                 producto.stock = req.body.stock;
                 producto.color = req.body.description;
+                producto.categoria=req.body.categoria;
                 producto.cost = req.body.cost;
                 producto.markup = req.body.markup;
                 producto.discount = req.body.discount;

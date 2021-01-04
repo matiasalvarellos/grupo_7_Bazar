@@ -1,0 +1,116 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Bazar e commerce </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel='stylesheet' href='/stylesheets/style.css' />-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="/stylesheets/productAdd.css">
+    <link rel="stylesheet" href="../stylesheets/index.css">
+    <link rel="stylesheet" href="../stylesheets/footer-menu.css">
+    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</head>
+<body>
+<%- include("partials/header") %>   
+
+<section class="userAccount-section">
+
+ 
+
+        <%- include("partials/adminMenu") %>
+
+
+<div class="dashboard">
+
+    <div>
+        <h1 class="productEdit-title dashboardTitle">ABM DE PRODUCTO</h1>
+        <form action="/productos/create" enctype="multipart/form-data" method="POST">
+            <div class="formulario">
+                    <div class="producto">
+                        <p>Codigo</p> 
+                        <input type="text" name="code" placeholder="Colocar el codigo del producto">
+                        <p>Producto</p> 
+                        <input type="text" name="name" placeholder="Colocar el nombre del producto">
+                        <p>Cantidad de stock</p> 
+                        <input type="number" name="stock" placeholder="Ingrese la cantidad de stock">
+                        <p>Color</p>
+                        <div class="colorCheckboxSection">
+                        <div class="colorCheckboxContainer">    
+                        <label><input type="checkbox" name="color" value="transparente" id="color">Transparente</label>
+                        <label><input type="checkbox" name="color" value="fume" id="color">Fume</label>
+                        <label><input type="checkbox" name="color" value="esmerilado" id="color">Esmerilado</label>
+                        <label><input type="checkbox" name="color" value="rojo" id="color">Rojo</label>
+                        </div>
+                        <div class="colorCheckboxContainer">
+                        <label><input type="checkbox" name="color" value="azul" id="color">Azul</label>
+                        <label><input type="checkbox" name="color" value="verde" id="color">Verde</label>
+                        <label><input type="checkbox" name="color" value="amarillo" id="color">Amarillo</label>
+                        <label><input type="checkbox" name="color" value="blanco" id="color">Blanco</label>
+                        </div>
+                        <div class="colorCheckboxContainer">
+                        <label><input type="checkbox" name="color" value="violeta" id="color">Violeta</label>
+                        <label><input type="checkbox" name="color" value="negro" id="color">Negro</label>
+                        <label><input type="checkbox" name="color" value="marron" id="color">Marron</label>
+                        </div>
+                    </div>
+                    <p> Categoría</p>
+
+                    <div class="colorCheckboxSection">
+                        <div class="colorCheckboxContainer">    
+                        <label><input type="checkbox" name="categoria" value="categoria1"> Categoría 1</label>
+                        <label><input type="checkbox" name="categoria" value="categoria2" >Categoría 2</label>
+                        <label><input type="checkbox" name="categoria" value="categoria3" >Categoría 3</label>
+                        <label><input type="checkbox" name="categoria" value="categoria4" >Categoría 4</label>
+                        </div>
+                        <div class="colorCheckboxContainer">
+                        <label><input type="checkbox" name="categoria" value="categoria5">Categoría 5</label>
+                        <label><input type="checkbox" name="categoria" value="categoria6" >Categoría 6</label>
+                        <label><input type="checkbox" name="categoria" value="categoria7" >Categoría 7</label>
+                        <label><input type="checkbox" name="categoria" value="categoria8" >Categoría 8</label>
+                        </div>
+                       
+                    </div>
+
+                        <p>Descripcion del producto</p>
+                        <textarea name="description" cols="50" rows="10"></textarea>
+                        <p>Imagenes</p>
+                        <input type="file" name="image" multiple>
+                    </div>
+                    <div class="contable">
+                        <p>Costo</p>
+                        <input type="number" name="cost" placeholder="Ingrese el costo del producto">
+                        <p>Markup</p>
+                        <input type="number" name="markup" placeholder="Ingrese la descripcion del producto">
+                        <p>Descuento</p>
+                        <input type="number" name="discount" placeholder="Ingrese el descuento">
+                    </div>    
+            </div>
+            <div class="botones">
+                <button type="submit">Agregar</button>
+            </div>
+        </form>     
+    </div>
+    <% if (typeof alert != "undefined") { %>
+        <script>Swal.fire({
+            position: 'top-middle',
+            icon: 'success',
+            title: 'Producto cargado con exito!',
+            showConfirmButton: false,
+            timer: 1500
+          })</script>
+    <% } %>
+
+
+</div>
+
+
+
+
+</section>
+
+<%- include("partials/footer") %>
+
+</body>

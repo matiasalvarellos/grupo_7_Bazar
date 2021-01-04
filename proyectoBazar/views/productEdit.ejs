@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/stylesheets/productAdd.css">
-    <link rel="stylesheet" href="/stylesheets/footer-menu.css">
+    <link rel="stylesheet" href="stylesheets/productAdd.css">
+    <link rel="stylesheet" href="stylesheets/footer-menu.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 </head>
 
@@ -20,7 +20,7 @@
             <div class="formulario">
                 <div class="producto">
                     <p>Codigo</p> 
-                    <input type="text" name="code" value="<%= product.code %>">
+                    <input type="text" name="code"  value="<%= product.code %>">
                     <p>Producto</p>
                     <input type="text" name="name" value="<%= product.name %>">
                     <p>Cantidad de stock</p>
@@ -28,17 +28,18 @@
                     <p>Color</p>
                     <input type="text" name="color" value="<%= product.color %> ">
                     <p>Descripcion del producto</p>
-                    <textarea name="description" cols="50" rows="10" ><%= product.description %> </textarea>
+                    <textarea name="description" cols="50" rows="10" ><% if(product.description)
+                      {= product.description }%> </textarea>
                     <p>Imagenes</p>
                     <input type="file" name="image">
                 </div>
                 <div class="contable">
                     <p>Costo</p>
-                    <input type="number" name="cost" value="<%=product.cost%>">
+                    <input type="number" name="cost" value="<%= product.cost%>">
                     <p>Markup</p>
                     <input type="number" name="markup" value="<%= product.markup%>">
                     <p>Descuento</p>
-                    <input type="number" name="discount" value="<%=product.discount%>"> 
+                    <input type="number" name="discount" value="<%= product.discount%>"> 
                 </div>
             </div>
             <div class="botones">

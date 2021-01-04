@@ -124,5 +124,228 @@
     "cost": "800",
     "markup": "200",
     "discount": "30"
+  },
+  {
+    "id": 7,
+    "code": "56",
+    "name": "Mesa",
+    "stock": "30",
+    "color": [
+      "fume",
+      "esmerilado"
+    ],
+    "description": "Linda mesa",
+    "image": [
+      "image-1609561655639.png",
+      "image-1609561655794.jpeg"
+    ],
+    "cost": "400",
+    "markup": "1",
+    "discount": "0"
+  },
+  {
+    "id": 8,
+    "code": "56",
+    "name": "Mesa",
+    "stock": "30",
+    "color": [
+      "fume",
+      "esmerilado"
+    ],
+    "description": "Linda mesa",
+    "image": [
+      "image-1609562003048.png",
+      "image-1609562003054.jpeg"
+    ],
+    "cost": "400",
+    "markup": "1",
+    "discount": "0"
+  },
+  {
+    "id": 9,
+    "code": "56",
+    "name": "Mesa",
+    "stock": "30",
+    "color": [
+      "fume",
+      "esmerilado"
+    ],
+    "description": "Linda mesa",
+    "image": [
+      "image-1609562009807.png",
+      "image-1609562009811.jpeg"
+    ],
+    "cost": "400",
+    "markup": "1",
+    "discount": "0"
+  },
+  {
+    "id": 10,
+    "code": "43",
+    "name": "silla",
+    "stock": "4",
+    "color": [
+      "verde",
+      "amarillo",
+      "violeta"
+    ],
+    "description": "lindas sillas",
+    "image": [
+      "image-1609562080305.jpg",
+      "image-1609562080333.jpg"
+    ],
+    "cost": "300",
+    "markup": "2",
+    "discount": "0"
+  },
+  {
+    "id": 11,
+    "code": "43",
+    "name": "silla",
+    "stock": "4",
+    "color": [
+      "verde",
+      "amarillo",
+      "violeta"
+    ],
+    "description": "lindas sillas",
+    "image": [
+      "image-1609562279669.jpg",
+      "image-1609562279694.jpg"
+    ],
+    "cost": "300",
+    "markup": "2",
+    "discount": "0"
+  },
+  {
+    "id": 12,
+    "code": "5",
+    "name": "sofa",
+    "stock": "40",
+    "color": "verde",
+    "description": "lindo sofa",
+    "image": [
+      "image-1609562340105.jpg"
+    ],
+    "cost": "600",
+    "markup": "5",
+    "discount": "0"
+  },
+  {
+    "id": 13,
+    "code": "5",
+    "name": "sofa",
+    "stock": "40",
+    "color": "verde",
+    "description": "lindo sofa",
+    "image": [
+      "image-1609562455331.jpg"
+    ],
+    "cost": "600",
+    "markup": "5",
+    "discount": "0"
+  },
+  {
+    "id": 14,
+    "code": "5",
+    "name": "sofa",
+    "stock": "40",
+    "color": "verde",
+    "description": "lindo sofa",
+    "image": [
+      "image-1609562460527.jpg"
+    ],
+    "cost": "600",
+    "markup": "5",
+    "discount": "0"
+  },
+  {
+    "id": 15,
+    "code": "compu",
+    "name": "compu",
+    "stock": "6",
+    "color": "fume",
+    "description": "compu buena",
+    "image": [
+      "image-1609562880392.png"
+    ],
+    "cost": "4000",
+    "markup": "5",
+    "discount": "0"
+  },
+  {
+    "id": 16,
+    "code": "5",
+    "name": "cuchara",
+    "stock": "2",
+    "color": "amarillo",
+    "description": "linda cuchara",
+    "image": [
+      "image-1609563251863.png"
+    ],
+    "cost": "600",
+    "markup": "5",
+    "discount": "0"
+  },
+  {
+    "id": 17,
+    "code": "5",
+    "name": "cuchara",
+    "stock": "2",
+    "color": "amarillo",
+    "description": "linda cuchara",
+    "image": [
+      "image-1609563269503.png"
+    ],
+    "cost": "600",
+    "markup": "5",
+    "discount": "0"
+  },
+  {
+    "id": 18,
+    "code": "9",
+    "name": "tazas",
+    "stock": "4",
+    "color": "verde",
+    "description": "juegos de tazas",
+    "image": [
+      "image-1609563445391.jpg"
+    ],
+    "cost": "500",
+    "markup": "8",
+    "discount": "70"
+  },
+  {
+    "id": 19,
+    "code": "9",
+    "name": "tazas",
+    "stock": "4",
+    "color": "verde",
+    "description": "juegos de tazas",
+    "image": [
+      "image-1609563592220.jpg"
+    ],
+    "cost": "500",
+    "markup": "8",
+    "discount": "70"
+  },
+  {
+    "id": 20,
+    "code": "0567",
+    "name": "sillón single",
+    "stock": "4",
+    "color": "amarillo",
+    "description": "Sillón single forrado en cuerina",
+    "image": [
+      "image-1609628153266.jpg"
+    ],
+    "cost": "10000",
+    "markup": "5",
+    "discount": "0",
+    "categorias": [
+      "categoria1",
+      "categoria2",
+      "categoria3"
+    ]
   }
 ]

@@ -14,7 +14,7 @@
         <!--<li> <a href=#> Pickup & Delivery </a> </li>-->
         <li> <a href="/seguimiento"> Tracking </a></li>
         <li> <a href="/pago"> Formas de pago </a></li>
-        <li> <a href="/users/login"> Mi cuenta </a></li>
+        <li> <a href="/users/account"> Mi cuenta </a></li>
         <li> <a href="/giftCard"> Gift Card </a></li>
       </ul>
     </nav>
@@ -30,9 +30,9 @@
       </a>
       <% if(usuario){ %>
         <form method="POST" action="/users/logout">
-          <button type="submit">Log out</button>
-        </form>
-        <p><%=usuario.nombre%></p>
+          <button type="submit" class="logButton">Log Out</button>
+        </form> <br>
+        <p class="userNameHeader"><%=usuario.nombre%></p>
       <% }else{ %>
       <a href="/users/login">
         <i class="far fa-user icon"></i>

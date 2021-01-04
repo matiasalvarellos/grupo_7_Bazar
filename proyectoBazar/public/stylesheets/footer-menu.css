@@ -6,6 +6,7 @@ body{
   padding: 0;
   margin:0;
   background-color:#E5E5E5;
+
 }
 header{
   width:100%;
@@ -131,6 +132,7 @@ header{
 }
 .main-footer{
   position:relative;
+  
   display:flex;
   flex-direction:column;
   margin:0;
@@ -208,6 +210,18 @@ header{
 .mobile-menu {
  font-size:2em;
  color:white;
+}
+
+.logButton{
+  color:white;
+  font-weight:600;
+  border-radius: 5px/10px;
+  background-color: #D8AC45;
+  padding: 5px 2px;
+  width:130%!important;
+}
+.userNameHeader{
+  color:white;
 }
 @media (max-width:770px){
   .navHeaderTop {

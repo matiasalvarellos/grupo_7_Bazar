@@ -5,9 +5,7 @@
     font-family: 'Roboto', sans-serif;
   }
 
-  header, footer {
-      background: #D6C6B9;
-  }
+  
 
   body {
       background: #E5E5E5;
@@ -38,7 +36,33 @@
   .botones {
       padding: 3% 0 5% 10%;
   }
-
+ 
+  .colorCheckboxSection{
+      width:100%;
+      display:flex;
+      flex-direction:row!important;
+      flex-wrap:wrap;
+     
+  }
+  .colorCheckboxContainer{
+      width:30%;
+  }
+ /*================================================================
+  Product Update Section*/
+  .CheckList-title{
+    margin-top:7%;
+   }
+  .CheckList{
+    margin-top:2%;
+    display:flex!important;
+    flex-direction:row!important;
+    flex-wrap: wrap;
+    width:70%;
+    justify-content:flex-start;
+  }
+  .checkLabel{
+    width:40%;
+  }
 
   @media (max-width: 600px) {
 
