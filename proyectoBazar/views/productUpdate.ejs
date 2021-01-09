@@ -49,11 +49,7 @@
             <p class="CheckList-title">Categorías</p>
           <div class="CheckList">
             
-              <% for (let i=0; i <8; i++)
-              { let inputValue="categoria"+(i+1);
-               let isChecked= product.categorias.find(function(category)
-               { return category== inputValue })%>
-               <label class="checkLabel"> <input class="checkInput" type="checkbox" name="categoria" value=<%=inputValue%> <% if(isChecked!=null) {%> checked <%}%> > Categoria <%= i+1 %> </label>    
+              <% for (let i=0; i <8; i++) { let inputValue="categoria"+(i+1);let isChecked= product.categorias.find(function(category) { return category== inputValue })%> <label class="checkLabel"> <input class="checkInput" type="checkbox" name="categoria" value=<%=inputValue%> <% if(isChecked!=null) {%> checked <%}%> > Categoria <%= i+1 %> </label>    
             <%} %>
 
           </div>

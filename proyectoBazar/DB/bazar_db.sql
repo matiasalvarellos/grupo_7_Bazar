@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 03-01-2021 a las 06:11:44
+-- Tiempo de generación: 09-01-2021 a las 03:50:51
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.6
 
@@ -18,138 +18,143 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `bazar_db`
+-- Base de datos: `bazar`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `CARRITOS`
+-- Estructura de tabla para la tabla `carts`
 --
 
-CREATE TABLE `CARRITOS` (
-  `ID` int(100) NOT NULL,
-  `USUARIO_ID` int(100) DEFAULT NULL,
-  `MONTO` int(10) DEFAULT NULL,
-  `ESTADO` varchar(250) CHARACTER SET utf8 DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `Carrito_Producto`
---
-
-CREATE TABLE `Carrito_Producto` (
-  `ID` int(100) NOT NULL,
-  `PRODUCTO_ID` int(100) DEFAULT NULL,
-  `CARRITO_ID` int(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `categorias`
---
-
-CREATE TABLE `categorias` (
+CREATE TABLE `carts` (
   `id` int(100) NOT NULL,
-  `Nombre` varchar(200) CHARACTER SET utf8 NOT NULL,
-  `Decripción` varchar(500) CHARACTER SET utf8 NOT NULL
+  `user_id` int(100) NOT NULL,
+  `amount` int(10) DEFAULT NULL,
+  `status` varchar(250) CHARACTER SET utf8 DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `uddated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `CATEGORIA_PRODUCTO`
+-- Estructura de tabla para la tabla `categories`
 --
 
-CREATE TABLE `CATEGORIA_PRODUCTO` (
+CREATE TABLE `categories` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `colors`
+--
+
+CREATE TABLE `colors` (
+  `id` int(100) NOT NULL,
+  `name` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `images`
+--
+
+CREATE TABLE `images` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `product_id` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `products`
+--
+
+CREATE TABLE `products` (
+  `id` int(100) NOT NULL,
+  `code` int(10) DEFAULT NULL,
+  `name` varchar(500) CHARACTER SET utf8 DEFAULT NULL,
+  `stock` int(10) DEFAULT NULL,
+  `description` varchar(500) CHARACTER SET utf8 DEFAULT NULL,
+  `cost` int(10) DEFAULT NULL,
+  `markup` int(10) NOT NULL,
+  `discount` int(10) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `product_cart`
+--
+
+CREATE TABLE `product_cart` (
   `ID` int(100) NOT NULL,
-  `CATEGORIA_ID` int(100) NOT NULL,
-  `PRODUCTO_ID` int(100) NOT NULL
+  `product_id` int(100) DEFAULT NULL,
+  `cart_id` int(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `colores`
+-- Estructura de tabla para la tabla `product_category`
 --
 
-CREATE TABLE `colores` (
+CREATE TABLE `product_category` (
   `ID` int(100) NOT NULL,
-  `Nombre` varchar(200) NOT NULL
+  `category_id` int(100) NOT NULL,
+  `product_id` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Compras`
+-- Estructura de tabla para la tabla `product_color`
 --
 
-CREATE TABLE `Compras` (
-  `ID` int(100) NOT NULL,
-  `USUARIO_ID` int(100) DEFAULT NULL,
-  `Monto` int(10) DEFAULT NULL,
-  `Fecha` datetime(6) NOT NULL
+CREATE TABLE `product_color` (
+  `id` int(11) NOT NULL,
+  `color_id` int(11) DEFAULT NULL,
+  `product_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Compra_Producto`
+-- Estructura de tabla para la tabla `subcategories`
 --
 
-CREATE TABLE `Compra_Producto` (
-  `ID` int(100) NOT NULL,
-  `COMPRA_ID` int(100) DEFAULT NULL,
-  `PRODUCTO_ID` int(100) DEFAULT NULL
+CREATE TABLE `subcategories` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `category_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Productos`
+-- Estructura de tabla para la tabla `users`
 --
 
-CREATE TABLE `Productos` (
-  `ID` int(100) NOT NULL,
-  `CODIGO` int(10) DEFAULT NULL,
-  `NOMBRE` varchar(500) CHARACTER SET utf8 DEFAULT NULL,
-  `STOCK` int(10) DEFAULT NULL,
-  `DESCRIPCION` varchar(500) CHARACTER SET utf8 DEFAULT NULL,
-  `IMAGENES` varchar(1000) CHARACTER SET utf8 DEFAULT NULL,
-  `COSTO` int(10) DEFAULT NULL,
-  `MARKUP` int(10) NOT NULL,
-  `DESCUENTO` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `PRODUCTO_COLOR`
---
-
-CREATE TABLE `PRODUCTO_COLOR` (
-  `ID` int(11) NOT NULL,
-  `COLOR_ID` int(11) DEFAULT NULL,
-  `PRODUCTO_ID` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `USUARIOS`
---
-
-CREATE TABLE `USUARIOS` (
-  `ID` int(100) NOT NULL,
-  `NOMBRE` varchar(500) CHARACTER SET utf8 DEFAULT NULL,
-  `APELLIDO` varchar(500) CHARACTER SET utf8 DEFAULT NULL,
-  `E-MAIL` varchar(500) CHARACTER SET utf8 DEFAULT NULL,
-  `PASSWORD` varchar(1000) NOT NULL,
-  `AVATAR` varchar(150) CHARACTER SET utf8 NOT NULL,
-  `ADMIN` varchar(10) CHARACTER SET utf8 NOT NULL
+CREATE TABLE `users` (
+  `id` int(100) NOT NULL,
+  `name` varchar(500) CHARACTER SET utf8 NOT NULL,
+  `last_name` varchar(500) CHARACTER SET utf8 NOT NULL,
+  `email` varchar(500) CHARACTER SET utf8 NOT NULL,
+  `password` varchar(1000) NOT NULL,
+  `type_customer` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `avatar` varchar(150) CHARACTER SET utf8 NOT NULL,
+  `admin` varchar(10) CHARACTER SET utf8 NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `update_add` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -157,176 +162,173 @@ CREATE TABLE `USUARIOS` (
 --
 
 --
--- Indices de la tabla `CARRITOS`
+-- Indices de la tabla `carts`
 --
-ALTER TABLE `CARRITOS`
-  ADD PRIMARY KEY (`ID`),
-  ADD KEY `USUARIO_ID` (`USUARIO_ID`);
+ALTER TABLE `carts`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `user_id` (`user_id`);
 
 --
--- Indices de la tabla `Carrito_Producto`
+-- Indices de la tabla `categories`
 --
-ALTER TABLE `Carrito_Producto`
-  ADD PRIMARY KEY (`ID`),
-  ADD KEY `PRODUCTO_ID` (`PRODUCTO_ID`),
-  ADD KEY `CARRITO_ID` (`CARRITO_ID`);
-
---
--- Indices de la tabla `categorias`
---
-ALTER TABLE `categorias`
+ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `CATEGORIA_PRODUCTO`
+-- Indices de la tabla `colors`
 --
-ALTER TABLE `CATEGORIA_PRODUCTO`
+ALTER TABLE `colors`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `images`
+--
+ALTER TABLE `images`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `PRODUCT_IMAGE_fk` (`product_id`);
+
+--
+-- Indices de la tabla `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `product_cart`
+--
+ALTER TABLE `product_cart`
   ADD PRIMARY KEY (`ID`),
-  ADD KEY `CATEGORIA_ID` (`CATEGORIA_ID`,`PRODUCTO_ID`),
-  ADD KEY `PRODUCTO_ID` (`PRODUCTO_ID`);
+  ADD KEY `PRODUCTO_ID` (`product_id`),
+  ADD KEY `CARRITO_ID` (`cart_id`);
 
 --
--- Indices de la tabla `colores`
+-- Indices de la tabla `product_category`
 --
-ALTER TABLE `colores`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indices de la tabla `Compras`
---
-ALTER TABLE `Compras`
+ALTER TABLE `product_category`
   ADD PRIMARY KEY (`ID`),
-  ADD KEY `USUARIO_ID` (`USUARIO_ID`);
+  ADD KEY `CATEGORIA_ID` (`category_id`,`product_id`),
+  ADD KEY `PRODUCTO_ID` (`product_id`);
 
 --
--- Indices de la tabla `Compra_Producto`
+-- Indices de la tabla `product_color`
 --
-ALTER TABLE `Compra_Producto`
-  ADD PRIMARY KEY (`ID`),
-  ADD KEY `COMPRA_ID` (`COMPRA_ID`,`PRODUCTO_ID`),
-  ADD KEY `PRODUCTO_ID` (`PRODUCTO_ID`);
+ALTER TABLE `product_color`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `CATEGORIA_ID` (`color_id`,`product_id`),
+  ADD KEY `PRODUCTO_ID` (`product_id`);
 
 --
--- Indices de la tabla `Productos`
+-- Indices de la tabla `subcategories`
 --
-ALTER TABLE `Productos`
-  ADD PRIMARY KEY (`ID`);
+ALTER TABLE `subcategories`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `CATEGORY_FK` (`category_id`);
 
 --
--- Indices de la tabla `PRODUCTO_COLOR`
+-- Indices de la tabla `users`
 --
-ALTER TABLE `PRODUCTO_COLOR`
-  ADD PRIMARY KEY (`ID`),
-  ADD KEY `CATEGORIA_ID` (`COLOR_ID`,`PRODUCTO_ID`),
-  ADD KEY `PRODUCTO_ID` (`PRODUCTO_ID`);
-
---
--- Indices de la tabla `USUARIOS`
---
-ALTER TABLE `USUARIOS`
-  ADD PRIMARY KEY (`ID`);
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT de la tabla `CARRITOS`
+-- AUTO_INCREMENT de la tabla `carts`
 --
-ALTER TABLE `CARRITOS`
-  MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `Carrito_Producto`
---
-ALTER TABLE `Carrito_Producto`
-  MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `categorias`
---
-ALTER TABLE `categorias`
+ALTER TABLE `carts`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `CATEGORIA_PRODUCTO`
+-- AUTO_INCREMENT de la tabla `categories`
 --
-ALTER TABLE `CATEGORIA_PRODUCTO`
+ALTER TABLE `categories`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `colors`
+--
+ALTER TABLE `colors`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `images`
+--
+ALTER TABLE `images`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `products`
+--
+ALTER TABLE `products`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `product_cart`
+--
+ALTER TABLE `product_cart`
   MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `colores`
+-- AUTO_INCREMENT de la tabla `product_category`
 --
-ALTER TABLE `colores`
+ALTER TABLE `product_category`
   MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `Compras`
+-- AUTO_INCREMENT de la tabla `product_color`
 --
-ALTER TABLE `Compras`
-  MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `product_color`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `Compra_Producto`
+-- AUTO_INCREMENT de la tabla `subcategories`
 --
-ALTER TABLE `Compra_Producto`
-  MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `subcategories`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `Productos`
+-- AUTO_INCREMENT de la tabla `users`
 --
-ALTER TABLE `Productos`
-  MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `PRODUCTO_COLOR`
---
-ALTER TABLE `PRODUCTO_COLOR`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `USUARIOS`
---
-ALTER TABLE `USUARIOS`
-  MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `users`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
 --
 
 --
--- Filtros para la tabla `Carrito_Producto`
+-- Filtros para la tabla `carts`
 --
-ALTER TABLE `Carrito_Producto`
-  ADD CONSTRAINT `Carrito_Producto_ibfk_1` FOREIGN KEY (`PRODUCTO_ID`) REFERENCES `Productos` (`ID`) ON DELETE CASCADE,
-  ADD CONSTRAINT `Carrito_Producto_ibfk_2` FOREIGN KEY (`CARRITO_ID`) REFERENCES `CARRITOS` (`ID`) ON DELETE CASCADE;
+ALTER TABLE `carts`
+  ADD CONSTRAINT `carts_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 
 --
--- Filtros para la tabla `CATEGORIA_PRODUCTO`
+-- Filtros para la tabla `images`
 --
-ALTER TABLE `CATEGORIA_PRODUCTO`
-  ADD CONSTRAINT `CATEGORIA_PRODUCTO_ibfk_1` FOREIGN KEY (`PRODUCTO_ID`) REFERENCES `Productos` (`ID`) ON DELETE CASCADE,
-  ADD CONSTRAINT `CATEGORIA_PRODUCTO_ibfk_2` FOREIGN KEY (`CATEGORIA_ID`) REFERENCES `categorias` (`id`) ON DELETE CASCADE;
+ALTER TABLE `images`
+  ADD CONSTRAINT `PRODUCT_IMAGE_fk` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Filtros para la tabla `Compras`
+-- Filtros para la tabla `product_cart`
 --
-ALTER TABLE `Compras`
-  ADD CONSTRAINT `Compras_ibfk_1` FOREIGN KEY (`USUARIO_ID`) REFERENCES `USUARIOS` (`ID`) ON DELETE CASCADE;
+ALTER TABLE `product_cart`
+  ADD CONSTRAINT `CARTfk` FOREIGN KEY (`cart_id`) REFERENCES `carts` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `PRODUCTfk` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Filtros para la tabla `Compra_Producto`
+-- Filtros para la tabla `product_category`
 --
-ALTER TABLE `Compra_Producto`
-  ADD CONSTRAINT `Compra_Producto_ibfk_1` FOREIGN KEY (`COMPRA_ID`) REFERENCES `Compras` (`ID`) ON DELETE CASCADE,
-  ADD CONSTRAINT `Compra_Producto_ibfk_2` FOREIGN KEY (`PRODUCTO_ID`) REFERENCES `Productos` (`ID`) ON DELETE CASCADE;
+ALTER TABLE `product_category`
+  ADD CONSTRAINT `CATEGORY_ID` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `PRODUCT_ID` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Filtros para la tabla `PRODUCTO_COLOR`
+-- Filtros para la tabla `subcategories`
 --
-ALTER TABLE `PRODUCTO_COLOR`
-  ADD CONSTRAINT `PRODUCTO_COLOR_ibfk_1` FOREIGN KEY (`COLOR_ID`) REFERENCES `colores` (`ID`) ON DELETE CASCADE,
-  ADD CONSTRAINT `PRODUCTO_COLOR_ibfk_2` FOREIGN KEY (`PRODUCTO_ID`) REFERENCES `Productos` (`ID`) ON DELETE CASCADE;
+ALTER TABLE `subcategories`
+  ADD CONSTRAINT `CATEGORY_FK` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
