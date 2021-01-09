@@ -91,7 +91,7 @@ producto={
             return producto;
         });
         writeJson(prodEdit);      
-        res.send("salio todo bien!")
+        res.redirect("/productos")
     },
     delete: function(req, res, next){
         const products = getProducts();

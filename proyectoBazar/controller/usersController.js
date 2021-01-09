@@ -50,10 +50,7 @@ const users={
                 nombre: req.body.nombre,
                 apellido: req.body.apellido,
                 email: req.body.email,
-
-                //Poner número azar en bcrypt
-
-                password: bcrypt.hashSync(req.body.password),
+                password: bcrypt.hashSync(req.body.password,10),
                 cliente: req.body.cliente,
                 id: crearId(),
                 avatar: req.file.filename,
@@ -87,10 +84,7 @@ const users={
        else{return res.redirect('/users/login')} 
         
     }
-        
-
-
-    }
+}    
 
 
 module.exports=users;

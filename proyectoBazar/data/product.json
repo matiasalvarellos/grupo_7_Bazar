@@ -347,5 +347,17 @@
       "categoria2",
       "categoria3"
     ]
+  },
+  {
+    "id": 21,
+    "code": "12345622",
+    "name": "colchon",
+    "stock": "1",
+    "description": "osadoaksdoasd",
+    "image": [],
+    "cost": "123",
+    "markup": "21",
+    "discount": "2",
+    "categorias": "categoria1"
   }
 ]
