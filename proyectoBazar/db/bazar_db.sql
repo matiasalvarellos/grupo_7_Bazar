@@ -152,9 +152,9 @@ CREATE TABLE `users` (
   `password` varchar(1000) NOT NULL,
   `type_customer` varchar(100) CHARACTER SET utf8 NOT NULL,
   `avatar` varchar(150) CHARACTER SET utf8 NOT NULL,
-  `admin` varchar(10) CHARACTER SET utf8 NOT NULL,
+  `admin` tinyint(10) CHARACTER SET utf8 NOT NULL DEFAULT "0",
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `update_at` timestamp NULL DEFAULT current_timestamp()
+  `updated_at` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --

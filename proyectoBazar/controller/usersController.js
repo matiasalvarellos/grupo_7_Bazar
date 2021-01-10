@@ -2,69 +2,54 @@ const fs = require("fs");
 const path = require("path");
 const bcrypt = require("bcryptjs");
 const { body, validationResult } = require("express-validator");
+const db = require("../database/models")
 
-function getUsers(){
-    const usersJSON = fs.readFileSync(path.resolve(__dirname, '../data/users.json'), "utf-8");
-    const users = JSON.parse(usersJSON);
-    return users;
-}
-function writeJson(array){
-    const arrayJson = JSON.stringify(array, null, 2);
-    return fs.writeFileSync(path.resolve(__dirname, "../data/users.json"), arrayJson);
-}
-function crearId(){
-    let users = getUsers();
-    let ultimoUsuario = users.pop();
-    return ultimoUsuario ? ultimoUsuario.id + 1 : 1;
-}
-const users={
-    login: function(req, res, next){
+const users = {
+    login: (req, res, next) => {
         res.render("login");
     },
-    processLogin: function(req, res, next){
-        const usuarios = getUsers();
+    processLogin: (req, res, next) => {
         const errores = validationResult(req);
-        if(errores.isEmpty()){
-            let usuarioEncontrado = usuarios.find(function(usuario){
-                return usuario.email == req.body.email;
+
+        if(!errores.isEmpty()){
+            return res.render("login", { 
+                errores: errores.errors,
+                old: req.body 
             });
+        }
+        db.User.findOne({
+            where: {
+                email: req.body.email
+            }
+        }).then( usuarioEncontrado => {
             req.session.usuarioLogueado = usuarioEncontrado;
             if(req.body.recordame){
-                res.cookie("recordame", usuarioEncontrado.id , {maxAge: 60000 * 60 * 24 })
+                res.cookie("recordame", usuarioEncontrado.id, { maxAge: 60000 * 60 * 24 })
             }
             return res.redirect("/");
-        }
-        
-        else{
-            return res.render("login", {errores: errores.errors, old: req.body});
-        }    
+        })  
     },
-    registro: function (req, res, next){
+    registro:(req, res, next) => {
         res.render("register")
     },
-    processRegistro: function (req, res, next){
+    processRegistro:(req, res, next) => {
         const errores = validationResult(req);
-        if(errores.isEmpty()){
-            let users = getUsers();
-            let nuevoUsers = {
-                nombre: req.body.nombre,
-                apellido: req.body.apellido,
-                email: req.body.email,
-                password: bcrypt.hashSync(req.body.password,10),
-                cliente: req.body.cliente,
-                id: crearId(),
-                avatar: req.file.filename,
-                admin: false
-            }
-            let UsuersAdd = [...users , nuevoUsers];
-            writeJson(UsuersAdd);
-           return res.redirect("/");
-        }else{
-           return res.render("register", {
-               errores: errores.errors,
-               old: req.body
+        if(!errores.isEmpty()){
+            return res.render("register", {
+                errores: errores.errors,
+                old: req.body
             })
-        }
+        };
+        db.User.create({
+            name: req.body.name,
+            last_name: req.body.last_name,
+            email: req.body.email,
+            password: bcrypt.hashSync(req.body.password, 10),
+            type_customer: req.body.type_customer,
+            avatar: req.file.filename
+        }).then(function(){
+            return res.redirect("/users/login");
+        })
     },
     logout: function(req, res){
         req.session.destroy();
@@ -73,7 +58,6 @@ const users={
         
         res.redirect("/");
     },   
-    
     account: function(req,res) {          
         if(req.session.usuarioLogueado)
         {console.log(req.session.usuarioLogueado);
@@ -85,6 +69,5 @@ const users={
         
     }
 }    
-
 
 module.exports=users;
