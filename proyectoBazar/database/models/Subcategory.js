@@ -1,23 +1,13 @@
-module.exports=function(sequelize, DataTypes){
+module.exports=function(sequelize, dataTypes){
     let cols={
-    id:{type: DataTypes.INTEGER,
-        primaryKey:true,
-        autoIncrement:true},
-    name:{ type: DataTypes.STRING,}, 
-        
-   category_id:{type: DataTypes.INTEGER,}, 
+        name: dataTypes.STRING, 
+        category_id:dataTypes.INTEGER 
     }
-    
-    let alias="categories";
-    let config={ timestamps:false}
+    let alias="Subcategory";
+    let config={ 
+        timestamps:false
+    }
+    let Subcategory=sequelize.define(alias, cols, config);
 
-let Subcategory=sequelize.define(alias, cols, config);
- Subcategory.associate=function(models){
-     Subcategory.belongsTo(models.categories, {
-     as:"subcategory-category",
-    foreignKey:"category_id", 
-     })
- }
-
-return Category;
+    return Subcategory;
 }

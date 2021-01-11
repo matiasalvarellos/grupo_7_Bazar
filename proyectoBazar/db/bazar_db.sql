@@ -97,7 +97,7 @@ CREATE TABLE `products` (
 --
 
 CREATE TABLE `product_cart` (
-  `ID` int(100) NOT NULL,
+  `id` int(100) NOT NULL,
   `product_id` int(100) DEFAULT NULL,
   `cart_id` int(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -109,7 +109,7 @@ CREATE TABLE `product_cart` (
 --
 
 CREATE TABLE `product_category` (
-  `ID` int(100) NOT NULL,
+  `id` int(100) NOT NULL,
   `category_id` int(100) NOT NULL,
   `product_id` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -197,7 +197,7 @@ ALTER TABLE `products`
 -- Indices de la tabla `product_cart`
 --
 ALTER TABLE `product_cart`
-  ADD PRIMARY KEY (`ID`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `PRODUCTO_ID` (`product_id`),
   ADD KEY `CARRITO_ID` (`cart_id`);
 
@@ -205,7 +205,7 @@ ALTER TABLE `product_cart`
 -- Indices de la tabla `product_category`
 --
 ALTER TABLE `product_category`
-  ADD PRIMARY KEY (`ID`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `CATEGORIA_ID` (`category_id`,`product_id`),
   ADD KEY `PRODUCTO_ID` (`product_id`);
 
@@ -268,13 +268,13 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT de la tabla `product_cart`
 --
 ALTER TABLE `product_cart`
-  MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `product_category`
 --
 ALTER TABLE `product_category`
-  MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `product_color`
