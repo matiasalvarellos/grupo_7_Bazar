@@ -1,14 +1,14 @@
-module.exports = function(sequelize, dataTypes){
+module.exports = function(sequelize, DataTypes){
     let cols= {
-        name: dataTypes.STRING ,
-        last_name: dataTypes.STRING ,
-        email: dataTypes.STRING ,
-        password: dataTypes.STRING ,
-        type_customer: dataTypes.STRING ,
-        avatar: dataTypes.STRING ,
-        admin: dataTypes.BOOLEAN
+        name: DataTypes.STRING ,
+        last_name: DataTypes.STRING ,
+        email: DataTypes.STRING ,
+        password: DataTypes.STRING ,
+        type_customer: DataTypes.STRING ,
+        avatar: DataTypes.STRING ,
+        admin: DataTypes.BOOLEAN
     };
-    let User = sequelize.define("User", cols);
+    let User = sequelize.define("users", cols);
 
     return User;
 }
