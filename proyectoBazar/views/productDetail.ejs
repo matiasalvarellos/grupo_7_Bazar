@@ -94,7 +94,7 @@
               </select><br>
               <button type="submit">AGREGAR AL CARRITO</button>
             </form>
-            <% if(usuario.admin){ %>
+            <% if(usuario.admin == 1){ %>
               <form method="POST" action="/productos/destroy/<%= productsFound.id %>">
                 <button type="submit">Borrar</button>
               </form>
