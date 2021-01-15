@@ -2,6 +2,10 @@ module.exports=function(sequelize, dataTypes){
   
     let alias="Product";
     let cols={
+        id:{
+            type: dataTypes.INTEGER,
+            primaryKey:true,
+        },
         code: dataTypes.INTEGER,
         name: dataTypes.STRING,
         stock: dataTypes.INTEGER,
@@ -10,7 +14,12 @@ module.exports=function(sequelize, dataTypes){
         markup: dataTypes.INTEGER,
         discount:dataTypes.INTEGER
     }
-    let Product=sequelize.define(alias, cols);
-    
+
+    let config={
+        tableName:'products',
+
+    }
+    let Product=sequelize.define(alias, cols, config);
+   
     return Product;
 }
