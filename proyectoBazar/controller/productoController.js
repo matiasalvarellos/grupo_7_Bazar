@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const db = require("../database/models")
 
 
 function getProducts(){
@@ -24,27 +25,25 @@ producto={
         res.render("productCreate", {usuario:req.session.usuarioLogueado});
     },
     store: function (req, res, next){
-        const products= getProducts();
-        let image = []
-        for (let i=0; i<req.files.length; i++) {
-            image.push (req.files[i].filename)
-        }
-        const newProd = {
-            id: products[products.length - 1].id + 1,
-            code: req.body.code,
-            name: req.body.name,
-            stock: req.body.stock,
-            color: req.body.color,
-            description: req.body.description,
-            image,
-            cost:req.body.cost,
+        db.Product.create({
+            code: req.body.code ,
+            name: req.body.name ,
+            stock: req.body.stock ,
+            description: req.body.description ,
+            cost: req.body.cost,
             markup: req.body.markup,
-            discount: req.body.discount,
-            categorias: req.body.categoria
-        }
-        let todosProductos = [...products , newProd];
-        writeJson(todosProductos);
-        res.render("productCreate", {alert: true, usuario:req.session.usuarioLogueado});
+            discount: req.body.discount
+        }).then(function(newProduct){
+            let imageToCreate = req.files.map(file => {
+                return {
+                    name: file.filename,
+                    product_id : newProduct.id
+                }
+            })
+            db.Image.bulkCreate(imageToCreate)
+        }).then(function(){
+            res.redirect("/")
+        })
     },
     detalle: function (req, res, next ){
         const products = getProducts();

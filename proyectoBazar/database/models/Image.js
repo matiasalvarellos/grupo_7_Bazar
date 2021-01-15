@@ -8,6 +8,12 @@ module.exports=function(sequelize, dataTypes){
         timestamps:true
     }
     let Image = sequelize.define(alias, cols, config);
-       
+
+    Image.associate = (model => {
+        Image.belongsTo(model.Product, {
+            as: "product",
+            foreignKey: "product_id"
+        });
+    });
     return Image;
 }

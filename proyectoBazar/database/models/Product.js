@@ -11,6 +11,13 @@ module.exports=function(sequelize, dataTypes){
         discount:dataTypes.INTEGER
     }
     let Product=sequelize.define(alias, cols);
+
+    Product.associate =(model => {
+        Product.hasMany(model.Image, {
+            as: "image",
+            foreignKey: "product_id"
+        })
+    })
     
     return Product;
 }
