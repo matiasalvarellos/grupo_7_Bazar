@@ -2,10 +2,6 @@ module.exports=function(sequelize, dataTypes){
   
     let alias="Product";
     let cols={
-        id:{
-            type: dataTypes.INTEGER,
-            primaryKey:true,
-        },
         code: dataTypes.INTEGER,
         name: dataTypes.STRING,
         stock: dataTypes.INTEGER,

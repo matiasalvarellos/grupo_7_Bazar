@@ -24,10 +24,8 @@ producto={
     crear: function (req, res, next ){
         res.render("productCreate", {usuario:req.session.usuarioLogueado});
     },
-    store: function (req, res, next){
-       
-       
-      let newProduct=  db.Product.create ({
+    store: function (req, res, next){ 
+        db.Product.create ({
             code: req.body.code,
             name: req.body.name,
             stock: req.body.stock,
@@ -37,20 +35,18 @@ producto={
             markup: req.body.markup,
             discount: req.body.discount,
             categorias: req.body.categoria        
-
-            }).then(function(resultado) {
-              
-        
-                db.Image.create(
-                    { name:req.files[0].filename,  
-                      product_id: resultado.id,                
-
-                    }).then(function(){res.render("productCreate", {alert: true, usuario:req.session.usuarioLogueado}) }) })},
-
-            
-        
-        
-    
+        }).then(function(product) {
+            let imagesTocreate = req.files.map(file => {
+                return {
+                    name: file.filename,
+                    product_id: product.id
+                }    
+            })
+            db.Image.bulkCreate(imagesTocreate)
+        }).then(function(){
+            res.redirect("/")
+        })    
+    },
     detalle: function (req, res, next ){
         const products = getProducts();
         const idproducts = req.params.id;

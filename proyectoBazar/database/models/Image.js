@@ -1,9 +1,6 @@
 module.exports=function(sequelize, dataTypes){
     let alias="Image";
-    let cols={
-       id:{ 
-           type: dataTypes.INTEGER,
-           primaryKey:true,}, 
+    let cols={ 
        name: dataTypes.STRING,
        product_id: dataTypes.INTEGER
     }
