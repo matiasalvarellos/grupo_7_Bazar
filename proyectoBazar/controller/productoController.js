@@ -88,10 +88,18 @@ producto={
         })
     },
     delete: function(req, res, next){
-        db.Product.destroy({
+        db.Image.destroy({
             where: {
                 id: req.params.id
             }
+        }).then(function(){
+            db.Product.destroy({
+                where:{
+                    id: req.params.id
+                }
+            })
+        }).then(function(){
+            res.redirect("/productos")
         })
     }
 }
