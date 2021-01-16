@@ -10,7 +10,12 @@ module.exports=function(sequelize, dataTypes){
         markup: dataTypes.INTEGER,
         discount:dataTypes.INTEGER
     }
-    let Product=sequelize.define(alias, cols);
-    
+
+    let config={
+        tableName:'products',
+
+    }
+    let Product=sequelize.define(alias, cols, config);
+   
     return Product;
 }

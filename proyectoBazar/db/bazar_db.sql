@@ -152,7 +152,7 @@ CREATE TABLE `users` (
   `password` varchar(1000) NOT NULL,
   `type_customer` varchar(100) CHARACTER SET utf8 NOT NULL,
   `avatar` varchar(150) CHARACTER SET utf8 NOT NULL,
-  `admin` tinyint(10) CHARACTER SET utf8 NOT NULL DEFAULT "0",
+  `admin` tinyint(10) INT NOT NULL DEFAULT 1,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -304,32 +304,7 @@ ALTER TABLE `users`
 ALTER TABLE `carts`
   ADD CONSTRAINT `carts_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 
---
--- Filtros para la tabla `images`
---
-ALTER TABLE `images`
-  ADD CONSTRAINT `PRODUCT_IMAGE_fk` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
---
--- Filtros para la tabla `product_cart`
---
-ALTER TABLE `product_cart`
-  ADD CONSTRAINT `CARTfk` FOREIGN KEY (`cart_id`) REFERENCES `carts` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `PRODUCTfk` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Filtros para la tabla `product_category`
---
-ALTER TABLE `product_category`
-  ADD CONSTRAINT `CATEGORY_ID` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `PRODUCT_ID` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Filtros para la tabla `subcategories`
---
-ALTER TABLE `subcategories`
-  ADD CONSTRAINT `CATEGORY_FK` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
