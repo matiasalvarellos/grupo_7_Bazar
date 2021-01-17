@@ -13,9 +13,20 @@ module.exports=function(sequelize, dataTypes){
 
     let config={
         tableName:'products',
+    }
+
+    let Product=sequelize.define(alias, cols, config);
+    
+    Product.associate=function(models){
+     Product.belongsToMany(models.Category,{
+     as:'products-categories', 
+     through: 'product_category',
+     foreignKey:'product_id',
+     otherKey:'category_id',
+     timestamps:false,  })
+
 
     }
-    let Product=sequelize.define(alias, cols, config);
-   
+
     return Product;
 }
