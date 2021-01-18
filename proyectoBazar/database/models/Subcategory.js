@@ -1,8 +1,5 @@
 module.exports=function(sequelize, dataTypes){
     let cols={
-        id: {
-            type: dataTypes.INTEGER,
-             primaryKey:true,},
         name: dataTypes.STRING, 
         category_id:dataTypes.INTEGER, 
     }

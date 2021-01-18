@@ -1,7 +1,5 @@
 module.exports=function(sequelize, dataTypes){
     let cols={
-        id:{type:dataTypes.INTEGER,
-            primaryKey:true,},
         name: dataTypes.STRING,
     };
     let alias="Category";
