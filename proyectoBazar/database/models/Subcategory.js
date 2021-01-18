@@ -1,5 +1,6 @@
 module.exports=function(sequelize, dataTypes){
     let cols={
+       
         name: dataTypes.STRING, 
         category_id:dataTypes.INTEGER, 
     }

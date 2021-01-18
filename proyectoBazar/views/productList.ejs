@@ -46,7 +46,7 @@
         <li>
             Description : <%= product.description %>- 
         </li>
-            <% if(usuario){ %>
+            <% if(usuario.admin == 1){ %>
                 <a href="/productos/edit/<%= product.id %>">EDITAR</a> -
                 <form method="POST" action="/productos/destroy/<%= product.id %>">
                     <button type="submit">Borrar</button>

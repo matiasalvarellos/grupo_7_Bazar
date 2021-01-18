@@ -17,7 +17,7 @@ const validar = {
             .withMessage("El Email debe ser valido")
             .bail()
             .custom(function(value){
-                return db.users.findOne({
+                return db.User.findOne({
                     where:{
                         email: value
                     }
@@ -52,7 +52,7 @@ const validar = {
             .withMessage("Email con formato incorrecto")
             .bail()
             .custom(function(value, {req}){
-             return db.users.findOne({
+             return db.User.findOne({
                 where:{
                     email: value
                 }

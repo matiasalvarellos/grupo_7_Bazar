@@ -33,19 +33,47 @@ producto={
             color: req.body.color,
             description: req.body.description,
             cost:req.body.cost,
-            markup: req.body.markup        
+            markup: req.body.markup,
+            discount: req.body.discount,
+            categorias: req.body.categoria,  
+                  
         }).then(function(product) {
             let imagesTocreate = req.files.map(file => {
                 return {
                     name: file.filename,
-                    product_id: product.id
-                }    
+                    product_id: product.id,
+                    
+                }
+
             })
-            db.Image.bulkCreate(imagesTocreate)
-        }).then(function(){
-            res.redirect("/")
-        })    
-    },
+
+
+            db.Image.bulkCreate(imagesTocreate).then(function(result){
+                console.log(result);
+          
+                db.product_subcategory.create(
+                   {
+                   
+                    product_id: result[0].product_id,
+                    subcategory_id:req.body.subcategory,
+
+                   }) 
+               .then(function(result){
+
+                db.product_category.create(
+                    {
+                    
+                     product_id: result.product_id,
+                     category_id:req.body.category,
+ 
+                    }) .then(function(){       
+           
+           
+                 res.redirect("/")} )})
+        
+    }) })
+
+},
     detalle: function (req, res, next ){
         const products = getProducts();
         const idproducts = req.params.id;
