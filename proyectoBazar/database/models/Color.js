@@ -1,9 +1,6 @@
 module.exports= function(sequelize, DataTypes){
     let alias="Color";
     let cols={
-        id:{
-            type: DataTypes.INTEGER,
-            primaryKey: true,         },
         name: DataTypes.STRING,    
     };
     let config={

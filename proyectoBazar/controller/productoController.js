@@ -26,7 +26,7 @@ producto={
         res.render("productCreate");
     },
     store: function (req, res, next){ 
-        db.Product.create ({
+        db.Product.create({
             code: req.body.code,
             name: req.body.name,
             stock: req.body.stock,
@@ -116,7 +116,7 @@ producto={
     delete: function(req, res, next){
         db.Image.destroy({
             where: {
-                id: req.params.id
+                product_id: req.params.id
             }
         }).then(function(){
             db.Product.destroy({
