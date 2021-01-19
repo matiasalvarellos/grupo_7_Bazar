@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const db = require('../database/models');
-
+const { Op } = require("sequelize");
 
 function getProducts(){
     const productFilePath = path.join(__dirname, '../data/product.json');
@@ -126,6 +126,17 @@ producto={
             })
         }).then(function(){
             res.redirect("/productos")
+        })
+    },
+
+    buscar:function(req,res,next){
+        let productToFind=req.body.product;
+        db.Product.findAll(
+ {  where: { name:{[Op.like]: '%'+productToFind+'%'}}}
+        )
+    
+        .then(function(products){
+            res.render("productList", { products });
         })
     }
 }

@@ -29,4 +29,7 @@ router.post("/destroy/:id",  productoController.delete);
 
 router.get("/carrito", authMiddlewares, productoController.carrito );
 
+/*SEARCH PRODUCTS */
+ router.post("/buscar", productoController.buscar);
+
 module.exports=router;

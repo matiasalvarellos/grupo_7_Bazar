@@ -18,12 +18,15 @@
         <li> <a href="/giftCard"> Gift Card </a></li>
       </ul>
     </nav>
-  
+  <form method="post" action="/productos/buscar">
     <div class="searchProducts">
+      
       <input type="text" id="search" name="product">
-      <label for="search"> Buscar </label><i
-        class=" iconSearch fas fa-search"></i>
+      <label for="search"> Buscar </label>
+      <input type="submit" value="buscar">
+      <!--<i class=" iconSearch fas fa-search"></i> -->
     </div>
+    </form>
     <div class="boxAcces">
       <a href="/productos/carrito">
         <i class="fas fa-cart-arrow-down icon"></i>

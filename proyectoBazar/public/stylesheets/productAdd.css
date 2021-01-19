@@ -5,12 +5,17 @@
     font-family: 'Roboto', sans-serif;
   }
 
-  .sc_container{
- display:flex!important;
- flex-direction: row!important;
- flex-wrap: wrap;
- margin:2% 0 5%  0%;
+ /* .sc_container{
+ display:none!important;
         
+  }*/
+
+  .sc_container_visible{
+    display:flex!important;
+    flex-direction: row!important;
+    flex-wrap: wrap;
+    margin:2% 0 5%  0%;
+      
   }
 
   body {
