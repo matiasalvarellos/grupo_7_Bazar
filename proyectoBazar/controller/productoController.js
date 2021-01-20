@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const db = require('../database/models');
 const { Op } = require("sequelize");
+const { render } = require('ejs');
 
 function getProducts(){
     const productFilePath = path.join(__dirname, '../data/product.json');
@@ -23,7 +24,10 @@ producto={
         res.render("productCart",{usuario:req.session.usuarioLogueado});
     },
     crear: function (req, res, next ){
-        res.render("productCreate");
+        db.Category.findAll().then(function(categories){
+            res.render("productCreate", {categories:categories});
+        })
+        
     },
     store: function (req, res, next){ 
         db.Product.create({

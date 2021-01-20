@@ -3,5 +3,6 @@ module.exports = function(req, res, next){
     if(req.session.usuarioLogueado){
         res.locals.usuario = req.session.usuarioLogueado 
     }
+
     return next();
 }

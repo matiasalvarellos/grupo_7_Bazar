@@ -1,5 +1,5 @@
 
-    window.addEventListener("onload", function(){
+window.addEventListener("onload", function(){
     var Category= document.querySelectorAll("CategoryInput");
 alert('hola');
 

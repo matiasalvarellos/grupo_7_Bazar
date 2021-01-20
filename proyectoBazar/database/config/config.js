@@ -1,7 +1,7 @@
 module.exports = {
   "development": {
     "username": "root",
-    "password": "vamos-2021",
+    "password": null,
     "database": "bazar_db",
     "host": "127.0.0.1",
     "dialect": "mysql",
@@ -13,14 +13,14 @@ module.exports = {
   "test": {
     "username": "root",
     "password": 'vamos-2021',
-    "database": "bazar_db",
+    "database": null,
     "host": "127.0.0.1",
     "port":"3306",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
-    "password": 'vamos-2021',
+    "password": null,
     "database": "bazar_db",
     "host": "127.0.0.1",
     "port":"3306",

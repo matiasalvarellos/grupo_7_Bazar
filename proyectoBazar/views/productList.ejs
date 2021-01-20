@@ -29,6 +29,9 @@
     <ul>
         <% products.forEach(function(product){ %>
         <li>
+            ID: <%= product.id %> -
+        </li>
+        <li>
             Name: <%= product.name %> -
         </li>
         <li>
@@ -40,9 +43,7 @@
         <li>
             Stock: <%= product.stock %> -
         </li>
-        <li>
-            ID: <%= product.id %> -
-        </li>
+        
         <li>
             Description : <%= product.description %>- 
         </li>

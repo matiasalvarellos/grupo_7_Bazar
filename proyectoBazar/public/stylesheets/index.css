@@ -19,11 +19,12 @@ padding:0;}
     margin:0;
      padding:0;
   }
-.imgSlider { position:relative; margin:0; padding:0; width:34%; height:40vh;
+*.imgSlider { position:relative; margin:0; padding:0; width:34%; height:40vh;
    background-size:cover; background-repeat:no-repeat; background-position:center;}
   .principal1 {background-image:url("../images/cocina1.jpeg");}
   .principal2 {background-image:url("../images/cristaleria1.jpg"); }
   .principal3 {background-image:url("../images/porcelana1.jpg"); }
+  
 
   .mas-vendidos{ position:relative;
     width:100%; display:flex; 

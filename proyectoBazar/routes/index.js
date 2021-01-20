@@ -15,4 +15,5 @@ router.get("/detalle/:id", peliculasController.detalle);
 router.get("/edit/:id", peliculasController.edit);
 router.post("/edit/:id", peliculasController.update); */
 
+
 module.exports = router;

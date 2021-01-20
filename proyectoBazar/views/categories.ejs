@@ -1,0 +1,65 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Bazar e commerce </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel='stylesheet' href='/stylesheets/style.css' />-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+   
+    <link rel="stylesheet" href="../stylesheets/index.css">
+    <link rel="stylesheet" href="../stylesheets/footer-menu.css">
+
+     <link rel="stylesheet" href="/stylesheets/productAdd.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    
+<body>
+<%- include("partials/header") %>   
+
+<section class="userAccount-section">
+
+ 
+
+        <%- include("partials/adminMenu") %>
+
+
+<div class="dashboard">
+
+    <div>
+        <h1 class="productEdit-title dashboardTitle">ABM DE CATEGORIA</h1>
+        <form action="/admin/categories"  method="POST">
+            <div class="formulario">
+                    <div class="producto">
+                        <p>Categoria</p> 
+                        <input type="text" name="name" placeholder="Colocar el nombre de la categoria">                    
+                       
+            <div class="botones">
+                <button type="submit">Agregar</button>
+            </div>
+        </form>     
+    </div>
+    <% if (typeof alert != "undefined") { %>
+        <script>Swal.fire({
+            position: 'top-middle',
+            icon: 'success',
+            title: 'Categoria cargada con exito!',
+            showConfirmButton: false,
+            timer: 1500
+          })</script>
+    <% } %>
+
+   
+</div>
+
+
+
+
+</section>
+
+<%- include("partials/footer") %>
+
+</body>
+<script src="/js/productCreate.js">
+          
+</script>
