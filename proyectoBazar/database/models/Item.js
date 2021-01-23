@@ -1,20 +1,20 @@
 module.exports = function (sequelize, dataTypes) {
         
-    const Order = sequelize.define("Order", {
+    const Item = sequelize.define("Item", {
         total_price: dataTypes.DOUBLE
     });
 
-    Order.associate = (models) => {
-        Order.hasMany(models.Item, {
-            as: 'items',
+    Item.associate = (models) => {
+        Item.belongsTo(models.Order, {
+            as: 'order',
             foreignKey: 'order_id'
         });
         
-        Order.belongsTo(models.User, {
+        Item.belongsTo(models.User, {
             as: 'user',
             foreignKey: 'user_id' 
         });
     };
     
-    return Order;
+    return Item;
 }

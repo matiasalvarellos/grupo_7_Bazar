@@ -3,11 +3,12 @@ module.exports=function(sequelize, dataTypes){
       name: dataTypes.STRING,
     });
 
-    Image.associate = model => {
-        Image.belongsTo(model.Product, {
+    Image.associate = (models) => {
+        Image.belongsTo(models.Product, {
             as: "product",
             foreignKey: "product_id"
         });
     };
+
     return Image;
 }
