@@ -1,20 +1,13 @@
 module.exports=function(sequelize, dataTypes){
-    let alias="Image";
-    let cols={ 
-       name: dataTypes.STRING,
-       product_id: dataTypes.INTEGER
-    }
-    let config={
-        tableName:'images',
-        
-    }
-    let Image = sequelize.define(alias, cols, config);
+    const Image = sequelize.define("Image", {
+      name: dataTypes.STRING,
+    });
 
-    Image.associate = (model => {
+    Image.associate = model => {
         Image.belongsTo(model.Product, {
             as: "product",
             foreignKey: "product_id"
         });
-    });
+    };
     return Image;
 }
