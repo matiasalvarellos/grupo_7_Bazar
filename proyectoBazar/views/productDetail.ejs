@@ -21,11 +21,11 @@
           <aside>
             <div id="content-wrapper">
               <div class="column">
-                <img id=featured src="/images/uploadProducts/<%= productFound.image[0] %>">
+                <img id=featured src="/images/uploadProducts/<%= images[0].name %>">
                 <div id="slide-wrapper">
                   <img id="slideLeft" class="arrow" src="/images/arrow-left.png">
-                  <div id="slider"> <% for (i=0; i<productFound.image.length; i++) { %>
-                    <img class="thumbnail" src="/images/uploadProducts/<%= productFound.image[i] %>">
+                  <div id="slider"> <% for (i=0; i<images.length; i++) { %>
+                    <img class="thumbnail" src="/images/uploadProducts/<%= images[i].name %>">
                     <% } %>
                   </div>
                 
@@ -82,15 +82,13 @@
               <% if (productFound.discount == "0") { %>
                 <h2><%= "$ " + precio + " " %>Precio</h2>
               <% } else { %>
-              <h2 class = "precioOff"><%= "$ " + precio + " " %>Precio</h2><h2 class = "descuento"><%="% " + productsFound.discount + " " %>Descuento</h2><h2 class = "precioOn"><%= "$ " + precioDescuento + " " %>Precio con descuento</h2>
+              <h2 class = "precioOff"><%= "$ " + precio + " " %>Precio</h2><h2 class = "descuento"><%="% " + productFound.discount + " " %>Descuento</h2><h2 class = "precioOn"><%= "$ " + precioDescuento + " " %>Precio con descuento</h2>
               <% } %>
               <p class="label"><label for="compra"></label>Cantidad</p>
               <input type="number" name="cantidad" id="compra">
               <p class="label"><label for="color"></label>Color</p>
               <select name="Color" id="compra">
-                <% for (var  i = 0; i<productFound.color.length; i++){ %>
-                <option value="<% productFound.color[i] %>"><%= productFound.color[i] %></option>
-                <% } %>
+                
               </select><br>
               <button type="submit">AGREGAR AL CARRITO</button>
             </form>

@@ -27,36 +27,37 @@
     <br>
     <ul>
         <% products.forEach(function(product){ %>
-        <li>
-            Name: <%= product.name %> -
-        </li>
-        <li>
-            Price: <%= product.price %> -
-        </li>
-        <li>
-            Marca: <%= products.marca %> -
-        </li>
-        <li>
-            Stock: <%= product.stock %> -
-        </li>
-        <li>
-            ID: <%= product.id %> -
-        </li>
-        <li>
-            Description : <%= product.description %>- 
-        </li>
-            <% if(usuario.admin == 1){ %>
-                <a href="/productos/edit/<%= product.id %>">EDITAR</a> -
-                <form method="POST" action="/productos/destroy/<%= product.id %>">
-                    <button type="submit">Borrar</button>
-                </form>
-            <% } %>
-        </li>
-        <br>
-        <hr>
-        <% }); %>
+        <a href="/productos/detail/<%= product.id %>">
+            <li>
+                Name: <%= product.name %> -
+            </li>
+            <li>
+                Price: <%= product.price %> -
+            </li>
+            <li>
+                Marca: <%= products.marca %> -
+            </li>
+            <li>
+                Stock: <%= product.stock %> -
+            </li>
+            <li>
+                ID: <%= product.id %> -
+            </li>
+            <li>
+                Description : <%= product.description %>- 
+            </li>
+                <% if(usuario.admin == 1){ %>
+                    <a href="/productos/edit/<%= product.id %>">EDITAR</a> -
+                    <form method="POST" action="/productos/destroy/<%= product.id %>">
+                        <button type="submit">Borrar</button>
+                    </form>
+                <% } %>
+            </li>
+            <br>
+            <hr>
+        </a>    
+        <% }) %>
     </ul>
- 
 
 </div>
 

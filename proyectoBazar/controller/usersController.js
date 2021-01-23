@@ -32,9 +32,7 @@ const users = {
     processRegistro:(req, res, next) => {
         const errores = validationResult(req);
         if(!errores.isEmpty()){
-            console.log(errores);
             return res.render("register", {
-               
                 errores: errores.errors,
                 old: req.body
             })
@@ -48,7 +46,6 @@ const users = {
             avatar: req.file.filename,
             admin:0
         }).then(function(){
-            console.log(db.users);
             return res.redirect("/");
         })
     },

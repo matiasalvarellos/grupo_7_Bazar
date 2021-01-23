@@ -41,15 +41,18 @@ producto={
             })
         })
     },        
-    detalle: function (req, res, next ){
-        db.Product.findByPk(req.params.id)
-        .then(function(productFound){
-            if (productFound) {
-                res.render("productDetail", { productFound, categories});
-            }else{
-                res.render("productDetail", { alert: true });
-            }
-        })
+    detalle: async function (req, res, next ){
+        let images = await db.Image.findAll({
+                where:{
+                    product_id: req.params.id
+                }   
+            })
+        let productFound = db.Product.findByPk(req.params.id)
+        if(productFound){
+            res.render("productDetail", { productFound, images});
+        }else{
+            res.render("productDetail", { alert: true });
+        }
     },
     edit: function(req, res, next){
         let categories = db.Category.findAll({
