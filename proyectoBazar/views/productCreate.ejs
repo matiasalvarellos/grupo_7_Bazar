@@ -46,7 +46,20 @@
                         <input type="file" name="image" multiple>
                         <p>Description:</p>
                         <textarea name="description"></textarea>
-                        
+                        <h2>Seleccionar a que categoria pertene:</h2>
+                        <% categories.forEach(category => { %>
+                            <h3> <%= category.name %> :</h3>
+                            <ul>
+                                <% category.subcategories.forEach( subcategory=> { %>
+                                    <li>
+                                        <input type="radio" name="subcategories" value="<%= subcategory.id %>">
+                                        <%= subcategory.name %>
+                                        <label for="subcategories"></label>
+                                    </li>
+                                <% }) %> 
+                            </ul>   
+                        <% }) %> 
+                    </div>    
             </div>
             <div class="botones">
                 <button type="submit">Agregar</button>

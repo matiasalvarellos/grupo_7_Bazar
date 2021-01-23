@@ -1,11 +1,12 @@
 module.exports=function(sequelize, dataTypes){
     let alias="Image";
-    let cols={
+    let cols={ 
        name: dataTypes.STRING,
        product_id: dataTypes.INTEGER
     }
     let config={
-        timestamps:true
+        tableName:'images',
+        
     }
     let Image = sequelize.define(alias, cols, config);
 

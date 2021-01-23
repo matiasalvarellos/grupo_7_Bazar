@@ -8,7 +8,8 @@ module.exports=function(sequelize, dataTypes){
         description: dataTypes.STRING,
         cost: dataTypes.INTEGER,
         markup: dataTypes.INTEGER,
-        discount:dataTypes.INTEGER
+        discount:dataTypes.INTEGER,
+        subcategory_id: dataTypes.INTEGER
     }
     let Product=sequelize.define(alias, cols);
 
@@ -18,6 +19,5 @@ module.exports=function(sequelize, dataTypes){
             foreignKey: "product_id"
         })
     })
-    
     return Product;
 }

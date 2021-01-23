@@ -16,11 +16,10 @@
 <%- include("partials/header") %>   
 
 <section class="userAccount-section">
-
  
-
+    <% if(usuario){ %>
         <%- include("partials/adminMenu") %>
-
+    <% } %> 
 
 <div class="dashboard">
 
@@ -46,11 +45,12 @@
         <li>
             Description : <%= product.description %>- 
         </li>
-
-            <a href="/productos/edit/<%= product.id %>">EDITAR</a> -
-            <form method="POST" action="/productos/destroy/<%= product.id %>">
-                <button type="submit">Borrar</button>
-            </form>
+            <% if(usuario.admin == 1){ %>
+                <a href="/productos/edit/<%= product.id %>">EDITAR</a> -
+                <form method="POST" action="/productos/destroy/<%= product.id %>">
+                    <button type="submit">Borrar</button>
+                </form>
+            <% } %>
         </li>
         <br>
         <hr>

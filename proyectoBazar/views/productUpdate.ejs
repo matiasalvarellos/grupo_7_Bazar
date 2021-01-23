@@ -31,12 +31,8 @@
                 <input type="text" name="name" value="<%= product.name %>">
                 <p>Cantidad de stock</p>
                 <input type="number" name="stock" value="<%= product.stock %>">
-                <p>Color</p>
-                <input type="text" name="color" value="<%= product.color %> ">
                 <p>Descripcion del producto</p>
                 <textarea name="description" cols="50" rows="10" ><%= product.description %> </textarea>
-                <p>Imagenes</p>
-                <input type="file" name="image">
             </div>
             <div class="contable">
                 <p>Costo</p>
@@ -48,9 +44,6 @@
             </div>
             <p class="CheckList-title">Categorías</p>
           <div class="CheckList">
-            
-              <% for (let i=0; i <8; i++) { let inputValue="categoria"+(i+1);let isChecked= product.categorias.find(function(category) { return category== inputValue })%> <label class="checkLabel"> <input class="checkInput" type="checkbox" name="categoria" value=<%=inputValue%> <% if(isChecked!=null) {%> checked <%}%> > Categoria <%= i+1 %> </label>    
-            <%} %>
 
           </div>
            

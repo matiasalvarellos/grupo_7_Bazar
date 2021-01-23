@@ -17,8 +17,7 @@ const users = {
         }
         db.User.findOne({
             where: {
-                email: req.body.email
-            }
+                email: req.body.email }
         }).then( usuarioEncontrado => {
             req.session.usuarioLogueado = usuarioEncontrado;
             if(req.body.recordame){
@@ -33,7 +32,9 @@ const users = {
     processRegistro:(req, res, next) => {
         const errores = validationResult(req);
         if(!errores.isEmpty()){
+            console.log(errores);
             return res.render("register", {
+               
                 errores: errores.errors,
                 old: req.body
             })
@@ -44,9 +45,11 @@ const users = {
             email: req.body.email,
             password: bcrypt.hashSync(req.body.password, 10),
             type_customer: req.body.type_customer,
-            avatar: req.file.filename
+            avatar: req.file.filename,
+            admin:0
         }).then(function(){
-            return res.redirect("/users/login");
+            console.log(db.users);
+            return res.redirect("/");
         })
     },
     logout: function(req, res){

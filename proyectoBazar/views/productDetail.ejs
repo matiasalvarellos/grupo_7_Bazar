@@ -17,15 +17,15 @@
   <body>
     <%- include("partials/header") %>
     <div class="container">
-      <% if (typeof productsFound != "undefined") { %>
+      <% if (typeof productFound != "undefined") { %>
           <aside>
             <div id="content-wrapper">
               <div class="column">
-                <img id=featured src="/images/uploadProducts/<%= productsFound.image[0] %>">
+                <img id=featured src="/images/uploadProducts/<%= productFound.image[0] %>">
                 <div id="slide-wrapper">
                   <img id="slideLeft" class="arrow" src="/images/arrow-left.png">
-                  <div id="slider"> <% for (i=0; i<productsFound.image.length; i++) { %>
-                    <img class="thumbnail" src="/images/uploadProducts/<%= productsFound.image[i] %>">
+                  <div id="slider"> <% for (i=0; i<productFound.image.length; i++) { %>
+                    <img class="thumbnail" src="/images/uploadProducts/<%= productFound.image[i] %>">
                     <% } %>
                   </div>
                 
@@ -71,15 +71,15 @@
           </aside>
           <main>
             <form action="" id="formulario">
-              <h1><%= productsFound.name %></h1>
+              <h1><%= productFound.name %></h1>
               <br>
               <!--Costo por Markup = Precio Final-->
-              <% var ganancia = (productsFound.cost * productsFound.markup)/100 %>
-              <% var precio = Number(ganancia) + Number(productsFound.cost) %>
+              <% var ganancia = (productFound.cost * productFound.markup)/100 %>
+              <% var precio = Number(ganancia) + Number(productFound.cost) %>
               <!--Descuento - Precio = Precio Final con Descuento-->
-              <% var descuento = (Number(precio) * productsFound.discount)/100 %>
+              <% var descuento = (Number(precio) * productFound.discount)/100 %>
               <% var precioDescuento = Math.round(Number(precio) - Number(descuento)) %>
-              <% if (productsFound.discount == "0") { %>
+              <% if (productFound.discount == "0") { %>
                 <h2><%= "$ " + precio + " " %>Precio</h2>
               <% } else { %>
               <h2 class = "precioOff"><%= "$ " + precio + " " %>Precio</h2><h2 class = "descuento"><%="% " + productsFound.discount + " " %>Descuento</h2><h2 class = "precioOn"><%= "$ " + precioDescuento + " " %>Precio con descuento</h2>
@@ -88,21 +88,21 @@
               <input type="number" name="cantidad" id="compra">
               <p class="label"><label for="color"></label>Color</p>
               <select name="Color" id="compra">
-                <% for (var  i = 0; i<productsFound.color.length; i++){ %>
-                <option value="<% productsFound.color[i] %>"><%= productsFound.color[i] %></option>
+                <% for (var  i = 0; i<productFound.color.length; i++){ %>
+                <option value="<% productFound.color[i] %>"><%= productFound.color[i] %></option>
                 <% } %>
               </select><br>
               <button type="submit">AGREGAR AL CARRITO</button>
             </form>
             <% if(usuario.admin == 1){ %>
-              <form method="POST" action="/productos/destroy/<%= productsFound.id %>">
+              <form method="POST" action="/productos/destroy/<%= productFound.id %>">
                 <button type="submit">Borrar</button>
               </form>
-              <a href="/productos/edit/<%= productsFound.id %>">Editar</a>
+              <a href="/productos/edit/<%= productFound.id %>">Editar</a>
             <% } %> 
             <div id="descripcion">
               <h3>Descripción</h3><br>
-              <p><%= productsFound.description %></p>
+              <p><%= productFound.description %></p>
             </div>
           </main>
       <% } %>
