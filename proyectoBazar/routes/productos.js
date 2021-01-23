@@ -20,7 +20,7 @@ router.get("/detail/:id", productoController.detalle );
 /*Formulario de edición de productos-Karla*/
 router.get("/edit/:id", authMiddlewares, adminMiddleware, productoController.edit);
 /*Acción de edición (a donde se envía el formulario)*/
-router.post("/edit/:id", upload.any(), productoController.update);
+router.post("/edit/:id", productoController.update);
 
 /*Formulario de borrar de productos-Flor*/
 router.post("/destroy/:id",  productoController.delete);

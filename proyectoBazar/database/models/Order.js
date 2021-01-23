@@ -1,7 +1,7 @@
 module.exports = function (sequelize, dataTypes) {
         
     const Order = sequelize.define("Order", {
-        total_price: dataTypes.DOUBLE
+        total_price: dataTypes.INTEGER
     });
 
     Order.associate = (models) => {

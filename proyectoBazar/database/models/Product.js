@@ -5,10 +5,10 @@ module.exports=function(sequelize, dataTypes){
         name: dataTypes.STRING,
         stock: dataTypes.INTEGER,
         description: dataTypes.TEXT,
-        cost: dataTypes.DOUBLE,
+        cost: dataTypes.INTEGER,
         markup: dataTypes.INTEGER,
         discount: dataTypes.INTEGER,
-        price: dataTypes.DOUBLE
+        price: dataTypes.INTEGER
     });
 
     Product.associate = (models) => {
