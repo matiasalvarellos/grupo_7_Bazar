@@ -42,13 +42,22 @@
                 <p>Descuento</p>
                 <input type="number" name="discount" value="<%=product.discount%>"> 
             </div>
-            <p class="CheckList-title">Categorías</p>
-          <div class="CheckList">
-
-          </div>
-           
-
-          </div>
+            <h2>Seleccionar a que categoria pertene:</h2>
+            <% categories.forEach(category=> { %>
+                <h3>
+                    <%= category.name %> :
+                </h3>
+                <ul>
+                    <% category.subcategories.forEach( subcategory=> { %>
+                        <li>
+                            <input type="radio" name="subcategories" value="<%= subcategory.id %>">
+                            <%= subcategory.name %>
+                                <label for="subcategories"></label>
+                        </li>
+                        <% }) %>
+                </ul>
+                <% }) %>
+        
           
         </div>
         <div class="botones">

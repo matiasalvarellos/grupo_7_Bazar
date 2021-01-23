@@ -45,18 +45,23 @@ producto={
         db.Product.findByPk(req.params.id)
         .then(function(productFound){
             if (productFound) {
-                res.render("productDetail", { productFound });
+                res.render("productDetail", { productFound, categories});
             }else{
                 res.render("productDetail", { alert: true });
             }
         })
     },
     edit: function(req, res, next){
-        db.Product.findByPk(req.params.id).then(product => {
-            if(product){
-                res.render("productUpdate", { product })
-            }else{
-                res.render("productUpdate", { alert: true});
+        let categories = db.Category.findAll({
+            include: [{ association: "subcategories" }]
+        })
+        let product = db.Product.findByPk(req.params.id);
+        Promise.all([categories, product])
+        .then(function([categories, product]){
+            if (product) {
+                res.render("productUpdate", { product, categories });
+            } else {
+                res.render("productUpdate", { alert: true });
             }
         })
     },
@@ -70,6 +75,8 @@ producto={
             cost: req.body.cost,
             markup: req.body.markup,
             discount: req.body.discount,
+            subcategory_id: req.body.subcategories,
+
         }).then(function(){
             res.redirect("/productos")
         })
