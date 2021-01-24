@@ -21,11 +21,11 @@
           <aside>
             <div id="content-wrapper">
               <div class="column">
-                <img id=featured src="/images/uploadProducts/<%= images[0].name %>">
+                <img id=featured src="/images/uploadProducts/<%= productFound.images[0].name %>">
                 <div id="slide-wrapper">
                   <img id="slideLeft" class="arrow" src="/images/arrow-left.png">
-                  <div id="slider"> <% for (i=0; i<images.length; i++) { %>
-                    <img class="thumbnail" src="/images/uploadProducts/<%= images[i].name %>">
+                  <div id="slider"> <% for (i=0; i<productFound.images.length; i++) { %>
+                    <img class="thumbnail" src="/images/uploadProducts/<%= productFound.images[i].name %>">
                     <% } %>
                   </div>
                 
@@ -88,7 +88,11 @@
               <input type="number" name="cantidad" id="compra">
               <p class="label"><label for="color"></label>Color</p>
               <select name="Color" id="compra">
-                
+                <% for (var i=0; i<productFound.colors.length; i++){ %>
+                  <option value="<% productFound.colors[i].id %>">
+                    <%= productFound.colors[i].name %>
+                  </option>
+                <% } %>
               </select><br>
               <button type="submit">AGREGAR AL CARRITO</button>
             </form>

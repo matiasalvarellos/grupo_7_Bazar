@@ -27,6 +27,12 @@
                     <input type="text" name="code" value="<%= product.code %> " >
                     <p>Producto</p>
                     <input type="text" name="name" value="<%= product.name %>" >
+                    <p>Colores del producto:</p>
+                    <%colors.forEach(color=>{ %>
+                        <p><input type="checkbox" name="colors" value="<%= color.id %>" <%= product.colorsId.includes(color.id) ? "checked" : "" %> >
+                            <%= color.name %>
+                        </p>
+                    <% }) %>
                     <p>Cantidad de stock</p>
                     <input type="number" name="stock" value="<%= product.stock %>">
                     <p>costo:</p>
@@ -45,13 +51,14 @@
                         <ul>
                             <% category.subcategories.forEach( subcategory=> { %>
                                 <li>
-                                    <input type="radio" name="subcategories" value="<%= subcategory.id %>">
+                                    <input type="radio" name="subcategories" value="<%= subcategory.id %>" 
+                                    <%= product.subcategory_id == subcategory.id ? "checked" : "" %> >
                                     <%= subcategory.name %>
                                         <label for="subcategories"></label>
                                 </li>
-                                <% }) %>
+                            <% }) %>
                         </ul>
-                        <% }) %>
+                    <% }) %>
                 </div>
             </div>
             <div class="botones">

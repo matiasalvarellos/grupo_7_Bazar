@@ -17,7 +17,8 @@ const users = {
         }
         db.User.findOne({
             where: {
-                email: req.body.email }
+                email: req.body.email 
+            }
         }).then( usuarioEncontrado => {
             req.session.usuarioLogueado = usuarioEncontrado;
             if(req.body.recordame){
@@ -46,7 +47,7 @@ const users = {
             avatar: req.file.filename,
             admin:0
         }).then(function(){
-            return res.redirect("/");
+            return res.redirect("/users/login");
         })
     },
     logout: function(req, res){

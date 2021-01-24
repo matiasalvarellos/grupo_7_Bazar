@@ -34,6 +34,13 @@
                         <input type="text" name="code" placeholder="Colocar el codigo del producto">
                         <p>Producto</p> 
                         <input type="text" name="name" placeholder="Colocar el nombre del producto">
+                        
+                        <p>Con colores:</p>
+                        <%colors.forEach(color =>{ %>
+                            <p><input type="checkbox" name="colors" value="<%= color.id %>"><%= color.name %></p>
+                        <% }) %>
+
+                        <hr> 
                         <p>Cantidad de stock</p> 
                         <input type="number" name="stock" placeholder="Ingrese la cantidad de stock">
                         <p>costo:</p>
