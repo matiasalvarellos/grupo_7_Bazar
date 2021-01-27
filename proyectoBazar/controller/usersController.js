@@ -17,7 +17,7 @@ const users = {
         }
         db.User.findOne({
             where: {
-                email: req.body.email
+                email: req.body.email 
             }
         }).then( usuarioEncontrado => {
             req.session.usuarioLogueado = usuarioEncontrado;
@@ -44,7 +44,8 @@ const users = {
             email: req.body.email,
             password: bcrypt.hashSync(req.body.password, 10),
             type_customer: req.body.type_customer,
-            avatar: req.file.filename
+            avatar: req.file.filename,
+            admin:0
         }).then(function(){
             return res.redirect("/users/login");
         })

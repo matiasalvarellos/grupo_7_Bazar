@@ -1,22 +1,17 @@
 module.exports= function(sequelize, DataTypes){
-    let alias="Color";
-    let cols={
-        name: DataTypes.STRING    
-    };
-    let config={
-        timestamps:false,
-    }
-    let Color=sequelize.define(alias, cols, config);
+    const Color = sequelize.define("Color", {
+        name: DataTypes.STRING,
+        hexadecimal: DataTypes.STRING
+    });
 
-    Color.associate= (model => {
-        Color.belongsToMany(model.Product,{
-            as:"products",
-            through:"product_color",
-            foreignKey: "color_id",
-            otherKey: "product_id",
-            timestamps: false
-        })
-    })
+    Color.associate = (models) => {
+        Color.belongsToMany(models.Product, {
+            as: 'products',
+            through: 'product_color',
+            foreignKey: 'color_id',
+            otherKey: 'product_id'
+        });
+    };
     
     return Color;
 }
