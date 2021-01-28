@@ -1,8 +1,9 @@
 module.exports=function(sequelize, dataTypes){
 
     const Subcategory = sequelize.define("Subcategory", {
-        name: dataTypes.STRING
+        name: dataTypes.STRING,
     });
+    
 
     Subcategory.associate = (models) => {
         Subcategory.belongsTo(models.Category, {
@@ -11,5 +12,6 @@ module.exports=function(sequelize, dataTypes){
         })
     };
 
+   
     return Subcategory;
 }

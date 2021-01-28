@@ -11,8 +11,10 @@ const productoRouter = require("./routes/productos");
 const recordameMiddleware = require("./middlewares/recordameMiddleware");
 const localsMiddle = require('./middlewares/localsMiddle');
 /*const backOfficeRouter= require("./routes/backOffice");*/
+const adminRouter = require('./routes/admin');
 
 const app = express();
+
 
 
 // view engine setup
@@ -38,6 +40,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use("/productos" ,productoRouter);
 /*app.use("/backOffice" ,backOfficeRouter);*/
+app.use("/admin" ,adminRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
