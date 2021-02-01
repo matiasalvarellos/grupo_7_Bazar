@@ -1,43 +1,83 @@
 <header>
- 
-    <div class="boxHeader1">
-      <a href="/">
-  
-      <img src="/images/logo.png" alt="logo" width="90%" class="headerLogo"> </a>
-      <i class="fas fa-bars icon mobile-menu"></i> 
-  
+  <nav class="navbar">
+    <div class="menu-top">
+      <div class="menu-left container-logo">
+        <a href="/">
+          <img src="/images/logo.png" alt="">
+        </a>
+      </div>
+      <div class="burger-button">
+        <i class="fas fa-bars" id="burger-button"></i>
+      </div>
+      <div class="menu-right" id="menu">
+        <div class="menu-right-l">
+          <ul class="menu-list">
+            <div class="menu-item">
+              <a href="/productos">
+                <li>Productos</li>
+              </a>
+            </div>
+            <div class="menu-item">
+              <a href="">
+                <li>Sobre nosotros</li>
+              </a>
+            </div>
+            <% if (usuario && usuario.admin == 1) { %>
+              <div class="menu-item">
+                <a href="/users/account">
+                  <li>Admin</li>
+                </a>
+              </div>
+            <% } %>
+          </ul>
+        </div>
+        <div class="menu-right-r">
+          <ul class="menu-list">
+
+            <% if (usuario) { %>
+
+            <div class="menu-item">
+              <a href="">
+                <li>
+                  <div class="container-avatar">
+                    <img src="/images/avatares/<%= usuario.avatar%>" alt="Imagen del usuario">
+                  </div>
+                </li>
+              </a>
+            </div>
+            <div class="menu-item">
+              <li>
+                <form class="form-logout" action="/users/logout" method="post">
+                  <button type="submit">Cerrar sesión</button>
+                </form>
+              </li>
+            </div>
+            
+            <% } else { %>
+
+            <div class="menu-item">
+              <a href="/users/login">
+                <li>Iniciar sesión</li>
+              </a>
+            </div>
+            <div class="menu-item">
+              <a href="/users/register">
+                <li>Registrarse</li>
+              </a>
+            </div>
+
+            <% } %>
+
+          </ul>
+        </div>
+      </div>
     </div>
-   <div class="boxHeader2">
-  
-    <nav class="navHeaderTop">
-      <ul>
-        <!--<li> <a href=#> Pickup & Delivery </a> </li>-->
-        <li> <a href="/seguimiento"> Tracking </a></li>
-        <li> <a href="/pago"> Formas de pago </a></li>
-        <li> <a href="/users/account"> Mi cuenta </a></li>
-        <li> <a href="/giftCard"> Gift Card </a></li>
-      </ul>
-    </nav>
-  
-    <div class="searchProducts">
-      <input type="text" id="search" name="product">
-      <label for="search"> Buscar </label><i
-        class=" iconSearch fas fa-search"></i>
+    <div class="menu-bottom">
+      <div class="search-container">
+        <form class="form-search" action="" method="get">
+          <input type="text" class="input" placeholder="¿Qué necesitas hoy?">
+        </form>
+      </div>
     </div>
-    <div class="boxAcces">
-      <a href="/productos/carrito">
-        <i class="fas fa-cart-arrow-down icon"></i>
-      </a>
-      <% if(usuario){ %>
-        <form method="POST" action="/users/logout">
-          <button type="submit" class="logButton">Log Out</button>
-        </form> <br>
-        <p class="userNameHeader"><%=usuario.name%></p>
-      <% }else{ %>
-      <a href="/users/login">
-        <i class="far fa-user icon"></i>
-      </a>
-      <% } %>
-    </div>
-  </div>
-  </header>
+  </nav>
+</header>

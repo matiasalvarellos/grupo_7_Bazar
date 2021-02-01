@@ -4,9 +4,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--<link rel='stylesheet' href='/stylesheets/style.css' />-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="/stylesheets/header.css">
+    <link rel="stylesheet" href="/stylesheets/footer.css">
+    <script src="/js/open-menu.js"></script>
     <link rel="stylesheet" href="/stylesheets/productAdd.css">
-    <link rel="stylesheet" href="../stylesheets/index.css">
-    <link rel="stylesheet" href="../stylesheets/footer-menu.css">
+    <link rel="stylesheet" href="/stylesheets/index.css">
     
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
@@ -34,21 +36,46 @@
                         <input type="text" name="code" placeholder="Colocar el codigo del producto">
                         <p>Producto</p> 
                         <input type="text" name="name" placeholder="Colocar el nombre del producto">
+                        
+                        <p>Con colores:</p>
+                        <%colors.forEach(color =>{ %>
+                            <p><input type="checkbox" name="colors" value="<%= color.id %>"><%= color.name %></p>
+                        <% }) %>
+
+                        <hr> 
                         <p>Cantidad de stock</p> 
+<<<<<<< HEAD
                         <input type="number" name="stock" placeholder="Ingrese la cantidad de stock"> 
 
                         <p>Descripcion del producto</p>
                         <textarea name="description" cols="50" rows="10"></textarea>
                         <p>Imagenes</p>
+=======
+                        <input type="number" name="stock" placeholder="Ingrese la cantidad de stock">
+                        <p>costo:</p>
+                        <input type="number" name="cost">
+                        <p>Markup:</p>
+                        <input type="number" name="markup">
+                        <p>discount:</p>
+                        <input type="number" name="discount">
+                        <p>Agregar Imagenes:</p>
+>>>>>>> d0c743d0bfcc30d95ccb6af721daa938b9e2d75a
                         <input type="file" name="image" multiple>
-                    </div>
-                    <div class="contable">
-                        <p>Costo</p>
-                        <input type="number" name="cost" placeholder="Ingrese el costo del producto">
-                        <p>Markup</p>
-                        <input type="number" name="markup" placeholder="Ingrese la descripcion del producto">
-                        <p>Descuento</p>
-                        <input type="number" name="discount" placeholder="Ingrese el descuento">
+                        <p>Description:</p>
+                        <textarea name="description"></textarea>
+                        <h2>Seleccionar a que categoria pertenece:</h2>
+                        <% categories.forEach(category => { %>
+                            <h3> <%= category.name %> :</h3>
+                            <ul>
+                                <% category.subcategories.forEach( subcategory=> { %>
+                                    <li>
+                                        <input type="radio" name="subcategories" value="<%= subcategory.id %>">
+                                        <%= subcategory.name %>
+                                        <label for="subcategories"></label>
+                                    </li>
+                                <% }) %> 
+                            </ul>   
+                        <% }) %> 
                     </div>    
             </div>
             <div class="botones">

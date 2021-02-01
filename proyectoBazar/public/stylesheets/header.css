@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Noto Sans KR', sans-serif;
+  /* border: solid black 1px; */
+}
+
+.navbar {
+  background: #7E675E;
+}
+
+
+.block {
+  display: block;
+}
+
+.menu-top {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.menu-top li {
+  color: rgb(226, 226, 226);
+}
+
+.menu-top li:hover {
+  color: rgb(255, 255, 255);
+  transition: 300ms;
+}
+
+.menu-left {
+  width: 20%;
+}
+
+.menu-right {
+  width: 80%;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-right-l, .menu-right-r {
+  display: flex;
+  align-items: center;
+}
+
+.menu-right-l {
+  width: 70%;
+}
+
+.menu-right-r {
+  width: 30%;
+}
+
+.menu-right-l, .menu-right-r {
+  border-left: rgb(221, 143, 143) 1px solid;
+}
+
+.menu-bottom {
+  border-top: rgba(221, 143, 143, 0.904) 1px solid;
+}
+
+.menu-list{
+  display: flex;
+}
+
+.menu-list {
+  align-items: center;
+}
+
+.menu-right-l ul {
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.menu-right-l ul li {
+  padding: 0 30px;
+}
+
+.menu-right-r ul {
+  width: 100%;
+  justify-content: space-around;
+}
+
+.menu-left {
+  display: flex;
+  justify-content: center;
+}
+
+.container-logo {
+  padding: 10px;
+}
+
+.container-logo img {
+  width: 160px;
+}
+
+
+/* Menu-bottom */
+
+.menu-bottom {
+  text-align: center;
+  padding: 10px;
+}
+
+.form-search input {
+  height: 30px;
+  width: 50%;
+}
+
+.form-search input {
+  padding-left: 10px;
+}
+
+.burger-button {
+  text-align: center;
+  font-size: 30px;
+  margin: 10px auto;
+  display: none;
+}
+
+.form-logout  button{
+  background: none;
+  border: none;
+  font-size: 16px;
+  color:  rgb(226, 226, 226);
+}
+
+.container-avatar img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+@media (max-width:900px) {
+  .menu-top {
+    display: block;
+  }
+  
+  .menu-left {
+    margin: auto;
+  }
+  
+  .burger-button {
+    display: block;
+  }
+  
+  .logo-container {
+    width: 100%;
+  }
+  
+  .menu-right {
+    width: 100%;
+    border-top:  rgba(221, 143, 143, 0.904) 1px solid;
+    display: none;
+  }
+  
+  .menu-right-l, .menu-right-r {
+    width: 100%;
+    border-left: none;
+  }
+  
+  .menu-list {
+    display: block;
+  }
+  
+  .menu-list div li {
+    padding: 10px 30px;
+  }
+  
+  .form-search input {
+    width: 80%;
+  }
+
+  .block {
+    display: block;
+  }
+
+  .form-search input {
+    width: 90%;
+  }
+
+}

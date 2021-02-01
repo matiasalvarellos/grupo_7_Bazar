@@ -3,6 +3,9 @@ index={
 inicio: function(req,res,next){
         res.render("index"); },
 
+home: function(req,res,next){
+        res.render("home"); },
+
 seguimiento: function(req,res,next)
 { res.redirect('https://www.correoargentino.com.ar/')},
 

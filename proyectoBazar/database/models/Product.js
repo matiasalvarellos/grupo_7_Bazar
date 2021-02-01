@@ -1,21 +1,34 @@
 module.exports=function(sequelize, dataTypes){
-  
-    let alias="Product";
-    let cols={
+
+    const Product = sequelize.define("Product", {
         code: dataTypes.INTEGER,
         name: dataTypes.STRING,
         stock: dataTypes.INTEGER,
-        description: dataTypes.STRING,
+        description: dataTypes.TEXT,
         cost: dataTypes.INTEGER,
         markup: dataTypes.INTEGER,
-        discount:dataTypes.INTEGER
-    }
+        discount: dataTypes.INTEGER,
+        price: dataTypes.INTEGER
+    });
 
-    let config={
-        tableName:'products',
+    Product.associate = (models) => {
+        Product.hasMany(models.Image, {
+            as: "images",
+            foreignKey: "product_id"
+        });
 
-    }
-    let Product=sequelize.define(alias, cols, config);
-   
+        Product.belongsToMany(models.Color, {
+            as: 'colors',
+            through: 'product_color',
+            foreignKey: 'product_id',
+            otherKey: 'color_id'
+        });
+
+        Product.belongsTo(models.Subcategory, {
+            as: "subcategory",
+            foreignKey: "subcategory_id"
+        });
+    };
+    
     return Product;
 }

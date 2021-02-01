@@ -1,7 +1,7 @@
 const db = require("../database/models")
 function recordameMiddleware(req, res, next){ 
     if(!req.session.usuarioLogueado && req.cookies.recordame){
-        db.users.findOne({
+        db.User.findOne({
             where:{
                 id: req.cookies.recordame
             }
@@ -12,3 +12,4 @@ function recordameMiddleware(req, res, next){
     return next()    
 }
 module.exports= recordameMiddleware;
+

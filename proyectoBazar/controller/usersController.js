@@ -15,11 +15,11 @@ const users = {
                 old: req.body 
             });
         }
-        db.users.findOne({
+        db.User.findOne({
             where: {
-                email: req.body.email }
+                email: req.body.email 
+            }
         }).then( usuarioEncontrado => {
-            console.log(db);
             req.session.usuarioLogueado = usuarioEncontrado;
             if(req.body.recordame){
                 res.cookie("recordame", usuarioEncontrado.id, { maxAge: 60000 * 60 * 24 })
@@ -33,24 +33,21 @@ const users = {
     processRegistro:(req, res, next) => {
         const errores = validationResult(req);
         if(!errores.isEmpty()){
-            console.log(errores);
             return res.render("register", {
-               
                 errores: errores.errors,
                 old: req.body
             })
         };
-        db.users.create({
+        db.User.create({
             name: req.body.name,
             last_name: req.body.last_name,
             email: req.body.email,
             password: bcrypt.hashSync(req.body.password, 10),
             type_customer: req.body.type_customer,
             avatar: req.file.filename,
-            admin:1,
+            admin:0
         }).then(function(){
-            console.log(db.users);
-            return res.redirect("/");
+            return res.redirect("/users/login");
         })
     },
     logout: function(req, res){
