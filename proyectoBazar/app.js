@@ -8,6 +8,7 @@ const session = require("express-session");
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const productoRouter = require("./routes/productos");
+const apiRouter = require('./routes/api');
 const recordameMiddleware = require("./middlewares/recordameMiddleware");
 const localsMiddle = require('./middlewares/localsMiddle');
 /*const backOfficeRouter= require("./routes/backOffice");*/
@@ -37,6 +38,7 @@ app.use(localsMiddle);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use("/productos" ,productoRouter);
+app.use('/api', apiRouter);
 /*app.use("/backOffice" ,backOfficeRouter);*/
 
 // catch 404 and forward to error handler
