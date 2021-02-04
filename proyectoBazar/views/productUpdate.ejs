@@ -29,8 +29,29 @@
                     <input type="text" name="code" value="<%= product.code %> " >
                     <p>Producto</p>
                     <input type="text" name="name" value="<%= product.name %>" >
+                     <h2>Seleccionar a que categoria pertenece:</h2>
+                      <% categories.forEach(category=> {
+                         %>
+                        
+                        <label for="<%=category.id %>"> <input type="checkbox" name= "category" value="<%=category.id %>"
+                            <% if ( product.category.id == category.id ) {%> checked <%}%>  >  <%= category.name %> </label> 
+                        
+                       <!-- <ul>
+                            <% category.subcategories.forEach( subcategory=> { %>
+                                <li>
+                                    <input type="radio" name="subcategories" value="<%= subcategory.id %>" 
+                                    <%= product.subcategory_id == subcategory.id ? "checked" : "" %> >
+                                    <%= subcategory.name %>
+                                        <label for="subcategories"></label>
+                                </li>
+                            <% }) %>
+                        </ul> -->
+                    <% }) %> 
+                   
+                   
                     <p>Colores del producto:</p>
                     <%colors.forEach(color=>{ %>
+                      
                         <p><input type="checkbox" name="colors" value="<%= color.id %>" <%= product.colorsId.includes(color.id) ? "checked" : "" %> >
                             <%= color.name %>
                         </p>
@@ -45,31 +66,30 @@
                     <input type="number" name="discount" value="<%= product.discount %>">
                     <p>Description:</p>
                     <textarea name="description"><%= product.description %></textarea>
-                    <h2>Seleccionar a que categoria pertenece:</h2>
-                    <% categories.forEach(category=> { %>
-                        <h3>
-                            <%= category.name %> :
-                        </h3>
-                        <ul>
-                            <% category.subcategories.forEach( subcategory=> { %>
-                                <li>
-                                    <input type="radio" name="subcategories" value="<%= subcategory.id %>" 
-                                    <%= product.subcategory_id == subcategory.id ? "checked" : "" %> >
-                                    <%= subcategory.name %>
-                                        <label for="subcategories"></label>
-                                </li>
-                            <% }) %>
-                        </ul>
-                    <% }) %>
+                
+                  
                 </div>
             </div>
             <div class="botones">
                 <button type="submit">Editar</button>
             </div>
-        </form>
+          <p> Imágenes del producto</p>
+          <div class="update-images">
+          <% product.images.forEach(function(image) { let number=0%> 
+            <form name = "product-image-form" class="img-form" action="/producto/imageDelete/<%= image.id %>" method="post">
+            <label class="image-e-c" for="<%= image.id %>"> <input type="checkbox" name="productImage" id="<%=image.id%>" value="<%=image.id%>"> <img class="thumbnail-edit" src="/images/uploadProducts/<%=image.name %>" width="250px"> </label>
+            <input type="submit" value="borrar"> 
+            </form>
+
+            
+            <%;})%>  
+            </div>
     </div>
 </section>
 
 <%- include("partials/footer") %>
+<script> 
+let imagenes= <%= product.images %> ;
+console.log( imagenes)</script>
 
 </body>

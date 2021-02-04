@@ -70,6 +70,13 @@
     width:40%;
   }
 
+  .image-e-c{ width:40%}
+  .thumbnail-edit { object-fit:contain}
+  .update-images{ display:flex; 
+    flex-direction:row!important;
+    flex-wrap:wrap;}
+    .img-for{ margin:2%;}
+
   @media (max-width: 600px) {
 
     .formulario {

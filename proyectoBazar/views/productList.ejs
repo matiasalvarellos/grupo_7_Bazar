@@ -9,6 +9,7 @@
     <script src="/js/open-menu.js"></script>
     <link rel="stylesheet" href="/stylesheets/productAdd.css">
     <link rel="stylesheet" href="/stylesheets/index.css">
+    <link rel="stylesheet" href="/stylesheets/productDetail.css">
     
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
@@ -27,34 +28,65 @@
 
     <h1 class="dashboardTitle">Lista de Productos</h1>
     <br>
-    <ul>
-        <% products.forEach(function(product){ %>
-        <a href="/productos/detail/<%= product.id %>">
+   
+        <% console.log(products);
+        let productsCounter=0; %>
+        <% products.forEach(function(products){
+            productsCounter++ %>
+
+            <ul >
+        <a href="/productos/detail/<%= products.id %>"> Ver detalle del producto </a>  
             <li>
-                Name: <%= product.name %> -
+                Name: <%= products.name %> -
             </li>
             <li>
-                Price: <%= product.price %> -
+                Price: <%= products.price %> -
             </li>
             <li>
-                Stock: <%= product.stock %> -
+                Stock: <%= products.stock %> -
             </li>
             <li>
-                ID: <%= product.id %> -
+                ID: <%= products.id %> -
             </li>
             <li>
-                Description : <%= product.description %>- 
+                Description : <%= products.description %>- 
+            </li>
+             <% if (products.images.length >0) { %>
+
+                <div class="column" id="<%=productsCounter%>">
+                    <div class="FIWrapper">
+                    <img id="featured<%= productsCounter %>" class="featuredImage" src="/images/uploadProducts/<%= products.images[0].name %>" width="50%">
+                    </div>
+                    <div class="slide-wrapper">
+                      <img id="" class="arrow slideLeft" src="/images/arrow-left.png">
+                      <img id="" class="arrow slideRight" src="/images/arrow-right.png">
+                      <div class="slider"> <% for (i=0; i<products.images.length; i++) { %>
+                        <img class="thumbnail <%=productsCounter %>" src="/images/uploadProducts/<%= products.images[i].name %>">
+                        <% } } %>
+
+                      
+                      </div>
+                     
+
+                     
+                    </div>
+                  </div>
+                
+                 
+
+             
+
             </li>
                 <% if(usuario.admin == 1){ %>
-                    <a href="/productos/edit/<%= product.id %>">EDITAR</a> -
-                    <form method="POST" action="/productos/destroy/<%= product.id %>">
+                    <a href="/productos/edit/<%= products.id %>">EDITAR</a> -
+                    <form method="POST" action="/productos/destroy/<%= products.id %>">
                         <button type="submit">Borrar</button>
                     </form>
                 <% } %>
             </li>
             <br>
             <hr>
-        </a>    
+          
         <% }) %>
     </ul>
 
@@ -66,5 +98,55 @@
 </section>
 
 <%- include("partials/footer") %>
+
+<script type="text/javascript">
+    let thumbnails = document.getElementsByClassName('thumbnail')
+
+    let activeImages = document.getElementsByClassName('active')
+
+    for (var i = 0; i < thumbnails.length; i++) {
+
+      thumbnails[i].addEventListener('mouseover', function () {
+          let numberElement= this.parentNode.parentNode.parentNode.getAttribute("id");
+          console.log( numberElement);
+        console.log(activeImages) ;
+
+        if (activeImages.length > 0) {
+          activeImages[0].classList.remove('active')
+        }
+
+
+        this.classList.add('active')
+        document.getElementById('featured'+numberElement).src = this.src
+      })
+    }
+
+
+    let buttonRight = document.querySelectorAll('.slideRight');
+    let buttonLeft = document.querySelectorAll('.slideLeft');
+
+    buttonRight.forEach(function(buttonSelected){
+       buttonSelected.addEventListener('click', function(){
+       let slider=    this.parentNode.querySelector('.slider');
+       console.log(slider);
+       slider.scrollLeft += 180;
+
+       } )
+
+    })
+
+    buttonLeft.forEach(function(buttonSelected){
+        buttonSelected.addEventListener('click', function(){
+            let slider= this.parentNode.querySelector('.slider')
+            console.log(slider);
+            slider.scrollLeft -=180;
+        })
+    })
+  
+
+   
+
+
+  </script>
 
 </body>

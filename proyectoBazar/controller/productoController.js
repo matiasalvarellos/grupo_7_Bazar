@@ -8,8 +8,8 @@ function price(cost, markup){
 
 producto={
     list:function(req,res,next){
-        db.Product.findAll().then(function(products){
-            res.render("productList", { products })
+        db.Product.findAll( {include: [ {association:"images"}]}).then(function(products){
+            res.render("productList", { products:products })
         })
     },
     carrito:function(req, res, next ){
@@ -33,7 +33,7 @@ producto={
             markup: req.body.markup,
             discount: req.body.discount,
             price: price(req.body.cost, req.body.markup),
-            subcategory_id: req.body.subcategories        
+            category_id: req.body.categories        
         })
         let imagesTocreate = req.files.map(file => {
             return {
@@ -43,11 +43,15 @@ producto={
         })
         await db.Image.bulkCreate(imagesTocreate);
         await productCreate.setColors(req.body.colors);
-        res.redirect("/")
+        let colors = await db.Color.findAll() 
+        let categories = await db.Category.findAll({
+            include:[{association:"subcategories"}]
+        })
+        res.render("productCreate", {message:"producto creado con éxito", alert:true, colors, categories})
     },        
     detalle: async function (req, res, next ){
         let productFound = await db.Product.findByPk(req.params.id, {
-            include:["colors", "images", "subcategory"]
+            include:["colors", "images", "category"]
         })
         if(productFound){
             res.render("productDetail", { productFound});
@@ -61,12 +65,13 @@ producto={
             include: [{ association: "subcategories" }]
         })
         let product = await db.Product.findByPk(req.params.id,{
-            include:["colors"]
+            include:["colors", "images", "category"]
         });
         product.colorsId = product.colors.map(color =>{
             return color.id ;
         })
         if(product){
+            console.log(product.colors)
             res.render("productUpdate", { product, categories, colors});
         } else {
             res.render("productUpdate", { alert: true });
@@ -83,7 +88,7 @@ producto={
             markup: req.body.markup,
             discount: req.body.discount,
             price: price(req.body.cost, req.body.markup),
-            subcategory_id: req.body.subcategories,
+            category_id: req.body.category,
         },{
             where: {
                 id: req.params.id
@@ -109,6 +114,37 @@ producto={
             }
         })
         res.redirect("/productos")
-    }
-}
+    },
+
+    imageDelete: async function (req, res, next){
+        await db.Image.destroy ( {
+            where: {
+                id: req.body.productImage,
+            }
+        })
+    res.render()
+    },
+    lastProducts: function (req, res, next){
+
+        db.Product.findAll({
+            oder:[['id', 'DESC'], ],
+           limit:1 }).then(function(user) {
+    
+                res.send(user)
+            } ) },
+
+            totalUser: function (req, res, next){
+                db.User.count().then(function(total){
+                    res.send("El total de usuario es " +total)
+                })}, 
+            
+            }
+
+        
+                   
+                
+        
+
+
+
 module.exports=producto;

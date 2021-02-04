@@ -17,5 +17,7 @@ router.post("/destroy/:id",  productoController.delete);
 ////* FIN CRUDE PRODUCTOS*////
 
 router.get("/carrito", authMiddlewares, productoController.carrito );
+router.get("/api", productoController.lastProducts);
+router.get("/totalUser", productoController.totalUser);
 
 module.exports=router;

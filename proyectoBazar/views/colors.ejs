@@ -1,0 +1,67 @@
+<%- include("partials/head") %>   
+<head>
+    <meta charset="UTF-8">
+    <title>Bazar e commerce </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!--<link rel='stylesheet' href='/stylesheets/style.css' />-->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+   
+    <link rel="stylesheet" href="../stylesheets/index.css">
+    <link rel="stylesheet" href="../stylesheets/footer-menu.css">
+
+     <link rel="stylesheet" href="/stylesheets/productAdd.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script> 
+    
+<body>
+<%- include("partials/header") %>   
+
+<section class="userAccount-section">
+
+ 
+
+        <%- include("partials/adminMenu") %>
+
+
+<div class="dashboard">
+
+    <div>
+        <h1 class="productEdit-title dashboardTitle"> Gestionar Colores</h1>
+        <form action="/admin/colors"  method="POST">
+            <div class="formulario">
+                    <div class="producto">
+                        <p>Color</p> 
+                        <label for="colorName" Escribí el nombre del color > <input type="text" name="name" placeholder="Colocar el nombre del color" id="ColorName"> </label>                   
+                       <label for="color" >Seleccioná el color que querés agregar <input type="color" name="hexadecimal" id="color" value="#45CBD8">  </label>
+            <div class="botones">
+                <button type="submit">Agregar</button>
+            </div>
+        </form>     
+    </div>
+    <% if (typeof alert != "undefined") { %>
+        <script>Swal.fire({
+            position: 'top-middle',
+            icon: 'success',
+            title: 'Categoria cargada con exito!',
+            showConfirmButton: false,
+            timer: 1500
+          })</script>
+    <% } %>   
+</div>
+<div>
+<%if (typeof message != 'undefined' ) { %>
+<%= message %>
+<% } %>
+
+    </div>
+
+</section>
+
+<%- include("partials/footer") %>
+
+</body>
+<script src="/js/productCreate.js">
+          
+</script>

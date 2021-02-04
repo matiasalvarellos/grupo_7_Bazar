@@ -99,9 +99,9 @@
               <button type="submit">AGREGAR AL CARRITO</button>
             </form>
             <% if(usuario.admin == 1){ %>
-              <form method="POST" action="/productos/destroy/<%= productFound.id %>">
+             <!-- <form method="POST" action="/productos/destroy/<%= productFound.id %>">
                 <button type="submit">Borrar</button>
-              </form>
+              </form>-->
               <a href="/productos/edit/<%= productFound.id %>">Editar</a>
             <% } %> 
             <div id="descripcion">
