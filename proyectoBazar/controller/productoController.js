@@ -124,19 +124,7 @@ producto={
         })
     res.render()
     },
-    lastProducts: function (req, res, next){
-
-        db.Product.findAll({
-            oder:[['id', 'DESC'], ],
-           limit:1 }).then(function(user) {
     
-                res.send(user)
-            } ) },
-
-            totalUser: function (req, res, next){
-                db.User.count().then(function(total){
-                    res.send("El total de usuario es " +total)
-                })}, 
             
             }
 

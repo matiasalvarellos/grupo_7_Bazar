@@ -4,6 +4,7 @@ const indexController= require("../controller/indexController");
 
 /* GET home page. */
 router.get('/', indexController.inicio);
+router.get('/home', indexController.home);
 router.get('/seguimiento', indexController.seguimiento);
 router.get('/pago', indexController.pago);
 router.get('/giftCard', indexController.giftCard);
