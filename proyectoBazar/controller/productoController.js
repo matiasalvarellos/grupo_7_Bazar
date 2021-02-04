@@ -109,6 +109,14 @@ producto={
             }
         })
         res.redirect("/productos")
+    },
+    ultimoProducto: async (req, res)=>{
+        let producto = await db.Product.findOne({
+            order: [
+                ["id", "DESC"]
+            ]
+        })
+        res.json(producto)
     }
 }
 module.exports=producto;

@@ -10,9 +10,6 @@ router.get('/giftCard', indexController.giftCard);
 router.get('/categorias', indexController.categorias);
 router.get('/nosotros', indexController.nosotros);
 router.get('/contacto', indexController.contacto);
-/*
-router.get("/detalle/:id", peliculasController.detalle);
-router.get("/edit/:id", peliculasController.edit);
-router.post("/edit/:id", peliculasController.update); */
+
 
 module.exports = router;

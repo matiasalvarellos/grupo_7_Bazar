@@ -1,26 +1,25 @@
-index={
+let gifResource = require("../requests/gifResource")
 
-inicio: function(req,res,next){
-        res.render("index"); },
+let index = {
 
-seguimiento: function(req,res,next)
-{ res.redirect('https://www.correoargentino.com.ar/')},
+        inicio: function (req, res, next) {
+                res.render("index");
+        },
 
-pago: function(req,res,next)
-{ res.send('Formas de pago');},
+        seguimiento: function (req, res, next) { res.redirect('https://www.correoargentino.com.ar/') },
 
-giftCard: function(req, res, next)
-{res.send('Obtené tu GiftCard'); },
+        pago: function (req, res, next) { res.send('Formas de pago'); },
 
-categorias: function(req,res,next)
-{ res.send('Aquí categorías'); },
+        giftCard: function (req, res, next) { res.send('Obtené tu GiftCard'); },
 
-nosotros: function(req,res,next)
-{res.send('Nosotros');},
+        categorias: function (req, res, next) { res.send('Aquí categorías'); },
 
-contacto:function(req, res,next)
-{ res.send('Aquí contacto');}
+        nosotros: function (req, res, next) { res.send('Nosotros'); },
 
+        contacto: function (req, res, next) {
+                gifResource.random().then(function(resultado){
+                        console.log(resultado)
+                })
+        }
 }
-
-module.exports=index;
+module.exports = index;

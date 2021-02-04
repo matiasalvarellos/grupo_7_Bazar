@@ -9,6 +9,7 @@ const adminMiddleware = require("../middlewares/adminMiddleware");
 
 /*Lista de productos-Karla*/
 router.get("/", productoController.list);
+router.get("/ultimoProducto", productoController.ultimoProducto)
 
 /*Formulario de creación de productos-Flor*/
 router.get("/create", authMiddlewares, adminMiddleware, productoController.crear);
