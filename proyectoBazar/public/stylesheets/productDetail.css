@@ -160,10 +160,9 @@
 .arrow:hover{
 	opacity: .5;
 }
-
-
-
-
+.infoSecreta{
+    display: none;
+}
 @media (max-width: 879px) {
 
     aside, main {
@@ -229,7 +228,4 @@
     #slider{
         width: 300px;
     }
-
-
-
 }

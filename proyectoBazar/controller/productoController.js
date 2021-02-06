@@ -12,9 +12,6 @@ producto={
             res.render("productList", { products })
         })
     },
-    carrito:function(req, res, next ){
-        res.render("productCart",{usuario:req.session.usuarioLogueado});
-    },
     crear: async function (req, res, next ){
         let colors = await db.Color.findAll() 
         let categories = await db.Category.findAll({
