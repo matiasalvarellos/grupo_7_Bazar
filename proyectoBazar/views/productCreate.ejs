@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/stylesheets/header.css">
     <link rel="stylesheet" href="/stylesheets/footer.css">
     <script src="/js/open-menu.js"></script>
+    <!--<script src="/js/createproduct.js"></script>-->
     <link rel="stylesheet" href="/stylesheets/productAdd.css">
     <link rel="stylesheet" href="/stylesheets/index.css">
     
@@ -28,45 +29,72 @@
 <div class="dashboard">
 
     <div>
-        <h1 class="productEdit-title dashboardTitle">ABM DE PRODUCTO</h1>
-        <form action="/productos/create" enctype="multipart/form-data" method="POST">
+        <h1 class="productEdit-title dashboardTitle">ALTA DE PRODUCTO</h1>
+        <form action="/productos/create" class= "prod" enctype="multipart/form-data" method="POST">
             <div class="formulario">
                     <div class="producto">
                         <p>Codigo</p> 
-                        <input type="text" name="code" placeholder="Colocar el codigo del producto">
-                        <p>Producto</p> 
-                        <input type="text" name="name" placeholder="Colocar el nombre del producto">
+                        <input type="text" class="inputform" id="codigo" name="code" placeholder="Colocar el codigo del producto" >
+                        <!-- <div class="invalid-feedback"></div> -->
+                        <p class="invalid-feedback"></p>
+                    </div>
                         
+                    <div class="producto">
+                        <p>Producto</p> 
+                        <input type="text" name="name" class="inputform" placeholder="Colocar el nombre del producto">
+                        <p class="invalid-feedback"></p>
+                    </div>
+                                         
+                    <div class="producto">
                         <p>Con colores:</p>
                         <%colors.forEach(color =>{ %>
-                            <p><input type="checkbox" name="colors" value="<%= color.id %>"><%= color.name %></p>
+                            <p><input type="checkbox" name="colors" class="inputform" value="<%= color.id %>"><%= color.name %></p>
                         <% }) %>
-
-                        <hr> 
+                    <p class="invalid-feedback"></p>
+                    </div>
+                    
+                     <hr> 
+                    <div class="producto">
                         <p>Cantidad de stock</p> 
-<<<<<<< HEAD
-                        <input type="number" name="stock" placeholder="Ingrese la cantidad de stock"> 
+                        <input type="number" name="stock" class="inputform" placeholder="Ingrese la cantidad de stock">
+                        <p class="invalid-feedback"></p>
+                    </div>
+                    
+                    <div class="producto">
+                        <p>Costo:</p>
+                        <input type="number" name="cost" class="inputform">
+                        <p class="invalid-feedback"></p>
+                    </div>
 
-                        <p>Descripcion del producto</p>
-                        <textarea name="description" cols="50" rows="10"></textarea>
-                        <p>Imagenes</p>
-=======
-                        <input type="number" name="stock" placeholder="Ingrese la cantidad de stock">
-                        <p>costo:</p>
-                        <input type="number" name="cost">
+                    <div class="producto">
                         <p>Markup:</p>
-                        <input type="number" name="markup">
-                        <p>discount:</p>
-                        <input type="number" name="discount">
+                        <input type="number" name="markup" class="inputform">
+                        <p class="invalid-feedback"></p>
+                    </div>
+                    
+                    <div class="producto" class="inputform">
+                        <p>Discount:</p>
+                        <input type="number" name="discount" class="inputform">
+                        <p class="invalid-feedback"></p>
+                    </div>
+                                       
+                    <div class="producto"class="inputform">
                         <p>Agregar Imagenes:</p>
->>>>>>> d0c743d0bfcc30d95ccb6af721daa938b9e2d75a
                         <input type="file" name="image" multiple>
+                        <p class="invalid-feedback"></p>
+                    </div>
+                    
+                    <div class="producto"class="inputform">
                         <p>Description:</p>
                         <textarea name="description"></textarea>
-                        <h2>Seleccionar a que categoria pertenece:</h2>
+                        <p class="invalid-feedback"></p>
+                    </div>
+                                         
+                        <!--<label for="">Categoria</label>-->
+                        <h3>Seleccionar a que subcategoria pertenece:</h3> 
                         <% categories.forEach(category => { %>
-                          <label> <input type="radio" name="categories" value="<%= category.id %>"> <%= category.name %> </label>
-                          <!--  <ul>
+                            <h4> <%= category.name %></h4>
+                            <ul>
                                 <% category.subcategories.forEach( subcategory=> { %>
                                     <li>
                                         <input type="radio" name="subcategories" value="<%= subcategory.id %>">
@@ -74,15 +102,17 @@
                                         <label for="subcategories"></label>
                                     </li>
                                 <% }) %> 
-                            </ul>  -->  
-                        <% }) %> 
-                    </div>    
-            </div>
+                            </ul>   
+                        <% }) %>
+                        </div> 
+                                           
             <div class="botones">
                 <button type="submit">Agregar</button>
             </div>
         </form>     
     </div>
+
+    
     <% if (typeof alert != "undefined") { %>
         <script>Swal.fire({
             position: 'top-middle',
