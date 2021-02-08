@@ -15,7 +15,9 @@ const recordameMiddleware = require("./middlewares/recordameMiddleware");
 const localsMiddle = require('./middlewares/localsMiddle');
 /*const backOfficeRouter= require("./routes/backOffice");*/
 
+
 const app = express();
+
 
 
 // view engine setup

@@ -9,7 +9,7 @@ module.exports=function(sequelize, dataTypes){
         markup: dataTypes.INTEGER,
         discount: dataTypes.INTEGER,
         price: dataTypes.INTEGER,
-        category_id: dataTypes.INTEGER,
+        subcategory_id: dataTypes.INTEGER,
     });
 
     Product.associate = (models) => {
@@ -25,11 +25,10 @@ module.exports=function(sequelize, dataTypes){
             otherKey: 'color_id'
         });
 
-        Product.belongsTo(models.Category, {
-            as: "category",
-            foreignKey: "category_id"
+        Product.belongsTo(models.Subcategory, {
+            as: "subcategory",
+            foreignKey: "subcategory_id"
         });
     };
-    
     return Product;
 }

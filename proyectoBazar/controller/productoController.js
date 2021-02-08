@@ -22,7 +22,7 @@ producto={
         })
         res.render("productCreate", {categories, colors});
     },
-    store: async function (req, res, next){ 
+    store: async function (req, res, next){
         let productCreate = await db.Product.create({
             code: req.body.code,
             name: req.body.name,
@@ -33,7 +33,7 @@ producto={
             markup: req.body.markup,
             discount: req.body.discount,
             price: price(req.body.cost, req.body.markup),
-            category_id: req.body.categories        
+            subcategory_id: req.body.subcategories       
         })
         let imagesTocreate = req.files.map(file => {
             return {
@@ -51,7 +51,7 @@ producto={
     },        
     detalle: async function (req, res, next ){
         let productFound = await db.Product.findByPk(req.params.id, {
-            include:["colors", "images", "category"]
+            include:["colors", "images", "subcategory"]
         })
         if(productFound){
             res.render("productDetail", { productFound});
@@ -65,13 +65,12 @@ producto={
             include: [{ association: "subcategories" }]
         })
         let product = await db.Product.findByPk(req.params.id,{
-            include:["colors", "images", "category"]
+            include:["colors", "images", "subcategory"]
         });
         product.colorsId = product.colors.map(color =>{
             return color.id ;
         })
         if(product){
-            console.log(product.colors)
             res.render("productUpdate", { product, categories, colors});
         } else {
             res.render("productUpdate", { alert: true });
@@ -88,7 +87,7 @@ producto={
             markup: req.body.markup,
             discount: req.body.discount,
             price: price(req.body.cost, req.body.markup),
-            category_id: req.body.category,
+            subcategory_id: req.body.subcategories,
         },{
             where: {
                 id: req.params.id
@@ -106,6 +105,7 @@ producto={
         await db.Image.destroy({
             where: {
                 product_id: req.params.id
+     
             }
         })
         await db.Product.destroy({
@@ -115,7 +115,6 @@ producto={
         })
         res.redirect("/productos")
     },
-
     imageDelete: async function (req, res, next){
         await db.Image.destroy ( {
             where: {
@@ -124,9 +123,7 @@ producto={
         })
     res.render()
     },
-    
-            
-            }
+}
 
         
                    

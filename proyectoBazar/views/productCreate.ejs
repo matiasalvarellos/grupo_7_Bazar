@@ -44,13 +44,6 @@
 
                         <hr> 
                         <p>Cantidad de stock</p> 
-<<<<<<< HEAD
-                        <input type="number" name="stock" placeholder="Ingrese la cantidad de stock"> 
-
-                        <p>Descripcion del producto</p>
-                        <textarea name="description" cols="50" rows="10"></textarea>
-                        <p>Imagenes</p>
-=======
                         <input type="number" name="stock" placeholder="Ingrese la cantidad de stock">
                         <p>costo:</p>
                         <input type="number" name="cost">
@@ -59,14 +52,15 @@
                         <p>discount:</p>
                         <input type="number" name="discount">
                         <p>Agregar Imagenes:</p>
->>>>>>> d0c743d0bfcc30d95ccb6af721daa938b9e2d75a
                         <input type="file" name="image" multiple>
                         <p>Description:</p>
                         <textarea name="description"></textarea>
-                        <h2>Seleccionar a que categoria pertenece:</h2>
+                      
+                        <!--<label for="">Categoria</label>-->
+                        <h3>Seleccionar a que subcategoria pertenece:</h3> 
                         <% categories.forEach(category => { %>
-                          <label> <input type="radio" name="categories" value="<%= category.id %>"> <%= category.name %> </label>
-                          <!--  <ul>
+                            <h4> <%= category.name %></h4>
+                            <ul>
                                 <% category.subcategories.forEach( subcategory=> { %>
                                     <li>
                                         <input type="radio" name="subcategories" value="<%= subcategory.id %>">
@@ -74,10 +68,10 @@
                                         <label for="subcategories"></label>
                                     </li>
                                 <% }) %> 
-                            </ul>  -->  
-                        <% }) %> 
-                    </div>    
-            </div>
+                            </ul>   
+                        <% }) %>
+                        </div>  
+                        
             <div class="botones">
                 <button type="submit">Agregar</button>
             </div>
