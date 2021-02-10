@@ -68,7 +68,32 @@ const validar = {
         body("password")
             .notEmpty()
             .withMessage("Completar campo de contraseña")
-    ]
+    ],
+
+    /*prod:[
+        body("code")
+         .isLength({min:3})
+         .withMessage("Campo de nombre debe tener un minimo de 3 caracteres"),
+        body("name")
+         .isLength({min:3})
+         .withMessage("Campo nombre de producto debe tener un minimo de 3 caracteres"),
+        body("stock")
+            .notEmpty()
+            .withMessage("Completar campo de stock"),
+        body("cost")
+            .isLength({min:""})
+            .withMessage("Campo costo debe de estar completo"),
+        body("markup")
+            .withMessage("Campo markup debe estar completo"),
+        body("discount")
+               .notEmpty()
+               .withMessage("Completar el campo de discount")
+       
+    ]*/
+
+
+
+    
 }
 
 module.exports= validar;
