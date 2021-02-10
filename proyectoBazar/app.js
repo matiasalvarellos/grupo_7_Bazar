@@ -8,9 +8,10 @@ const session = require("express-session");
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const adminRouter= require('./routes/admin');
-
 const productoRouter = require("./routes/productos");
+const cartRouter = require("./routes/carrito");
 const apiRouter = require('./routes/api');
+
 const recordameMiddleware = require("./middlewares/recordameMiddleware");
 const localsMiddle = require('./middlewares/localsMiddle');
 /*const backOfficeRouter= require("./routes/backOffice");*/
@@ -43,6 +44,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use("/productos" ,productoRouter);
 app.use("/admin" ,adminRouter);
+app.use("/cart", cartRouter);
 app.use('/api', apiRouter);
 /*app.use("/backOffice" ,backOfficeRouter);*/
 

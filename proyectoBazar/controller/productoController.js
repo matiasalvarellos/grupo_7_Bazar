@@ -12,9 +12,6 @@ producto={
             res.render("productList", { products:products })
         })
     },
-    carrito:function(req, res, next ){
-        res.render("productCart",{usuario:req.session.usuarioLogueado});
-    },
     crear: async function (req, res, next ){
         let colors = await db.Color.findAll() 
         let categories = await db.Category.findAll({
@@ -43,7 +40,7 @@ producto={
         })
         await db.Image.bulkCreate(imagesTocreate);
         await productCreate.setColors(req.body.colors);
-        res.render("productCreate", {message:"producto creado con éxito", alert:true})
+        res.redirect("/productos");
     },        
     detalle: async function (req, res, next ){
         let productFound = await db.Product.findByPk(req.params.id, {

@@ -5,67 +5,50 @@ body {
   /**/
     
   /**/
-  
-  main{
-    padding: 10px;
-    width: 60%;
-    margin: auto;
-    
-    }
-  
-.nombre{
-    color: #8593AE;
+main{
+  padding: 10px;
+  width: 60%;
+  margin: auto;  
 }
-
-.titulos{
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;  
-    }
-
-  .unitario {
-    padding-left: 40%;
-  }
-
-  .unitario,
-  .total{
-    padding-top:50px;
-   }
-    
-
-  .precioCart,
-  .subprecio,
-  .box7{
-   font-size: 16px;
-   font-weight: bolder;
+.productData{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
   
-  }
-  
-  .titulo1{
-    border-color: #8593AE;
-  }
+}
+.nombre{
+  color: #8593AE; 
+}
+.precioCart,
+.subprecio,
+.box7{
+  font-size: 16px;
+  font-weight: bolder;
+}
+.titulo1{
+  border-color: #8593AE;
+}
   
   /*-----*/
   
   
   .containerCart{
     display: flex;
-    justify-content: space-between
+    justify-content: space-around
   }
   
   .containerCart .box1 img{
     width: 80px;
     padding-left: 30px;
-    
   }
   
-  .containerCart .box1,
+  .box1,
   .numberCart,
   .precioCart{
     display: flex;
     position: relative;
     align-items: flex-start;
-    }
+  }
   
    
   .box1 p,

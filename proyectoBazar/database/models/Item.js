@@ -1,7 +1,12 @@
 module.exports = function (sequelize, dataTypes) {
         
     const Item = sequelize.define("Item", {
-        total_price: dataTypes.INTEGER
+        product_name: dataTypes.STRING,
+        unit_price: dataTypes.INTEGER,
+        color: dataTypes.STRING,
+        image: dataTypes.STRING,
+        subtotal: dataTypes.INTEGER,
+        quantity: dataTypes.INTEGER
     });
 
     Item.associate = (models) => {
