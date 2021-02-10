@@ -43,11 +43,7 @@ producto={
         })
         await db.Image.bulkCreate(imagesTocreate);
         await productCreate.setColors(req.body.colors);
-        let colors = await db.Color.findAll() 
-        let categories = await db.Category.findAll({
-            include:[{association:"subcategories"}]
-        })
-        res.render("productCreate", {message:"producto creado con éxito", alert:true, colors, categories})
+        res.render("productCreate", {message:"producto creado con éxito", alert:true})
     },        
     detalle: async function (req, res, next ){
         let productFound = await db.Product.findByPk(req.params.id, {
