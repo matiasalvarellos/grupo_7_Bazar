@@ -1,33 +1,95 @@
 const db = require('../../database/models');
 
 const apis = {
-
-
-listProducts: function (req, res, next){
-
-    db.Product.findAll({
-        oder:[['id', 'DESC'], ], }).then(function(user) {
-
-            res.send(user)
-        } ) },
-
-        lastProducts: function (req, res, next){
-
-            db.Product.findAll({
-                oder:[['id', 'DESC'], ],
-               limit:10 }).then(function(user) {
-        
-                    res.send(user)
-                } ) },
-
-listUser: function (req, res, next){
-            db.User.count().then(function(total){
-                res.send("El total de usuario es " +total)
-            })}, 
-
-
-
-
+    listProducts: function (req, res, next){
+        db.Product.findAll({
+            oder:[
+                ['id', 'DESC'], 
+            ],
+            include:["images", "subcategory", "colors"] 
+        }).then(function(products){
+            products.forEach(product =>{
+                product.setDataValue("endpoint", "/api/products/" + product.id);
+            }) 
+            let jsonProducts = {
+                meta:{
+                    status: 200,
+                    total_products: products.length,
+                    url: "/api/products"
+                },
+                data:products
+            }
+            res.json(jsonProducts)
+        }) 
+    },
+    lastProducts: function (req, res, next){
+        db.Product.findAll({
+            oder:[
+                ['id', 'DESC'],
+            ],
+            limit:10 
+        }).then(function(user) {
+                res.send(user)
+        }) 
+    },
+    productDetail: function(req, res){
+        db.Product.findByPk(req.params.id, {
+            include:["subcategory","colors"]
+        }).then(product =>{
+            let productJson = {
+                data:{
+                    id: product.id,
+                    code: product.code,
+                    name: product.name,
+                    price: product.price,
+                    description: product.description,
+                    data_color: resultado.colors,
+                    data_subcategory: resultado.subcategory
+                }
+            }
+            res.json(productJson)
+        })
+    },
+    listUser: function (req, res, next){
+        db.User.findAll().then(users => {
+            let respuesta = {
+                meta:{
+                    status: 200,
+                    total_users: users.length ,
+                    url: "/api/users"
+                },
+                data: users.map(user =>{
+                    let newData={
+                            id: user.id,
+                            name: user.name,
+                            last_name: user.last_name,
+                            email: user.email,
+                            type_customer: user.type_customer,
+                            endpoint: "/api/user/" + user.id
+                        }
+                    return newData
+                    })
+                }
+            res.json(respuesta) 
+        })         
+    },
+    userDetail: function (req, res) {
+        db.User.findByPk(req.params.id).then(resultado => {
+            let jsonProducto = {
+                meta:{
+                    status: 200
+                },
+                data: {
+                    id: resultado.id,
+                    name: resultado.name,
+                    last_name: resultado.last_name,
+                    email: resultado.email,
+                    type_customer: resultado.type_customer
+                }
+            }
+            res.json(jsonProducto);
+        })
+    }
 }
 
 module.exports = apis
