@@ -1,7 +1,7 @@
 const db = require('../../database/models');
 
 const apis = {
-    listProducts: function (req, res, next){
+    productsList: function (req, res, next){
         db.Product.findAll({
             oder:[
                 ['id', 'DESC'], 
@@ -43,33 +43,33 @@ const apis = {
                     name: product.name,
                     price: product.price,
                     description: product.description,
-                    data_color: resultado.colors,
-                    data_subcategory: resultado.subcategory
+                    data_color: product.colors,
+                    data_subcategory: product.subcategory
                 }
             }
             res.json(productJson)
         })
     },
-    listUser: function (req, res, next){
+    usersList: function (req, res, next){
         db.User.findAll().then(users => {
+            let newData = users.map(user => {
+                return {
+                    id: user.id,
+                    name: user.name,
+                    last_name: user.last_name,
+                    email: user.email,
+                    type_customer: user.type_customer,
+                    endpoint: "/api/user/" + user.id
+                }
+            })
             let respuesta = {
                 meta:{
                     status: 200,
                     total_users: users.length ,
                     url: "/api/users"
                 },
-                data: users.map(user =>{
-                    let newData={
-                            id: user.id,
-                            name: user.name,
-                            last_name: user.last_name,
-                            email: user.email,
-                            type_customer: user.type_customer,
-                            endpoint: "/api/user/" + user.id
-                        }
-                    return newData
-                    })
-                }
+                data: newData 
+            }
             res.json(respuesta) 
         })         
     },
