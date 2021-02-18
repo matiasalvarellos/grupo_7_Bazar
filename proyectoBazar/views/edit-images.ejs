@@ -1,0 +1,72 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Bazar e commerce </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel='stylesheet' href='/stylesheets/style.css' />-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="/stylesheets/header.css">
+    <link rel="stylesheet" href="/stylesheets/footer.css">
+    <script src="/js/open-menu.js"></script>
+    <link rel="stylesheet" href="/stylesheets/productAdd.css">
+    <link rel="stylesheet" href="/stylesheets/index.css">
+    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet">
+      <script> var js = document.querySelectorAll('script');
+
+        for (var i = 0; i < js.length; i++) {
+            js[i].src = js[i].src + '?v=' + Date.now();
+        }
+        
+        var css = document.querySelectorAll('link');
+        
+        for (var i = 0; i < css.length; i++) {
+            css[i].href = css[i].href + '?v=' + Date.now();
+        }</script>
+        
+</head>
+<body>
+<%- include("partials/header") %>   
+
+<section class="userAccount-section">
+ <%- include("partials/adminMenu") %>
+    <div class="dashboard">
+        <h1 class="productEdit-title dashboardTitle">Agregar o quitar imágenes </h1>
+        
+          
+         
+          <div class="update-images">
+          <% product.images.forEach(function(image) { let number=0%> 
+            <form name = "product-image-form" class="img-form" action="/productos/imageDelete/<%= image.id %>" method="post">
+            <label class="image-e-c" for="<%= image.id %>">  <img class="thumbnail-edit" src="/images/uploadProducts/<%=image.name %>" width="250px"> <input type="checkbox" name="imageToDelete" id="<%=image.id%>" value="<%=image.name%>" >  </label>
+            <input type="submit" value="borrar"> 
+            </form>
+
+<%;})%>
+
+          
+
+<form method="post" class="second-form" action="/productos/addImages/1"  enctype="multipart/form-data">
+
+  <h2>Agregar Imagenes</h2>
+  <input type="text" class="hidden" name="product_id" value="<%=product.id%>"> <br>
+  <input type="file" name="images" multiple>
+  <p class="invalid-feedback"></p> <br> <br>
+
+<input type="submit" value="Aceptar">
+</form>
+
+
+
+  
+            
+    </div>
+</section>
+
+<%- include("partials/footer") %>
+<script> 
+let imagenes= <%= product.images %> ;
+console.log( imagenes)</script>
+
+</body>

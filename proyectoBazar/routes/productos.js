@@ -11,8 +11,12 @@ router.get("/create", authMiddlewares, adminMiddleware, productoController.crear
 router.post("/create", upload.any(), productoController.store);
 router.get("/detail/:id", productoController.detalle );
 router.get("/edit/:id", authMiddlewares, adminMiddleware, productoController.edit);
+router.get("/edit-images/:id", productoController.editImages);
+router.post("/imageDelete/:id", productoController.imageDelete);
+router.post("/addImages/:id?", upload.any(), productoController.addImages);
 router.post("/edit/:id", productoController.update);
 router.post("/destroy/:id",  productoController.delete);
+
 
 ////* FIN CRUDE PRODUCTOS*////
 

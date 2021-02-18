@@ -4,7 +4,20 @@
     padding: 0;
     font-family: 'Roboto', sans-serif;
   }
+.hidden{
+    display:none!important;
+}
+.second-form{
+    display:block;
+    margin: 0 33% 0 33%;
+    padding-left: auto;
+    padding-right: auto;
+    width:33%;
+    position:relative;
+    text-align:center;
+}
 
+.second-form h2{ text-align:center;}
   .sc_container{
  display:flex!important;
  flex-direction: row!important;

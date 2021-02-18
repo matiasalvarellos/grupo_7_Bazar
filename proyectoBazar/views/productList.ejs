@@ -35,8 +35,9 @@
             productsCounter++ %>
 
             <ul >
-        <a href="/productos/detail/<%= products.id %>"> Ver detalle del producto </a>  
-            <li>
+        <a href="/productos/detail/<%= products.id %>"> Ver detalle del producto </a>  <br>
+        <a href="/productos/edit/<%= products.id %>"> Editar Producto </a>  
+        <li>
                 Name: <%= products.name %> -
             </li>
             <li>
@@ -53,10 +54,14 @@
             </li>
              <% if (products.images.length >0) { %>
 
+                <a href="/productos/edit-images/<%= products.id %>"> Agregar o quitar imágenes </a>  
+
                 <div class="column" id="<%=productsCounter%>">
                     <div class="FIWrapper">
                     <img id="featured<%= productsCounter %>" class="featuredImage" src="/images/uploadProducts/<%= products.images[0].name %>" width="50%">
                     </div>
+                    <br>
+                    <br>
                     <div class="slide-wrapper">
                       <img id="" class="arrow slideLeft" src="/images/arrow-left.png">
                       <img id="" class="arrow slideRight" src="/images/arrow-right.png">

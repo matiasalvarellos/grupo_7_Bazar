@@ -116,13 +116,44 @@ producto={
         res.redirect("/productos")
     },
     imageDelete: async function (req, res, next){
-        await db.Image.destroy ( {
-            where: {
-                id: req.body.productImage,
+        let imageName= req.body.imageToDelete;
+        let productId;
+
+         db.Image.findOne({name:imageName}).then(function(image){
+             productId=image.product_id;
+             db.Image.destroy ( {
+                where: {
+                    name:req.body.imageToDelete
+                }
+            }).then(function(){res.redirect("/productos/edit-images/"+productId); })
+
+
+         })         
+    
+    },
+
+    addImages: async function(req,res,next){
+       let  productId=req.body.product_id;
+        let imagesTocreate = req.files.map(file => {
+            return {
+                name: file.filename,
+                product_id: productId,
             }
         })
-    res.render()
+        await db.Image.bulkCreate(imagesTocreate);
+        res.redirect("/productos/edit-images/"+productId);
+
+
     },
+    
+    editImages: async function (req,res,next){
+        let product = await  db.Product.findByPk(req.params.id,{
+            include:[ "images"]
+        });
+        res.render("edit-images", {product})
+
+    }
+  
 }
 
         
