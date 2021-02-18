@@ -22,50 +22,61 @@
   <%- include("partials/header") %> 
   <main>
     <div class="titulos">
-    <h1 div class="nombre">
+    <h1 class="nombre">
       MI CARRITO
     </h1>
-    <h2 div class="unitario">
+  </div>
+  <div class="productData">
+    <h2>
+      Producto:
+    </h2>
+    <h2 class="cantidad">
+      cantidad
+    </h2>
+    <h2 class="unitario">
       Unitario
     </h2>
-    <h2 div class="total">
+    <h2 class="total">
       Total
     </h2>
-
   </div>
-
+  <% items.forEach(item =>{ %>
     <hr class="titulo1">
-
+    
     <div class="containerCart">
       <div class="box1">
-        <i class="fas fa-times"></i>
-        <image src="/images/dish1.jpg"></image>
+        <form method="POST" action="/cart/item/delete/<%= item.id %>">
+          <button type="submit"> 
+            <i class="fas fa-times"></i>
+          </button>
+        </form>
+        <image src="/images/uploadProducts/<%= item.image %>"></image>
         <div class="nomProducto">
-          <p>Nombre de producto</p>
+          <p><%= item.product_name %></p>
         </div>
       </div>
-
+    
       <div class="numberCart">
-        <input type="number">
-        <label for="number">Cantidad</label>
+        <p><%= item.quantity %></p>
       </div>
       <div class="unidad">
-        <p>$500</p>
+        <p><%= item.unit_price %></p>
       </div>
       <div class="precioCart">
-        <p>$3500</p>
+        <p><%= item.subtotal %> </p>
       </div>
     </div>
-    <!--  fin fila cart  -->
-
     <hr>
+  <% }) %> 
+    
+    <!--  fin fila cart  -->
 
     <div class="subtotal">
       <div class="subt">
         <p>Subtotal</p>
       </div>
-      <div class="subprecio">
-        <p>$3500</p>
+      <div class="subprecio">  
+        <p> <%= totalPrice %></p>
       </div>
     </div>
 
@@ -102,7 +113,7 @@
         <h2>TOTAL A PAGAR</h4>
       </div>
       <div class="box7">
-        <p>$7000</p>
+        <p><%= totalPrice %> </p>
       </div>
     </div>
 
@@ -111,12 +122,16 @@
 
     <div class="container3">
       <div class="box8">
-        <button class="button1">
-          <a href=#>Pagar</a></button>
+        <form action="/cart/order/add" method="POST">
+          <button type="submit" class="button1">
+            Pagar
+          </button>
+        </form>
       </div>
       <div class="box9">
         <button class= "button2">
-          <a href=#>Seguí comprando</a></button>
+          <a href="/productos">Seguí comprando</a>
+        </button>
       </div>
     </div>
 

@@ -72,7 +72,7 @@
             </script>
           </aside>
           <main>
-            <form action="" id="formulario">
+            
               <h1><%= productFound.name %></h1>
               <br>
               <!--Costo por Markup = Precio Final-->
@@ -86,16 +86,18 @@
               <% } else { %>
               <h2 class = "precioOff"><%= "$ " + precio + " " %>Precio</h2><h2 class = "descuento"><%="% " + productFound.discount + " " %>Descuento</h2><h2 class = "precioOn"><%= "$ " + precioDescuento + " " %>Precio con descuento</h2>
               <% } %>
+            <form action="/cart/add/<%= productFound.id %>" method="POST" id="formulario">
               <p class="label"><label for="compra"></label>Cantidad</p>
-              <input type="number" name="cantidad" id="compra">
+              <input type="number" name="cantidad" id="compra" value="1">
               <p class="label"><label for="color"></label>Color</p>
-              <select name="Color" id="compra">
-                <% for (var i=0; i<productFound.colors.length; i++){ %>
-                  <option value="<% productFound.colors[i].id %>">
-                    <%= productFound.colors[i].name %>
-                  </option>
-                <% } %>
+              <select name="colors">
+                <% productFound.colors.forEach(color=> { %>
+                  <option value="<%= color.name %>">
+                    <%= color.name %>
+                  </option><br>
+                <% }) %>
               </select><br>
+
               <button type="submit">AGREGAR AL CARRITO</button>
             </form>
             <% if(usuario.admin == 1){ %>
