@@ -16,6 +16,7 @@ router.post("/imageDelete/:id", productoController.imageDelete);
 router.post("/addImages/:id?", upload.any(), productoController.addImages);
 router.post("/edit/:id", productoController.update);
 router.post("/destroy/:id",  productoController.delete);
+router.post("/buscar", productoController.buscar);
 
 
 ////* FIN CRUDE PRODUCTOS*////

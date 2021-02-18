@@ -79,8 +79,9 @@
     </div>
     <div class="menu-bottom">
       <div class="search-container">
-        <form class="form-search" action="" method="get">
-          <input type="text" class="input" placeholder="¿Qué necesitas hoy?">
+        <form class="form-search" action="/productos/buscar" method="post">
+          <input type="text" class="input" name="product" placeholder="¿Qué necesitas hoy?">
+          <input type="submit" value="buscar">
         </form>
       </div>
     </div>

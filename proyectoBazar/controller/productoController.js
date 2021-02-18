@@ -1,4 +1,5 @@
 const db = require('../database/models');
+const { Op } = require("sequelize");
 
 function price(cost, markup){
     let ganancia = (Number(cost) * Number(markup))/100;
@@ -145,7 +146,20 @@ producto={
         });
         res.render("edit-images", {product})
 
-    }
+    },
+
+    buscar:function(req,res,next){
+        let productToFind=req.body.product;
+        console.log(productToFind);
+        db.Product.findAll({include: [ {association:"images"}], where:{name:{[Op.like]:'%'+productToFind+'%'}}}
+                 
+        )
+    
+        .then(function(products){
+            res.render("productList", { products:products });
+        })},
+   
+    
   
 }
 
