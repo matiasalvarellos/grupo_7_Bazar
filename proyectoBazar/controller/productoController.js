@@ -109,7 +109,7 @@ producto={
         })
         res.redirect("/productos")
     },
-    imageDelete: async function (req, res, next){
+    imageDelete:function (req, res, next){
         let imageName= req.body.imageToDelete;
         let productId;
 
