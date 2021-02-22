@@ -154,7 +154,7 @@ producto={
     },
 
     buscar:function(req,res,next){
-        let productToFind=req.body.product;
+        let productToFind=req.query.product;
         console.log(productToFind);
         db.Product.findAll({include: [ {association:"images"}], where:{name:{[Op.like]:'%'+productToFind+'%'}}}
                  
