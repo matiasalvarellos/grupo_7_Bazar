@@ -117,8 +117,7 @@ producto={
     imageDelete:function (req, res, next){
         let imageName= req.body.imageToDelete;
         let productId;
-
-         db.Image.findOne({name:imageName}).then(function(image){
+        db.Image.findOne({name:imageName}).then(function(image){
              productId=image.product_id;
              db.Image.destroy ( {
                 where: {
@@ -130,7 +129,6 @@ producto={
          })         
     
     },
-
     addImages: async function(req,res,next){
        let  productId=req.body.product_id;
         let imagesTocreate = req.files.map(file => {
@@ -141,31 +139,25 @@ producto={
         })
         await db.Image.bulkCreate(imagesTocreate);
         res.redirect("/productos/edit-images/"+productId);
-
-
     },
-    
     editImages: async function (req,res,next){
         let product = await  db.Product.findByPk(req.params.id,{
             include:[ "images"]
         });
         res.render("edit-images", {product})
-
     },
-
     buscar:function(req,res,next){
         let productToFind=req.query.product;
-        console.log(productToFind);
-        db.Product.findAll({include: [ {association:"images"}], where:{name:{[Op.like]:'%'+productToFind+'%'}}}
-                 
-        )
-    
+        db.Product.findAll({
+            include: ["images"],
+            where:{
+                name:{ [Op.like]:'%'+productToFind+'%' }
+            }
+        })
         .then(function(products){
             res.render("productList", { products:products });
-        })},
-   
-    
-  
+        })
+    }
 }
 
         

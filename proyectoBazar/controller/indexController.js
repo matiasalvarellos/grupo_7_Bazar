@@ -3,9 +3,11 @@ const db = require('../database/models');
 index={
 
 inicio: function(req,res,next){
-db.Product.findAll( {include: [ {association:"images"}]}).then(function(products){
-        console.log(products);
-res.render("home", {products:products }) })}, 
+        db.Product.findAll( {include: [ {association:"images"}]})
+        .then(function(products){
+                res.render("home", {products:products })
+        })
+}, 
      
 home: function(req,res,next){
         db.Product.findAll( {include: [ {association:"images"}]}).then(function(products){
