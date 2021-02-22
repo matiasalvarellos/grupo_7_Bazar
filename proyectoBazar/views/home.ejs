@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+   
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRM pro Bienvenidos</title>
@@ -112,95 +113,31 @@
                 <div class="latest-product">
                     <h2 class="section-title">Ultimos ingresos</h2>
                     <div class="product-carousel">
+                       
+                         <% for( let i=0; i<5; i++){ %>
                         <div class="single-product">
+                          
                             <div class="product-f-image">
-                                <img src="/images/product-1.jpg" alt="">
+                                
+                       
+                                <img src="/images/uploadProducts/<%= products[i].images[0].name%>" alt="">
                                 <div class="product-hover">
-                                    <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Carrito</a>
-                                    <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> Detalles</a>
+                                    <a href="/productos/detail/<%= products[i].id%>" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Carrito</a>
+                                    <a href="/productos/detail/<%= products[i].id%>" class="view-details-link"><i class="fa fa-link"></i> Detalles</a>
                                 </div>
                             </div>
-                            
-                            <h2><a href="single-product.html">Plato</a></h2>
+                            <h2> <%= products[i].name %></h2>
+                           
                             
                             <div class="product-carousel-price">
-                                <ins>$250</ins>
+                                <ins> <%= products[i].price %>  </ins>
                             </div> 
                         </div>
-                        <div class="single-product">
-                            <div class="product-f-image">
-                                <img src="/images/product-2.jpg" alt="">
-                                <div class="product-hover">
-                                    <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Carrito</a>
-                                    <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> Detalles</a>
-                                </div>
-                            </div>
-                            
-                            <h2>Sarten</h2>
-                            <div class="product-carousel-price">
-                                <ins>$1100</ins>
-                            </div> 
-                        </div>
-                        <div class="single-product">
-                            <div class="product-f-image">
-                                <img src="/images/product-3.jpg" alt="">
-                                <div class="product-hover">
-                                    <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Carrito</a>
-                                    <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> Detalles</a>
-                                </div>
-                            </div>
-                            
-                            <h2>Vaso</h2>
-
-                            <div class="product-carousel-price">
-                                <ins>$300</ins>
-                            </div>                                 
-                        </div>
-                        <div class="single-product">
-                            <div class="product-f-image">
-                                <img src="/images/product-4.jpg" alt="">
-                                <div class="product-hover">
-                                    <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Carrito</a>
-                                    <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> Detalles</a>
-                                </div>
-                            </div>
-                            
-                            <h2><a href="single-product.html">Cuchilla</a></h2>
-
-                            <div class="product-carousel-price">
-                                <ins>$2000</ins>
-                            </div>                            
-                        </div>
-                        <div class="single-product">
-                            <div class="product-f-image">
-                                <img src="/images/product-5.jpg" alt="">
-                                <div class="product-hover">
-                                    <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Carrito</a>
-                                    <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> Detalles</a>
-                                </div>
-                            </div>
-                            
-                            <h2>Termo</h2>
-
-                            <div class="product-carousel-price">
-                                <ins>$9999</ins>
-                            </div>                                 
-                        </div>
-                        <div class="single-product">
-                            <div class="product-f-image">
-                                <img src="/images/product-6.jpg" alt="">
-                                <div class="product-hover">
-                                    <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Carrito</a>
-                                    <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> Detalles</a>
-                                </div>
-                            </div>
-                            
-                            <h2><a href="single-product.html">Taza</a></h2>
-
-                            <div class="product-carousel-price">
-                                <ins>$400.00</ins>
-                            </div>                            
-                        </div>
+                        <% } %>
+                  
+                 
+                 
+                      
                     </div>
                 </div>
             </div>
@@ -238,144 +175,103 @@
                 <div class="single-product-widget">
                     <h2 class="product-wid-title">Top Ventas</h2>
                     <a href="" class="wid-view-more">Ver todos</a>
-                    <div class="single-wid-product">
-                        <a href="single-product.html"><img src="/images/product-6.jpg" alt="" class="product-thumb"></a>
-                        <h2><a href="single-product.html">Taza</a></h2>
-                        <div class="product-wid-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                    <% for( let i=0; i<3; i++){ %>
+  
+                          
+                            <div class="single-wid-product">
+                                <a href="productos/detail/<%=products[i].id%>" >   
+                                    <img src="/images/uploadProducts/<%=products[i].images[0].name %>" alt="" class="product-thumb">
+                                    <h2><a href="productos/detail/<%=products[i].id%>"> <h2> <%= products[i].name %></h2> </a></h2>  
+                                <div class="product-wid-rating"> 
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+
+                                  </div>
+                                  <div class="product-wid-price">
+                                    <ins> <%=products[i].name %> </ins> <span> <%=products[i].price%>   </span>
+                                    
+
+                                </div>
+                            </div>
+
+
+                               
+                        <% } %>
                         </div>
-                        <div class="product-wid-price">
-                            <ins>$400.00</ins> <del>$425.00</del>
-                        </div>                            
-                    </div>
-                    <div class="single-wid-product">
-                        <a href="single-product.html"><img src="/images/product-5.jpg" alt="" class="product-thumb"></a>
-                        <h2><a href="single-product.html">Termo</a></h2>
-                        <div class="product-wid-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
                         </div>
-                        <div class="product-wid-price">
-                            <ins>$400.00</ins> <del>$425.00</del>
-                        </div>                            
-                    </div>
-                    <div class="single-wid-product">
-                        <a href="single-product.html"><img src="/images/product-4.jpg" alt="" class="product-thumb"></a>
-                        <h2><a href="single-product.html">Cuchilla</a></h2>
-                        <div class="product-wid-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <div class="product-wid-price">
-                            <ins>$400.00</ins> <del>$425.00</del>
-                        </div>                            
-                    </div>
-                </div>
-            </div>
+
             <div class="col-md-4">
                 <div class="single-product-widget">
                     <h2 class="product-wid-title">Ultimos ingresos</h2>
                     <a href="#" class="wid-view-more">Ver todos</a>
-                    <div class="single-wid-product">
-                        <a href="single-product.html"><img src="/images/product-3.jpg" alt="" class="product-thumb"></a>
-                        <h2><a href="single-product.html">Vaso</a></h2>
-                        <div class="product-wid-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                    <% for( let i=0; i<3; i++){ %>
+  
+                          
+                        <div class="single-wid-product">
+                            <a href="productos/detail/<%=products[i].id%>" >   
+                                <img src="/images/uploadProducts/<%=products[i].images[0].name %>" alt="" class="product-thumb">
+                                <h2><a href="productos/detail/<%=products[i].id%>"> <h2> <%= products[i].name %></h2> </a></h2>  
+                            <div class="product-wid-rating"> 
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+
+                              </div>
+                              <div class="product-wid-price">
+                                <ins> <%=products[i].name %> </ins> <span> <%=products[i].price%>   </span>
+                                
+
+                            </div>
                         </div>
-                        <div class="product-wid-price">
-                            <ins>$400.00</ins> <del>$425.00</del>
-                        </div>                            
-                    </div>
-                    <div class="single-wid-product">
-                        <a href="single-product.html"><img src="/images/product-2.jpg" alt="" class="product-thumb"></a>
-                        <h2><a href="single-product.html">Sarten</a></h2>
-                        <div class="product-wid-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <div class="product-wid-price">
-                            <ins>$400.00</ins> <del>$425.00</del>
-                        </div>                            
-                    </div>
-                    <div class="single-wid-product">
-                        <a href="single-product.html"><img src="/images/product-1.jpg" alt="" class="product-thumb"></a>
-                        <h2><a href="single-product.html">Plato</a></h2>
-                        <div class="product-wid-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <div class="product-wid-price">
-                            <ins>$400.00</ins> <del>$425.00</del>
-                        </div>                            
-                    </div>
+
+
+                           
+                    <% } %>
+                     
+              
+                
                 </div>
             </div>
             <div class="col-md-4">
+            
+           
+
                 <div class="single-product-widget">
                     <h2 class="product-wid-title">Ofertas</h2>
                     <a href="#" class="wid-view-more">Ver todos</a>
-                    <div class="single-wid-product">
-                        <a href="single-product.html"><img src="/images/product-4.jpg" alt="" class="product-thumb"></a>
-                        <h2><a href="single-product.html">Cuchilla</a></h2>
-                        <div class="product-wid-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+
+                    <% for( let i=0; i<3; i++){ %>
+  
+                          
+                        <div class="single-wid-product">
+                            <a href="productos/detail/<%=products[i].id%>" >   
+                                <img src="/images/uploadProducts/<%=products[i].images[0].name %>" alt="" class="product-thumb">
+                                <h2><a href="productos/detail/<%=products[i].id%>"> <h2> <%= products[i].name %></h2> </a></h2>  
+                            <div class="product-wid-rating"> 
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+
+                              </div>
+                              <div class="product-wid-price">
+                                <ins> <%=products[i].name %> </ins> <span> <%=products[i].price%>   </span>
+                                
+
+                            </div>
                         </div>
-                        <div class="product-wid-price">
-                            <ins>$400.00</ins> <del>$425.00</del>
-                        </div>                            
-                    </div>
-                    <div class="single-wid-product">
-                        <a href="single-product.html"><img src="/images/product-2.jpg" alt="" class="product-thumb"></a>
-                        <h2><a href="single-product.html">Sarten</a></h2>
-                        <div class="product-wid-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <div class="product-wid-price">
-                            <ins>$400.00</ins> <del>$425.00</del>
-                        </div>                            
-                    </div>
-                    <div class="single-wid-product">
-                        <a href="single-product.html"><img src="/images/product-3.jpg" alt="" class="product-thumb"></a>
-                        <h2><a href="single-product.html">Vaso</a></h2>
-                        <div class="product-wid-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <div class="product-wid-price">
-                            <ins>$400.00</ins> <del>$425.00</del>
-                        </div>                            
-                    </div>
+
+
+                           
+                    <% } %>
+  
+                
                 </div>
             </div>
         </div>

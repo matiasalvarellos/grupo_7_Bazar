@@ -37,10 +37,17 @@ body {
     margin-top: 3.5%;
 }
 
-.form-search input {
-    width: 50%;
+.image-avatar{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
 }
+.form-search{ 
+    display:flex;
+  flex-direction: row!important;}
+  .form-search input[type=submit] {background-color: #7E675F}
 
+  .site-branding-area{background-color:#F49974;}
 .header-area {
     background: none repeat scroll 0 0 #7e675f;
 }

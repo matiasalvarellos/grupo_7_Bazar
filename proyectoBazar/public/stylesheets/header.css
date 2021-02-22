@@ -108,6 +108,10 @@
   padding: 10px;
 }
 
+.form-search{ 
+  display:flex;
+flex-direction: row!important;}
+
 .form-search input {
   height: 30px;
   width: 50%;
@@ -136,6 +140,7 @@
   height: 30px;
   border-radius: 50%;
 }
+.submit{width:30px;}
 
 @media (max-width:900px) {
   .menu-top {

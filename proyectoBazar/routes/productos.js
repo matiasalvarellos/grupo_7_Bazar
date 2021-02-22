@@ -4,6 +4,7 @@ const productoController= require("../controller/productoController");
 const upload = require('../middlewares/multer/multerProduct');
 const authMiddlewares = require("../middlewares/authMiddleware");
 const adminMiddleware = require("../middlewares/adminMiddleware");
+const validator = require("../middlewares/express-validator");
 
 ////*CRUDE PRODUCTOS*////
 router.get("/", productoController.list);

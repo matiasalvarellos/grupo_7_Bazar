@@ -1,6 +1,7 @@
 const db = require('../database/models');
 const { Op } = require("sequelize");
 
+
 function price(cost, markup){
     let ganancia = (Number(cost) * Number(markup))/100;
     let total = ganancia + Number(cost);
@@ -20,7 +21,9 @@ producto={
         })
         res.render("productCreate", {categories, colors});
     },
-    store: async function (req, res, next){
+    store: async function (req, res, next){    
+
+       
         let productCreate = await db.Product.create({
             code: req.body.code,
             name: req.body.name,
@@ -42,7 +45,9 @@ producto={
         await db.Image.bulkCreate(imagesTocreate);
         await productCreate.setColors(req.body.colors);
         res.redirect("/productos");
-    },        
+
+
+},        
     detalle: async function (req, res, next ){
         let productFound = await db.Product.findByPk(req.params.id, {
             include:["colors", "images", "subcategory"]

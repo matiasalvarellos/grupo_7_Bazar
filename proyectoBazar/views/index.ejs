@@ -44,18 +44,21 @@
 
     <div class="productos-masvendidos">
       <!--FLEX DIRECTION ROW-->
+     
+     <% 
+     console.log(products);
+     for (let i=0; i<2; i++) {%>  
 
-
-      <a class="detalle-masvendidos" href="/productos/detail">
+      <a class="detalle-masvendidos" href="/productos/detail/<=%products[i].id%>">
 
         <div class="producto-imagen" id="producto1"> </div>
-        <h3>5000</h3>
-        <h4>40%</h4>
-        <p>Lorem ipsum dolor sit, amet.</p>
+        <h3><%= products[i].price %></h3>
+        <h4><%= products[i].discount %></h4>
+        <p> <%= products[i].name %></p>
     
-      </a>
+      </a> <% } %> 
 
-      <a class="detalle-masvendidos" href="/productos/detail">
+  <!--    <a class="detalle-masvendidos" href="/productos/detail">
         <div class="producto-imagen" id="producto2"> </div>
         <h3>5000</h3>
         <h4>40%</h4>
@@ -72,17 +75,17 @@
     </div>
   </section>
   <section class="mas-vendidos">
-    <div class="titular-masvendidos">
+    <div class="titular-masvendidos"> -->
       <!--FLEX DIRECTION ROW-->
-      <h2>Ofertas</h2>
+    <!--  <h2>Ofertas</h2>
       <a href="">Ver todas</a>
     </div>
 
-    <div class="productos-masvendidos">
+    <div class="productos-masvendidos"> -->
       <!--FLEX DIRECTION ROW-->
 
 
-      <a class="detalle-masvendidos" href="/productos/detail">
+     <!-- <a class="detalle-masvendidos" href="/productos/detail">
         <div class="producto-imagen" id="producto1"> </div>
         <h3>5000</h3>
         <h4>40%</h4>
@@ -118,9 +121,9 @@
   </div>
 
   <section class="mas-vendidos">
-    <div class="titular-masvendidos">
+    <div class="titular-masvendidos"> -->
       <!--FLEX DIRECTION ROW-->
-      <h2>Novedades</h2>
+     <h2>Novedades</h2>
       <a href="">Ver todas</a>
     </div>
 

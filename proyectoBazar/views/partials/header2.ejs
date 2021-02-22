@@ -7,8 +7,14 @@
                         <li><a href="cart.html"><i class="fas fa-cart-arrow-down"></i> Carrito</a></li>
                         <li><a href="/users/logout"><i class="fa fa-user"></i> Checkout</a></li>
                         <% if (usuario) { %>
+                          
+                              
+                           
+               
                         <li><a href="#"><i class="fa fa-user"></i> Mi Cuenta</a></li>
                         <li><a href="/users/logout"><i class="fa fa-user"></i> Cerrar Sesion</a></li>
+                        <li><img src="/images/avatares/<%= usuario.avatar%>" alt="Imagen del usuario" class="image-avatar"></li>
+                     
                         <% } else { %>
                         <li><a href="/users/login"><i class="fa fa-user"></i> Login</a></li>            
                         <li><a href="/users/login"><i class="fas fa-clipboard-list"></i> Registrarse</a></li>
@@ -47,9 +53,11 @@
             
             <div class="menu-bottom">
                 <div class="search-container">
-                  <form class="form-search" action="" method="get">
-                    <input type="text" class="input" placeholder="¿Qué necesitas hoy?">
-                  </form>
+                    <form class="form-search" action="/productos/buscar" method="post">
+                        <input type="text" class="input" name="product" placeholder="¿Qué necesitas hoy?">
+                        <input type="submit" value="buscar" style="width:100px;">
+                      </form>
+ 
                 </div>
               </div>
         </div>
