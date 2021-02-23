@@ -9,6 +9,18 @@ function price(cost, markup){
 }
 
 producto={
+    buscar: function (req, res, next) {
+        let productToFind = req.query.product;
+        db.Product.findAll({
+            include: ["images"],
+            where: {
+                name: { [Op.like]: '%' + productToFind + '%' }
+            }
+        })
+            .then(function (products) {
+                res.render("productList", { products: products });
+            })
+    },
     list:function(req,res,next){
         db.Product.findAll( {include: [ {association:"images"}]}).then(function(products){
             res.render("productList", { products:products })
@@ -145,18 +157,6 @@ producto={
             include:[ "images"]
         });
         res.render("edit-images", {product})
-    },
-    buscar:function(req,res,next){
-        let productToFind=req.query.product;
-        db.Product.findAll({
-            include: ["images"],
-            where:{
-                name:{ [Op.like]:'%'+productToFind+'%' }
-            }
-        })
-        .then(function(products){
-            res.render("productList", { products:products });
-        })
     }
 }
 
