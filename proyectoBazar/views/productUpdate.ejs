@@ -1,22 +1,23 @@
 <head>
+    <%- include("partials/head") %> 
     <meta charset="UTF-8">
+
     <title>Bazar e commerce </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--<link rel='stylesheet' href='/stylesheets/style.css' />-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <link rel="stylesheet" href="/stylesheets/header.css">
-    <link rel="stylesheet" href="/stylesheets/footer.css">
-    <script src="/js/open-menu.js"></script>
-    <link rel="stylesheet" href="/stylesheets/productAdd.css">
-    <link rel="stylesheet" href="/stylesheets/index.css">
-    
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet">
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+    <script src="/js/open-menu.js"></script>
+   
+    <link rel="stylesheet" href="/stylesheets/index.css">
+    <link rel="stylesheet" href="/stylesheets/productAdd.css">
+   
 
 </head>
 <body>
-<%- include("partials/header") %>   
+<%- include("partials/header2") %>   
 
 <section class="userAccount-section">
  <%- include("partials/adminMenu") %>
@@ -68,24 +69,11 @@
             <div class="botones">
                 <button type="submit">Editar</button>
             </div>
-          <!--
-          <p> Imágenes del producto</p>
-          <div class="update-images">
-          <% product.images.forEach(function(image) { let number=0%> 
-            <form name = "product-image-form" class="img-form" action="/producto/imageDelete/<%= image.id %>" method="post">
-            <label class="image-e-c" for="<%= image.id %>"> <input type="checkbox" name="productImage" id="<%=image.id%>" value="<%=image.id%>"> <img class="thumbnail-edit" src="/images/uploadProducts/<%=image.name %>" width="250px"> </label>
-            <input type="submit" value="borrar"> 
-            </form>
-
-            
-            <%;})%>
-
-            </div>
-            -->
+      
     </div>
 </section>
 
-<%- include("partials/footer") %>
+<%- include("partials/footer2") %>
 <script> 
 let imagenes= <%= product.images %> ;
 console.log( imagenes)</script>

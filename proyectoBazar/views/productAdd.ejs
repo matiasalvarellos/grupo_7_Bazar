@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <%- include("partials/head") %> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -12,7 +13,7 @@
     <script src="/js/open-menu.js"></script>
 </head>
 <body>
-    <%- include("partials/header") %>   
+    <%- include("partials/header2") %>   
     <div>
         <div><h1>ABM DE PRODUCTO</h1></div>
         <form action="/productos/create" enctype="multipart/form-data" method="POST">
@@ -64,6 +65,6 @@
             timer: 1500
           })</script>
     <% } %>
-    <%- include("partials/footer") %> 
+    <%- include("partials/footer2") %> 
 </body>
 </html>

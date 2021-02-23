@@ -18,10 +18,23 @@
                 <div class="footer-menu">
                     <h2 class="footer-wid-title">User Navigation </h2>
                     <ul>
-                        <li><a href="#">Mi cuenta</a></li>
-                        <li><a href="#">Registarse</a></li>
-                        <li><a href="#">Carrito</a></li>
-                    </ul>                        
+                        <li><a href="/cart"><i class="fas fa-cart-arrow-down"></i> Carrito</a></li>
+                       
+                        <% if (usuario) { %>
+                          
+                     <li><a href="/users/logout"><i class="fa fa-user"></i> Salir</a></li>                           
+               
+                        <li><a href="/users/account"><i class="fa fa-user"></i> Mi Cuenta</a></li>                     
+                       
+                     
+                        <% } else { %>
+                        <li><a href="/users/login"><i class="fa fa-user"></i> Login</a></li>            
+                        <li><a href="/users/register"><i class="fas fa-clipboard-list"></i> Registrarse</a></li>
+                        <% } %>
+                        
+                    </ul>
+                    
+
                 </div>
             </div>
             
@@ -29,24 +42,20 @@
                 <div class="footer-menu">
                     <h2 class="footer-wid-title">Categorias</h2>
                     <ul>
-                        <li><a href="#">Bazar</a></li>
-                        <li><a href="#">Maquinaria</a></li>
-                        <li><a href="#">Blanco</a></li>
-                        <li><a href="#">Cristaleria</a></li>
-                        <li><a href="#">Indumentaria</a></li>
+                        <li><a href="/category">Bazar</a></li>
+                        <li><a href="/category">Maquinaria</a></li>
+                        <li><a href="/category">Blanco</a></li>
+                        <li><a href="/category">Cristaleria</a></li>
+                        <li><a href="/category">Indumentaria</a></li>
                     </ul>                        
                 </div>
             </div>
             
             <div class="col-md-3 col-sm-6">
                 <div class="footer-newsletter">
-                    <h2 class="footer-wid-title">Newsletter</h2>
-                    <p>Ingresa tu mail y enterate de todas las novedades y ofertas</p>
-                    <div class="newsletter-form">
-                        <form action="#">
-                            <input type="email" placeholder="Ingrese su email">
-                            <input type="submit" value="Suscribirse">
-                        </form>
+                    <h2 class="footer-wid-title">Contacto</h2>
+                    <a href="/contacto">Contacto</p>
+        
                     </div>
                 </div>
             </div>

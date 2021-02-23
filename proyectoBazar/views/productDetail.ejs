@@ -2,6 +2,7 @@
 <html lang="en">
 
   <head>
+    <%- include("partials/head") %> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalle del producto</title>
@@ -17,7 +18,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   </head>
   <body>
-    <%- include("partials/header") %>
+    <%- include("partials/header2") %>
     <div class="container">
       <% if (typeof productFound != "undefined") { %>
           <aside>
@@ -121,6 +122,6 @@
         })</script>
       <% } %>
     </div>
-    <%- include("partials/footer") %>
+    <%- include("partials/footer2") %>
   </body>
 </html>
