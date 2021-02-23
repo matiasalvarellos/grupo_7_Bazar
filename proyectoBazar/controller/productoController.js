@@ -1,5 +1,6 @@
 const db = require('../database/models');
 const { Op } = require("sequelize");
+const {check, body, validationResult} = require("express-validator");
 
 
 function price(cost, markup){
@@ -33,7 +34,11 @@ producto={
         })
         res.render("productCreate", {categories, colors});
     },
-    store: async function (req, res, next){    
+    store: async function (req, res, next){ 
+        
+        let errors =validationResult(req);
+
+       if (errors.isEmpty()){
 
        
         let productCreate = await db.Product.create({
@@ -58,6 +63,13 @@ producto={
         await productCreate.setColors(req.body.colors);
         res.redirect("/productos");
 
+    }else {
+            let colors = await db.Color.findAll() 
+            let categories = await db.Category.findAll({
+                include:[{association:"subcategories"}]
+            })
+             return res.render("productCreate", {categories, colors, errors:errors.errors })
+        }
 
 },        
     detalle: async function (req, res, next ){

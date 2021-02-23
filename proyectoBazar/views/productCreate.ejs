@@ -30,6 +30,16 @@
 
     <div>
         <h1 class="productEdit-title dashboardTitle">ALTA DE PRODUCTO</h1>
+        <% if(typeof errors != "undefined"){ %>
+            <ul>
+                <% for (let i = 0; i < errors.length; i++){ %>
+                <li>
+                    <%= errors[i].msg %>
+                </li>
+                <% } %>
+            </ul>
+        <% } %>
+
         <form action="/productos/create" class= "prod" enctype="multipart/form-data" method="POST">
             <div class="formulario">
                     <div class="producto">
@@ -83,13 +93,12 @@
                         <input type="file" name="image" multiple>
                         <p class="invalid-feedback"></p>
                     </div>
-                    
-                    <div class="producto"class="inputform">
+ 
+                    <div class="producto" name="description" class="inputform">
                         <p>Description:</p>
                         <textarea name="description"></textarea>
                         <p class="invalid-feedback"></p>
-                    </div>
-                                         
+                    </div>                                         
                         <!--<label for="">Categoria</label>-->
                         <h3>Seleccionar a que subcategoria pertenece:</h3> 
                         <% categories.forEach(category => { %>
@@ -104,14 +113,12 @@
                                 <% }) %> 
                             </ul>   
                         <% }) %>
-                        </div> 
-                                           
+                        </div>                                            
             <div class="botones">
                 <button type="submit">Agregar</button>
             </div>
-        </form>     
+        </form> 
     </div>
-
 
     <% if (typeof alert != "undefined") { %>
         <script>Swal.fire({
@@ -125,9 +132,6 @@
 
 
 </div>
-
-
-
 
 </section>
 

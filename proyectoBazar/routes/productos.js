@@ -9,7 +9,7 @@ const validator = require("../middlewares/express-validator");
 ////*CRUDE PRODUCTOS*////
 router.get("/", productoController.list);
 router.get("/create", authMiddlewares, adminMiddleware, productoController.crear);
-router.post("/create", upload.any(), productoController.store);
+router.post("/create", upload.any(),  validator.prod, productoController.store);
 router.get("/detail/:id", productoController.detalle );
 router.get("/edit/:id", authMiddlewares, adminMiddleware, productoController.edit);
 router.get("/edit-images/:id", productoController.editImages);

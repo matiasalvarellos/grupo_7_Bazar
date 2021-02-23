@@ -73,7 +73,32 @@ const validar = {
     prod:[
         check("code")
          .isLength({min:5, max:8})
-         .withMessage("Campo code tener un minimo de 8 caracteres"),
+         .withMessage("Campo de code tener entre 5 y 8 caracteres"),
+
+         check("name")
+         .isLength({min:3})
+         .withMessage("Campo de nombre debe tener un minimo de 3 caracteres"),
+
+         check("stock")
+         .isLength({})
+         .withMessage("Campo de stock tiene que estar completo"),
+
+         check("cost")
+         .isLength({min:1})
+         .withMessage("Campo de costo de producto tiene que estar completo"),
+
+         check("markup")
+         .isLength({min:1})
+         .withMessage("Campo de markup tiene que estar completo"),
+
+         check("discount")
+         .isLength({min:1})
+         .withMessage("Campo discount tiene que estar completo"),
+
+         check("description")
+         .isLength({min:3})
+         .withMessage("Campo description tiene que estar completo")
+         
     ]
 
 
