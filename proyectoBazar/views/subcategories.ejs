@@ -28,7 +28,7 @@
 <div class="dashboard">
 
     <div>
-        <h1 class="productEdit-title dashboardTitle">ABM DE SUBCATEGORIA</h1>
+        <h1 class="productEdit-title dashboardTitle">ALTA DE SUBCATEGORIA</h1>
 
         <form action="/admin/subcategories"  method="POST">
             <label for="">Eleji Categoria</label>
@@ -52,6 +52,17 @@
         </form>
 
     </div>
+
+    <% if(typeof errors != "undefined"){ %>
+        <ul>
+            <% for (let i = 0; i < errors.length; i++){ %>
+            <li>
+                <%= errors[i].msg %>
+            </li>
+            <% } %>
+        </ul>
+    <% } %>
+
     <% if (typeof alert != "undefined") { %>
         <script>Swal.fire({
             position: 'top-middle',

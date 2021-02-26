@@ -99,9 +99,27 @@ const validar = {
          .isLength({min:3})
          .withMessage("Campo description tiene que estar completo")
          
-    ]
+    ],
 
+    cat:[
+        check("name")
+        .isLength({min:3})
+        .withMessage("Campo de nombre debe tener un minimo de 3 caracteres")
+    ],
 
+    colors:[
+        check("name")
+        .isLength({min:3})
+        .withMessage("Campo de nombre de color tiene que estar completo")
+        
+    ],
+
+    subcat:[
+        check("name")
+         .isLength({min:3})
+         .withMessage("Campo de subcategoria debe estar completo")
+
+        ]
 
     
 }

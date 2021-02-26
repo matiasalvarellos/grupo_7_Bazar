@@ -29,9 +29,20 @@
 
     <div>
         <h1 class="productEdit-title dashboardTitle"> Gestionar Colores</h1>
+        <% if(typeof errors != "undefined"){ %>
+            <ul>
+                <% for (let i = 0; i < errors.length; i++){ %>
+                <li>
+                    <%= errors[i].msg %>
+                </li>
+                <% } %>
+            </ul>
+        <% } %>
+
+
         <form action="/admin/colors"  method="POST">
             <div class="formulario">
-                    <div class="producto">
+                    <div class="producto" name="colors">
                         <p>Color</p> 
                         <label for="colorName" Escribí el nombre del color > <input type="text" name="name" placeholder="Colocar el nombre del color" id="ColorName"> </label>                   
                        <label for="color" >Seleccioná el color que querés agregar <input type="color" name="hexadecimal" id="color" value="#45CBD8">  </label>
