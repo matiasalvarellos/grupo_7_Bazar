@@ -1,4 +1,5 @@
 const db = require('../../database/models');
+const bcrypt = require("bcryptjs");
 
 const apis = {
     productsList: function (req, res, next){
@@ -89,6 +90,29 @@ const apis = {
             }
             res.json(jsonProducto);
         })
+    },
+    checkPassword: async function(req, res){
+        let userFound = await db.User.findByPk(req.session.usuarioLogueado.id);
+        let boolean = bcrypt.compareSync(req.body.password, userFound.password)
+        res.json({
+            isCorrect : boolean
+        })
+    },
+    updatePassword: async function(req, res){
+        
+        await db.User.update({
+           password: bcrypt.hashSync(req.body.new)
+        },{
+            where: {
+               id: req.session.usuarioLogueado.id
+            }
+        })
+
+        res.json("Todo ok");
+
+        let userFound = await db.User.findByPk(req.session.usuarioLogueado.id)
+        req.session.usuarioLogueado = userFound;
+       
     }
 }
 

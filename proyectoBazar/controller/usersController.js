@@ -66,7 +66,30 @@ const users = {
        
        else{return res.redirect('/users/login')} 
         
-    }
+    },
+    editUser: (req, res) => {
+        res.render("editUsers")         
+    },
+    processEdit: async(req, res) => {
+        await db.User.update({
+            name: req.body.name,
+            last_name: req.body.last_name,
+            email: req.body.email,
+            type_customer: req.body.type_customer,
+            avatar: req.file ? req.file.filename : req.session.usuarioLogueado.avatar,
+            adress: req.body.adress ,
+            phone: req.body.phone ,
+            dni: req.body.dni ,
+            post_code: req.body.post_code
+        },{
+            where:{
+                id: req.session.usuarioLogueado.id
+            }  
+        });
+        let userFound = await db.User.findByPk(req.session.usuarioLogueado.id)
+        req.session.usuarioLogueado = userFound;
+        res.redirect("/");
+    }    
 }    
 
 module.exports=users;

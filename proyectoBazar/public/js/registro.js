@@ -2,7 +2,7 @@ window.addEventListener ("load", function(){
     /*let error = []*/
     
     let form = document.querySelector(".regi");   
-    console.log(form)  
+      
     form.addEventListener("submit", function(e){
  
          e.preventDefault();
@@ -21,7 +21,7 @@ window.addEventListener ("load", function(){
                 input.classList.add('is-invalid');                            
                 error.innerHTML = "El campo esta vacio.";
                 hayError = true;*/
-                console.log("elemento", input.nextElementSibling)
+                
                 input.nextElementSibling.style.color="red";
                 input.nextElementSibling.style.fontSize= "12px";
                 input.classList.add('is-invalid');                            

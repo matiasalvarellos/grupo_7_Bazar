@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <%- include('partials/head') %>
+        <link rel="stylesheet" href="/stylesheets/loginRegistro.css">
+        <script src="/js/registro.js"></script>
+        <script src="/js/checkPassword.js"></script>
+    </head>
+    <body>
+        <%- include("partials/header2") %>
+
+        <div class="login1">
+            <main>
+                <div class="ventanaFormulario">
+                    <form action="/users/edit" class="regi" enctype="multipart/form-data" method="POST">
+                        <div class="titulo">
+                            <label for="name">
+                                <em>
+                                    <mark>Editar datos del usuario:</mark>
+                                </em>
+                            </label>
+                        </div>
+                        <div class="flex">
+                            <div class="datos">
+                                <p><label>Nombre:</label></p>
+                                <input type="text" class="inputdatos" id="name" name="name" value="<%=usuario.name%>">
+                                <p class="invalid-feedback"></p>
+                            </div>
+                            <div class="datos">
+                                <p><label>Apellido:</label></p>
+                                <input type="text" class="inputdatos" id="last_name" name="last_name" value="<%= usuario.last_name %>">
+                                <p class="invalid-feedback"></p>
+                            </div>
+                            <div class="datos">
+                                <p><label>Email:</label></p>
+                                <input type="email" class="inputdatos" id="email" name="email" value="<%= usuario.email %>">
+                                <p class="invalid-feedback"></p>
+                            </div>
+                            <div class="datos">
+                                <p><label>Dirección:</label></p>
+                                <input type="text"  name="adress" value="<%= usuario.adress ? usuario.adress : "" %>">
+                                
+                            </div>
+                            <div class="datos">
+                                <p><label>Teléfono:</label></p>
+                                <input type="number" name="phone" value="<%= usuario.phone ? usuario.phone : "" %>">
+                                
+                            </div>
+                            <div class="datos">
+                                <p><label>DNI:</label></p>
+                                <input type="number" name="dni" value="<%= usuario.dni ? usuario.dni : "" %>">
+                                
+                            </div>
+                            <div class="datos">
+                                <p><label>Codigo Postal:</label></p>
+                                <input type="number" name="post_code" value="<%= usuario.post_code ? usuario.post_code : "" %>">
+                                
+                            </div>
+                            <div class="datos">
+                                <p><label>Cliente:</label></p>
+                                <select name="type_customer">
+                                    <option disabled>-Tipo de Cliente-</option>
+                                    <option value="mayorista">Mayorista</option>
+                                    <option value="C.f">Minorista</option>
+                                </select>
+                            </div>
+
+                        </div>
+                        
+                        <div class="imagenArchivo">
+                            <label for="avatar">Remplazar Imagen Avatar</label><br>
+                            <input type="file" id="avatar" name="avatar">
+                        </div>
+
+                        <button class="primerButton" type="submit">
+                            Editar
+                        </button>
+                    </form>
+
+                    <h2>Cambia tu contraseña</h2>
+                    <form class="changePassword">
+                        <div class="datos">
+                            <p><label>Contraseña Actual:</label></p>
+                            <input type="password" id="password" name="password">
+                        </div>
+                        <div class="datos">
+                            <p><label>Nueva Contraseña:</label></p>
+                            <input type="password" id="new" name="new">
+                        </div>
+                        <div class="datos">
+                            <p><label>Repetir Contraseña:</label></p>
+                            <input type="password" id="repeat" name="repeat">
+                        </div>
+                        <button id="buttonPassword" class="primerButton" type="submit">
+                            actualizar
+                        </button>
+                    </form>
+                    <div id="message">
+
+                    </div>
+                </div>
+            </main>
+        </div>
+        <%- include("partials/footer2") %>
+    </body>
+</html>

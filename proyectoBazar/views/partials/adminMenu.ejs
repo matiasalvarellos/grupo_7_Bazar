@@ -6,11 +6,24 @@
     <h3 class="productsEdit-title">Productos</h3>
         <ul class="productsOptions">
            <% if (usuario.admin == 1) { %>
-                <li class="productsEdit-option"> <a href="/productos/create"> Agregar productos </a> </li>
-                <li class="productsEdit-option"> <a href="/admin/categories"> Administrar categorías </a> </li>
-                <li class="productsEdit-option"> <a href="/admin/colors"> Administrar colores </a> </li>
-                <li class="productsEdit-option"> <a href="/admin/subcategories"> Agregar subcategorias </a> </li>
+                <li class="productsEdit-option">
+                    <a href="/productos/create"> Agregar productos </a> 
+                </li>
+                <li class="productsEdit-option">
+                    <a href="/admin/categories"> Administrar categorías </a>
+                </li>
+                <li class="productsEdit-option">
+                    <a href="/admin/colors"> Administrar colores </a>
+                </li>
+                <li class="productsEdit-option">
+                    <a href="/admin/subcategories"> Agregar subcategorias </a>
+                </li>
             <% } %>
-            <li class="productsEdit-option"> <a href="/productos"> Ver lista de productos </a> </li>
+            <li class="productsEdit-opcion">
+                <a href="/users/edit">Editar información de usuario</a>
+            </li>
+            <li class="productsEdit-option">
+                <a href="/productos"> Ver lista de productos </a>
+            </li>
         </ul>
 </div>

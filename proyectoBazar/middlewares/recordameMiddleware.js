@@ -7,9 +7,12 @@ function recordameMiddleware(req, res, next){
             }
         }).then(function(user){
             req.session.usuarioLogueado = user;
+            return next()
         })
+    }else{
+        return next()
     }
-    return next()    
+        
 }
 module.exports= recordameMiddleware;
 
