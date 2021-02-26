@@ -26,9 +26,20 @@
 
 
 <div class="dashboard">
+    
 
     <div>
-        <h1 class="productEdit-title dashboardTitle">ABM DE CATEGORIA</h1>
+        <h1 class="productEdit-title dashboardTitle">ALTA DE CATEGORIA</h1>
+
+        <% if(typeof errors != "undefined"){ %>
+            <ul>
+                <% for (let i = 0; i < errors.length; i++){ %>
+                <li>
+                    <%= errors[i].msg %>
+                </li>
+                <% } %>
+            </ul>
+        <% } %>
         <form action="/admin/categories"  method="POST">
             <div class="formulario">
                     <div class="producto">
