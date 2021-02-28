@@ -4,6 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const session = require("express-session");
+var cors = require('cors')
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -35,6 +36,7 @@ app.use(session({
   resave: true ,
   saveUninitialized: true 
 }));
+app.use(cors())
 
 app.use(recordameMiddleware);
 app.use(localsMiddle);
