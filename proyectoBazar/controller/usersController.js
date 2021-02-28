@@ -77,7 +77,7 @@ const users = {
             email: req.body.email,
             type_customer: req.body.type_customer,
             avatar: req.file ? req.file.filename : req.session.usuarioLogueado.avatar,
-            adress: req.body.adress ,
+            address: req.body.address ,
             phone: req.body.phone ,
             dni: req.body.dni ,
             post_code: req.body.post_code
