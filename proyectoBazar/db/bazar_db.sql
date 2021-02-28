@@ -13,7 +13,7 @@ CREATE TABLE users(
     password VARCHAR(255) NOT NULL,
     type_customer VARCHAR(255) NOT NULL,
     phone varchar(100) DEFAULT NULL,
-    adress varchar(100) DEFAULT NULL,
+    address varchar(100) DEFAULT NULL,
     dni varchar(100) DEFAULT NULL,
     post_code varchar(100) DEFAULT NULL, 
     avatar VARCHAR(255) NOT NULL,
@@ -57,14 +57,14 @@ CREATE TABLE colors(
 );
 
 -- Volcamos los colores
-
-INSERT INTO `colors` (`id`, `name`, `hexadecimal`, `created_at`, `updated_at`) VALUES
+INSERT INTO colors (`id`, `name`, `hexadecimal`, `created_at`, `updated_at`) VALUES
 (3, 'Acero', '#45cbd8', '2021-02-25 23:59:37', '2021-02-25 23:59:37'),
 (4, 'Blanco', '#45cbd8', '2021-02-25 23:59:51', '2021-02-25 23:59:51'),
 (5, 'Negro', '#45cbd8', '2021-02-25 23:59:55', '2021-02-25 23:59:55'),
 (6, 'Rojo', '#45cbd8', '2021-02-26 00:00:21', '2021-02-26 00:00:21'),
 (7, 'Cobre', '#45cbd8', '2021-02-26 00:00:25', '2021-02-26 00:00:25'),
 (8, 'Transparente', '#45cbd8', '2021-02-26 00:00:37', '2021-02-26 00:00:37');
+
 
 -- Creamos la tabla pivot PRODUCT_COLOR (PRODUCTS - COLORS)
 CREATE TABLE product_color(
@@ -161,6 +161,7 @@ CREATE TABLE items(
     subtotal INT UNSIGNED NOT NULL,
     quantity INT UNSIGNED NOT NULL,
     image VARCHAR(255) NOT NULL,
+    color varchar(200) NOT NULL,
     user_id INT UNSIGNED NOT NULL,
     order_id INT UNSIGNED DEFAULT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
