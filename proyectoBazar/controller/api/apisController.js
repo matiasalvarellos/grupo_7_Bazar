@@ -11,10 +11,15 @@ const apis = {
         }).then(function(products){
             products.forEach(product =>{
                 product.setDataValue("endpoint", "/api/products/" + product.id);
-            }) 
+            })
+            let amountProduct = products.reduce((current, valor) => {
+                return current + Number(valor.price)
+            }, 0)
+ 
             let jsonProducts = {
                 meta:{
                     status: 200,
+                    amountProduct,
                     total_products: products.length,
                     url: "/api/products"
                 },
