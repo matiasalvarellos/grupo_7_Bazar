@@ -8,18 +8,15 @@ const apis = {
                 ['id', 'DESC'], 
             ],
             include:["images", "subcategory", "colors"] 
+            
         }).then(function(products){
             products.forEach(product =>{
                 product.setDataValue("endpoint", "/api/products/" + product.id);
             })
-            let amountProduct = products.reduce((current, valor) => {
-                return current + Number(valor.price)
-            }, 0)
- 
+
             let jsonProducts = {
                 meta:{
                     status: 200,
-                    amountProduct,
                     total_products: products.length,
                     url: "/api/products"
                 },
@@ -27,6 +24,14 @@ const apis = {
             }
             res.json(jsonProducts)
         }) 
+    },
+    amountOrder: function(req, res){
+        db.Order.findAll({
+            include:["items"]
+        })
+        .then(resultado => {
+            res.json(resultado)
+        })
     },
     lastProducts: function (req, res, next){
         db.Product.findAll({
