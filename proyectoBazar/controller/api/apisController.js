@@ -2,7 +2,7 @@ const db = require('../../database/models');
 const bcrypt = require("bcryptjs");
 
 const apis = {
-    productsList: async function (req, res, next){
+    productsList: async function (req, res){
 
         let products = await db.Product.findAll({
             oder:[
@@ -13,15 +13,21 @@ const apis = {
         })
 
         let lastProducts = await db.Product.findAll({
-            oder: [
+            include:["images"],
+            order: [
                 ['created_at', 'DESC'],
             ],
-            limit: 10
+            limit: 5
         })
 
         products.forEach(product =>{
             product.setDataValue("endpoint", "/api/products/" + product.id);
         })
+        
+        lastProducts.forEach(product => {
+            product.setDataValue("endpoint", "/api/products/" + product.id);
+        })
+
         let jsonProducts = {
             meta:{
                 status: 200,
@@ -33,14 +39,6 @@ const apis = {
         }
         res.json(jsonProducts)
 
-    },
-    amountOrder: function(req, res){
-        db.Order.findAll({
-            include:["items"]
-        })
-        .then(resultado => {
-            res.json(resultado)
-        })
     },
     productDetail: function(req, res){
         db.Product.findByPk(req.params.id, {
@@ -60,7 +58,15 @@ const apis = {
             res.json(productJson)
         })
     },
-    usersList: function (req, res, next){
+    amountOrder: function (req, res) {
+        db.Order.findAll({
+            include: ["items"]
+        })
+            .then(resultado => {
+                res.json(resultado)
+            })
+    },
+    usersList: function (req, res){
         db.User.findAll().then(users => {
             let newData = users.map(user => {
                 return {
