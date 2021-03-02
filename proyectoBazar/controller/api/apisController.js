@@ -2,28 +2,37 @@ const db = require('../../database/models');
 const bcrypt = require("bcryptjs");
 
 const apis = {
-    productsList: function (req, res, next){
-        db.Product.findAll({
+    productsList: async function (req, res, next){
+
+        let products = await db.Product.findAll({
             oder:[
                 ['id', 'DESC'], 
             ],
             include:["images", "subcategory", "colors"] 
             
-        }).then(function(products){
-            products.forEach(product =>{
-                product.setDataValue("endpoint", "/api/products/" + product.id);
-            })
+        })
 
-            let jsonProducts = {
-                meta:{
-                    status: 200,
-                    total_products: products.length,
-                    url: "/api/products"
-                },
-                data:products
-            }
-            res.json(jsonProducts)
-        }) 
+        let lastProducts = await db.Product.findAll({
+            oder: [
+                ['created_at', 'DESC'],
+            ],
+            limit: 10
+        })
+
+        products.forEach(product =>{
+            product.setDataValue("endpoint", "/api/products/" + product.id);
+        })
+        let jsonProducts = {
+            meta:{
+                status: 200,
+                total_products: products.length,
+                lastProducts: lastProducts,
+                url: "/api/products"
+            },
+            data:products
+        }
+        res.json(jsonProducts)
+
     },
     amountOrder: function(req, res){
         db.Order.findAll({
@@ -32,16 +41,6 @@ const apis = {
         .then(resultado => {
             res.json(resultado)
         })
-    },
-    lastProducts: function (req, res, next){
-        db.Product.findAll({
-            oder:[
-                ['id', 'DESC'],
-            ],
-            limit:10 
-        }).then(function(user) {
-                res.send(user)
-        }) 
     },
     productDetail: function(req, res){
         db.Product.findByPk(req.params.id, {

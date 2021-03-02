@@ -6,7 +6,6 @@ const apisController= require("../controller/api/apisController");
 router.get('/users', apisController.usersList);
 router.get("/orders", apisController.amountOrder);
 router.get('/products', apisController.productsList);
-router.get('/lastProducts', apisController.lastProducts);
 router.get("/users/:id" , apisController.userDetail);
 router.post("/users/checkPassword", apisController.checkPassword)
 router.post("/users/updatePassword" , apisController.updatePassword);
