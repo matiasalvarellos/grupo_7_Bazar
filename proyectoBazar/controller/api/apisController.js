@@ -62,9 +62,18 @@ const apis = {
         db.Order.findAll({
             include: ["items"]
         })
-            .then(resultado => {
-                res.json(resultado)
-            })
+        .then(resultado => {
+            let jsonOrders = {
+                meta:{
+                    status:200,
+                    url: "/api/orders",
+                    total_orders: resultado.length
+                },
+                data: resultado
+            }
+
+            res.json(jsonOrders)
+        })
     },
     usersList: function (req, res){
         db.User.findAll().then(users => {
@@ -75,7 +84,7 @@ const apis = {
                     last_name: user.last_name,
                     email: user.email,
                     type_customer: user.type_customer,
-                    endpoint: "/api/user/" + user.id
+                    endpoint: "/api/users/" + user.id
                 }
             })
             let respuesta = {
@@ -93,7 +102,8 @@ const apis = {
         db.User.findByPk(req.params.id).then(resultado => {
             let jsonProducto = {
                 meta:{
-                    status: 200
+                    status: 200,
+                    url: "/api/users/"+ req.params.id
                 },
                 data: {
                     id: resultado.id,
@@ -104,6 +114,21 @@ const apis = {
                 }
             }
             res.json(jsonProducto);
+        })
+    },
+    categoriesList: function(req, res){
+        db.Category.findAll({
+            include:["subcategories"]
+        }).then(categories => {
+
+            let categoriesJson = {
+                meta:{
+                    status:200,
+                    url: "/api/categories"
+                },
+                data: categories
+            }
+            res.json(categoriesJson);
         })
     },
     checkPassword: async function(req, res){
