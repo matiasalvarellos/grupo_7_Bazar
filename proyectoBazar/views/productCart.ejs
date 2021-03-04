@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
   <link rel="stylesheet" href="/stylesheets/header.css">
   <link rel="stylesheet" href="/stylesheets/footer.css">
-  <script src="/js/open-menu.js"></script>
   <script src="/js/cart.js"></script>
   <link rel="stylesheet" href="/stylesheets/index.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
@@ -39,7 +38,7 @@
       Unitario
     </h2>
     <h2 class="total">
-      Total
+      Subtotal
     </h2>
   </div>
   <% items.forEach(item =>{ %>
@@ -54,60 +53,31 @@
         </form>
         <image src="/images/uploadProducts/<%= item.image %>"></image>
         <div class="nomProducto">
-          <p><%= item.product_name %></p>
+          <p class="product_name"><%= item.product_name %></p>
         </div>
       </div>
     
       <div class="numberCart">
-        <p><%= item.quantity %></p>
+        <p>
+          <input type="number" name="quantity" class="quantity" value="<%= item.quantity %>" >
+        </p>
       </div>
+
       <div class="unidad">
-        <p><%= item.unit_price %></p>
+        <p class="unit_price">
+          <%= item.unit_price %>
+        </p>
       </div>
+
       <div class="precioCart">
-        <p><%= item.subtotal %> </p>
+        <p class="subtotal">
+          <%= item.subtotal %>
+        </p>
       </div>
     </div>
     <hr>
   <% }) %> 
-    
     <!--  fin fila cart  -->
-
-    <div class="subtotal">
-      <div class="subt">
-        <p>Subtotal</p>
-      </div>
-      <div class="subprecio">  
-        <p> <%= totalPrice %></p>
-      </div>
-    </div>
-
-    <!--  fin fila subtotal  -->
-
-   
-    <!--<div class="descuento">
-      <p>Cupón de descuento:
-      <p>
-      <div class="desc">
-        <input type="number">
-        <label for=""> Validar </label>
-      </div>
-    </div>
-
-      fin fila descuento  -->
-
-    <hr>
-
-    <div class="envio">
-
-      <div class="costoenvio1">
-        <p>Costo de Envío<p>
-      </div>     
-
-    </div>
-
-    <!--  fin fila Envio  -->
-
     <hr>
 
     <div class="container2">
@@ -115,13 +85,12 @@
         <h2>TOTAL A PAGAR</h4>
       </div>
       <div class="box7">
-        <p><%= totalPrice %> </p>
+        <p id="total"> 
+          <%= totalPrice %> 
+        </p>
       </div>
     </div>
-
-    <!--  fin fila Total a Pagar  -->
-
-
+    
     <div class="container3">
       <div class="box8">
         <form class="buy" action="/cart/order/add" method="POST">
