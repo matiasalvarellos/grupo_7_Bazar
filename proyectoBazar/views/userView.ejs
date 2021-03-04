@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <%- include('partials/head') %>
+        <link rel="stylesheet" href="/stylesheets/userView.css">
+        <script src="/js/registro.js"></script>
+    </head>
+    <body>
+        <%- include("partials/header2") %>
+
+        <div class="login1">
+            <main>
+                <div class="ventanaFormulario">
+                    <form>
+                        <div class="titulo">
+                            <label for="name">
+                                <em>
+                                    <mark>Datos del usuario</mark>
+                                </em>
+                            </label>
+                        </div>
+                        <div class="flex">
+                            <div class="datos">
+                                <p><label>Nombre: <%=usuario.name%></label></p>
+                            </div>
+                            <div class="datos">
+                                <p><label>Apellido: <%= usuario.last_name %></label></p>
+                            </div>
+                            <div class="datos">
+                                <p><label>Email: <%= usuario.email %></label></p>
+                            </div>
+                            <div class="datos">
+                                <p><label>Dirección: <%= usuario.address ? usuario.address : "" %></label></p>                              
+                            </div>
+                            <div class="datos">
+                                <p><label>Teléfono: <%= usuario.phone ? usuario.phone : "" %></label></p>                              
+                            </div>
+                            <div class="datos">
+                                <p><label>DNI: <%= usuario.dni ? usuario.dni : "" %></label></p>
+                            </div>
+                            <div class="datos">
+                                <p><label>Codigo Postal: <%= usuario.post_code ? usuario.post_code : "" %></label></p>                             
+                            </div><br>
+                        </div>
+
+                        <div class="conImage">
+                            <img src="/images/avatares/<%= usuario.avatar%>" alt="Imagen del usuario" class="image-avatar_2">
+                        </div>
+                        
+                        <input type="button" class="primerButton" onclick="location.href='/users/edit';" value="EDITAR" />
+
+                    </form>
+                    
+
+                    </form>
+                </div>
+            </main>
+        </div>
+        <%- include("partials/footer2") %>
+    </body>
+</html>

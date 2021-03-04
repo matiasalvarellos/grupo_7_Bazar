@@ -15,5 +15,6 @@ router.get("/register", guestMiddleware ,usersController.registro);
 router.post("/register", userMulterConfig.single("avatar"), validator.regis, usersController.processRegistro);
 router.get("/logout", usersController.logout);
 router.get('/account', usersController.account);
+router.get('/view', usersController.userView);
 
 module.exports = router;

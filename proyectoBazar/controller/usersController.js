@@ -89,7 +89,10 @@ const users = {
         let userFound = await db.User.findByPk(req.session.usuarioLogueado.id)
         req.session.usuarioLogueado = userFound;
         res.redirect("/");
-    }    
+    },
+    userView: (req, res) => {
+        res.render("userView")         
+    },    
 }    
 
 module.exports=users;
