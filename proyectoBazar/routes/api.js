@@ -8,6 +8,7 @@ router.get("/orders", apisController.amountOrder);
 router.get('/products', apisController.productsList);
 router.get("/users/:id" , apisController.userDetail);
 router.get("/categories", apisController.categoriesList);
+router.post("/cart/update", apisController.updateCart);
 router.post("/users/checkPassword", apisController.checkPassword)
 router.post("/users/updatePassword" , apisController.updatePassword);
 router.get("/products/:id", apisController.productDetail);
