@@ -29,14 +29,13 @@
     <h1 class="dashboardTitle">Lista de Productos</h1>
     <br>
    
-        <% console.log(products);
+        <% 
         let productsCounter=0; %>
         <% products.forEach(function(products){
             productsCounter++ %>
 
             <ul >
-        <a href="/productos/detail/<%= products.id %>"> Ver detalle del producto </a>  <br>
-        <a href="/productos/edit/<%= products.id %>"> Editar Producto </a>  
+        <a href="/productos/detail/<%= products.id %>"> Ver detalle del producto </a>  <br> 
         <li>
                 Name: <%= products.name %> -
             </li>
@@ -54,7 +53,12 @@
             </li>
              <% if (products.images.length >0) { %>
 
-                <a href="/productos/edit-images/<%= products.id %>"> Agregar o quitar imágenes </a>  
+                <% if(usuario.admin == 1){ %>
+                    <a href="/productos/edit-images/<%= products.id %>">
+                     Agregar o quitar imágenes 
+                    </a>
+                <% } %> 
+                      
 
                 <div class="column" id="<%=productsCounter%>">
                     <div class="FIWrapper">

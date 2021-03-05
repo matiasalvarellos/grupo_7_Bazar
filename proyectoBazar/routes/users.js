@@ -13,8 +13,8 @@ router.get("/edit", authMiddleware, usersController.editUser);
 router.post("/edit", userMulterConfig.single("avatar"), usersController.processEdit);
 router.get("/register", guestMiddleware ,usersController.registro);
 router.post("/register", userMulterConfig.single("avatar"), validator.regis, usersController.processRegistro);
-router.get("/logout", usersController.logout);
+router.post("/logout", usersController.logout);
 router.get('/account', usersController.account);
-router.get('/view', usersController.userView);
+router.get('/view',authMiddleware, usersController.userView);
 
 module.exports = router;

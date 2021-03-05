@@ -8,7 +8,13 @@
                        
                         <% if (usuario) { %>
                           
-                     <li><a href="/users/logout"><i class="fa fa-user"></i> Salir</a></li>                           
+                        <li>
+                            <form action="/users/logout" method="POST">
+                                <i class="fa fa-user">
+                                    <button type="submit" class="logout">Salir</button>
+                                </i>
+                            </form>
+                        </li>                           
                
                         <li><a href="/users/account"><i class="fa fa-user"></i> Mi Cuenta</a></li>
                        

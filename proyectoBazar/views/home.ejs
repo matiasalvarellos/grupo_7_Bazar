@@ -114,13 +114,16 @@
                     <h2 class="section-title">Ultimos ingresos</h2>
                     <div class="product-carousel">
                        
-                         <% for( let i=0; i<3; i++){ %>
+                        <% for( let i=0; i<3; i++){ %>
                         <div class="single-product">
                           
                             <div class="product-f-image">
                                 
                        
-                                <img src="/images/uploadProducts/<%= products[i].images[0].name%>" alt="">
+                                <img 
+                                    style="height:260px; width: 225px;" 
+                                    src="/images/uploadProducts/<%= products[i].images[0].name%>" alt=""
+                                >
                                 <div class="product-hover">
                                     <a href="/productos/detail/<%= products[i].id%>" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Carrito</a>
                                     <a href="/productos/detail/<%= products[i].id%>" class="view-details-link"><i class="fa fa-link"></i> Detalles</a>
