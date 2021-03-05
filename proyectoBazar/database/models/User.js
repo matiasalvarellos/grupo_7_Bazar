@@ -9,7 +9,7 @@ module.exports = function(sequelize, dataTypes){
         avatar: dataTypes.STRING,
         admin: dataTypes.BOOLEAN,
         phone: dataTypes.STRING,
-        adress: dataTypes.STRING,
+        address: dataTypes.STRING,
         dni: dataTypes.STRING,
         post_code: dataTypes.STRING
     });

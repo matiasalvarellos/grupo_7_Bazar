@@ -77,7 +77,7 @@ const users = {
             email: req.body.email,
             type_customer: req.body.type_customer,
             avatar: req.file ? req.file.filename : req.session.usuarioLogueado.avatar,
-            adress: req.body.adress ,
+            address: req.body.address ,
             phone: req.body.phone ,
             dni: req.body.dni ,
             post_code: req.body.post_code
@@ -89,7 +89,10 @@ const users = {
         let userFound = await db.User.findByPk(req.session.usuarioLogueado.id)
         req.session.usuarioLogueado = userFound;
         res.redirect("/");
-    }    
+    },
+    userView: (req, res) => {
+        res.render("userView")         
+    },    
 }    
 
 module.exports=users;

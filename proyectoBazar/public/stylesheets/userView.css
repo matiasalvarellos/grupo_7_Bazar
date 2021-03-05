@@ -1,0 +1,132 @@
+*{
+    box-sizing: border-box;
+    font-family:sans-serif;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+}
+main{
+    width:100%;
+    background-color: rgba(229, 229, 229, 0.51);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.ventanaFormulario{
+    background-image:url(https://image.freepik.com/free-vector/white-abstract-background_23-2148810353.jpg);
+    width: 40%;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+    border: 3px solid #8593AE;
+    border-radius: 5px;
+    outline: none;
+    font-size: 15px;
+}
+form{
+    width: 100%; 
+    padding: 5px;
+    text-align: center;
+}
+form .titulo{
+    font-size: 30px;
+    text-align: center;
+}
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.datos, .imagenArchivo{
+    margin: 10px;
+}
+.datos input, .datos select{
+    width: 200px;
+    height: 40px;
+    background-color:rgba(229, 229, 229, 0.80) ;
+    border: 3px solid #8593AE;
+    text-align: center;
+    border-radius: 7px;
+    outline: none;
+    cursor: pointer;
+    transition: 0.25s;     
+}
+.imagenArchivo input[type = "file"]{
+    opacity: 0;
+}    
+.link {
+    width: 200px;
+    height: 40px;
+    border-radius:50px;
+    font-weight: bold;
+    color:#DDA288;
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.25s;
+    background-color:#7E675E;
+    outline: none;
+}
+.primerButton{
+    background: none repeat scroll 0 0 #5a88ca;
+    color: #fff;
+    width:200px;
+    height:40px;
+    border-radius:50px;
+    cursor: pointer;
+    outline: none;
+    font-size: 16px;
+    border:3px solid #5a88ca ;
+    margin-top: 5%;
+}
+.primerButton:focus{
+    border-color:#F49974;
+}
+.ventanaFormulario em{
+    text-decoration:underline;
+}
+.titulo mark{
+    background-color: rgba(229, 229, 229, 0.30);
+    border-radius: 5px;
+}
+form p,
+form a .link p{
+    margin: 10px;
+    font-size: 16px;
+}
+.conImage{
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    margin: 10px;
+    position: relative;
+    display: block;
+    margin:auto;
+}
+.conImage .image-avatar_2{
+    position:absolute;
+    left: -100%;
+    right: -100%;
+    top: -100%;
+    bottom: -100%;
+    margin: auto;
+    min-height: 100%;
+    min-width: 100%;
+    border-radius: 50% !important;
+}
+
+
+@media (max-width: 750px){
+    .ventanaFormulario{    
+       width: 100%;
+       margin-top: 40px;
+    }
+    main{
+        margin-bottom: 50px;
+    }
+}
