@@ -12,7 +12,7 @@ const storage = multer.diskStorage({
 const upload = multer({ 
     storage: storage ,
     fileFilter: function(req, file, cb){
-        const imagenesValidas = [".jpg", ".jpeg", ".png"]
+        const imagenesValidas = [".jpg", ".jpeg", ".png", ".PNG" ]
         const extencion = path.extname(file.originalname);
         const resultado = imagenesValidas.includes(extencion)
         if(resultado == false){
