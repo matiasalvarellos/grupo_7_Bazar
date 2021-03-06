@@ -116,20 +116,31 @@ const apis = {
             res.json(jsonProducto);
         })
     },
-    categoriesList: function(req, res){
-        db.Category.findAll({
+    categoriesList: async function(req, res){
+        let categories = await db.Category.findAll({
             include:["subcategories"]
-        }).then(categories => {
-
-            let categoriesJson = {
-                meta:{
-                    status:200,
-                    url: "/api/categories"
-                },
-                data: categories
-            }
-            res.json(categoriesJson);
         })
+        let subcategories = await db.Subcategory.findAll({
+            include:["products"]
+        })
+        
+        let productsInCategory= categories.map(category => {
+            return {
+                name: category.name,
+                quantity: category.subcategories.length 
+            }
+        }) 
+
+        let categoriesJson = {
+            meta:{
+                status:200,
+                url: "/api/categories",
+                productsInCategory,
+                subcategories
+            },
+            data: categories
+        }
+        res.json(categoriesJson);
     },
     checkPassword: async function(req, res){
         let userFound = await db.User.findByPk(req.session.usuarioLogueado.id);

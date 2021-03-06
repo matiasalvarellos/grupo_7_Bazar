@@ -730,6 +730,7 @@ input[type="text"], input[type="password"], input[type="email"], textarea {
     border: 1px solid #ddd;
     padding: 10px;
 }
+
 input[type="submit"], button[type=submit] {
     background: none repeat scroll 0 0 #5a88ca;
     border: medium none;
@@ -742,6 +743,7 @@ input[type="submit"]:hover, button[type=submit]:hover {background-color: #222}
     margin-bottom: 10px;
     width: 100%;
 }
+
 .thubmnail-recent {
     margin-bottom: 30px;
     overflow: hidden;
@@ -1131,8 +1133,17 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
     margin-top: 15px;
 }
 
-.single-shop-product {margin-bottom: 50px}
+.single-shop-product {
+    margin-bottom: 50px
+}
 
 .pagination > li > a, .pagination > li > span {
   color: #5a88ca;
+}
+
+.logout{
+    font-size: 13px ;
+    text-decoration: none ;
+    border-radius: 15px;
+    
 }
