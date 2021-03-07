@@ -129,6 +129,7 @@ CREATE TABLE orders(
 );
 
 -- Creamos la tabla ITEMS
+
 CREATE TABLE items(
 	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     product_name VARCHAR(255) NOT NULL,
@@ -136,17 +137,11 @@ CREATE TABLE items(
     subtotal INT UNSIGNED NOT NULL,
     quantity INT UNSIGNED NOT NULL,
     image VARCHAR(255) NOT NULL,
-<<<<<<< HEAD
-    color VARCHAR(255) NOT NULL,
-=======
-    color varchar(200) NOT NULL,
->>>>>>> dbb7f4d84a2f1b36a3b3528cbc9c532c91abcd71
     user_id INT UNSIGNED NOT NULL,
     order_id INT UNSIGNED DEFAULT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
-
 --
 -- Inicia creación de FK
 --

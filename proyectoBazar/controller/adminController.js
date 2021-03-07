@@ -68,7 +68,7 @@ storesubcategory: function (req, res, next){
       name: req.body.name,
       category_id: req.body.categories
     }).then(function(){
-      res.redirect("/users/account")
+      res.redirect("/admin/subcategories")
     })
 
   }

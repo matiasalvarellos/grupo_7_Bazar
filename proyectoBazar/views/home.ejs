@@ -114,7 +114,7 @@
                     <h2 class="section-title">Ultimos ingresos</h2>
                     <div class="product-carousel">
                        
-                        <% for( let i=0; i<3; i++){ %>
+                        <% for( let i=0; i<9; i++){ %>
                         <div class="single-product">
                           
                             <div class="product-f-image">
@@ -176,10 +176,14 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="single-product-widget">
-                    <h2 class="product-wid-title">Top Ventas</h2>
+                    <h2 class="product-wid-title"> Novedades </h2>
                     <a href="" class="wid-view-more">Ver todos</a>
-                    <% for( let i=0; i<3; i++){ %>
-  
+                  <%
+                    var counter=0;
+                    for( let i=0; i<products.length ; i++){  
+                        if(products[i].subcategory.name=="Especiales" && counter<3) {
+                        counter++; 
+                         %>
                           
                             <div class="single-wid-product">
                                 <a href="productos/detail/<%=products[i].id%>" >   
@@ -202,7 +206,7 @@
 
 
                                
-                        <% } %>
+                        <% }} %>
                         </div>
                         </div>
 
@@ -248,10 +252,15 @@
                     <h2 class="product-wid-title">Ofertas</h2>
                     <a href="#" class="wid-view-more">Ver todos</a>
 
-                    <% for( let i=0; i<3; i++){ %>
+                    <% var counter=0;
+                       for( let i=0; i<products.length ; i++){  
+                        if(products[i].subcategory.name=="OFERTAS POPULARES" && counter<3) {
+                        counter++; %>
   
+                         
+                       <div class="single-wid-product">
                           
-                        <div class="single-wid-product">
+                              <script> console.log("productos"+<%=counter%>) </script>
                             <a href="productos/detail/<%=products[i].id%>" >   
                                 <img src="/images/uploadProducts/<%=products[i].images[0].name %>" alt="" class="product-thumb">
                                 <h2><a href="productos/detail/<%=products[i].id%>"> <h2> <%= products[i].name %></h2> </a></h2>  
@@ -272,7 +281,7 @@
 
 
                            
-                    <% } %>
+                    <% } } %>
   
                 
                 </div>

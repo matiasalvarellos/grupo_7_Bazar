@@ -1,6 +1,7 @@
 module.exports=function(sequelize, dataTypes){
 
-    const Subcategory = sequelize.define("Subcategory", {
+const Subcategory = sequelize.define("Subcategory", {
+        id:{ type: dataTypes.INTEGER, primaryKey: true, autoIncrement: true},
         name: dataTypes.STRING,
     });
 

@@ -2,7 +2,7 @@ const db = require('../database/models');
 
 index={
         inicio: function(req,res,next){
-                db.Product.findAll( {include: [ {association:"images"}]})
+                db.Product.findAll( {include: ["images","subcategory"]})
                 .then(function(products){
                         res.render("home", {products:products })
                 })
