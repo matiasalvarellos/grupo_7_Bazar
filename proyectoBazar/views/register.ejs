@@ -3,6 +3,7 @@
         <%- include('partials/head') %>
         <link rel="stylesheet" href="/stylesheets/loginRegistro.css">
         <script src="/js/registro.js"></script>
+        <script src="/js/api.js"></script>
     </head>
 
     
@@ -14,6 +15,9 @@
       <%- include("partials/header2") %> 
         <div class="login1">
             <main>
+                
+
+              
                 <div class="ventanaFormulario">
                     <form action="/users/register" class= "regi" enctype="multipart/form-data" method="POST">
                         <div class="titulo">
@@ -30,6 +34,17 @@
                         <div class="datos">
                             <input type="text" class="inputdatos" id="last_name" name="last_name" placeholder="Apellido" value="<%= typeof old != "undefined" ? old.last_name : "" %>">
                         <p class="invalid-feedback"></p>
+                        </div>
+
+                        <div class="datos">
+                            <label> Provincia <br>
+                            <select name="provincias" class="provincias">
+
+                            </select>
+                            </label>
+
+
+
                         </div>
 
                         <div class="datos">
@@ -76,6 +91,7 @@
                 </div>
             </main>
         </div>
+       
       <%- include("partials/footer2") %>   
     </body>
 </html>
