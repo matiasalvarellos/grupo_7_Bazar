@@ -120,9 +120,6 @@ const apis = {
         let categories = await db.Category.findAll({
             include:["subcategories"]
         })
-        let subcategories = await db.Subcategory.findAll({
-            include:["products"]
-        })
         let categoriesJson = {
             meta:{
                 status:200,
@@ -132,6 +129,27 @@ const apis = {
         }
         res.json(categoriesJson);
     },
+    subcategoryList: async function(req, res){
+        let subcategories = await db.Subcategory.findAll({
+            include: ["products"]
+        })
+        let quantityProducts = subcategories.map(subcategory =>{
+            return {
+                name: subcategory.name,
+                count: subcategory.products.length
+            }
+        })
+
+        let subcategoriesJson = {
+            meta:{
+                status:200,
+                url:"/api/subcategories",
+                quantityProducts
+            },
+            data: subcategories
+        }
+        res.json(subcategoriesJson)
+    }, 
     checkPassword: async function(req, res){
         let userFound = await db.User.findByPk(req.session.usuarioLogueado.id);
         let boolean = bcrypt.compareSync(req.body.password, userFound.password)
