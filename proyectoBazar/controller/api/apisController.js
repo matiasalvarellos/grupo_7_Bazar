@@ -123,20 +123,10 @@ const apis = {
         let subcategories = await db.Subcategory.findAll({
             include:["products"]
         })
-        
-        let productsInCategory= categories.map(category => {
-            return {
-                name: category.name,
-                quantity: category.subcategories.length 
-            }
-        }) 
-
         let categoriesJson = {
             meta:{
                 status:200,
                 url: "/api/categories",
-                productsInCategory,
-                subcategories
             },
             data: categories
         }
