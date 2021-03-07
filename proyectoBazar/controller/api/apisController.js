@@ -6,7 +6,7 @@ const apis = {
 
         let products = await db.Product.findAll({
             oder:[
-                ['id', 'DESC'], 
+                ["id", "DESC"], 
             ],
             include:["images", "subcategory", "colors"] 
             

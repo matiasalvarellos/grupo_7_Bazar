@@ -12,15 +12,15 @@
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
     
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="../stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="../stylesheets/owl.carousel.css">
-    <link rel="stylesheet" href="../stylesheets/style.css">
-    <link rel="stylesheet" href="../stylesheets/responsive.css">
+    <link rel="stylesheet" href="/stylesheets/owl.carousel.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/responsive.css">
 
 </head>
 
@@ -177,10 +177,10 @@
             <div class="col-md-4">
                 <div class="single-product-widget">
                     <h2 class="product-wid-title"> Novedades </h2>
-                    <a href="" class="wid-view-more">Ver todos</a>
+                    <a href="/category/7" class="wid-view-more">Ver todos</a>
                   <%
                     var counter=0;
-                    for( let i=0; i<products.length ; i++){  
+                    for( let i=products.length-1; i>-1 ; i--){  
                         if(products[i].subcategory.name=="Especiales" && counter<3) {
                         counter++; 
                          %>
@@ -213,8 +213,8 @@
             <div class="col-md-4">
                 <div class="single-product-widget">
                     <h2 class="product-wid-title">Ultimos ingresos</h2>
-                    <a href="#" class="wid-view-more">Ver todos</a>
-                    <% for( let i=0; i<3; i++){ %>
+                    <a href="/category" class="wid-view-more">Ver todos</a>
+                    <% for( let i=products.length-1; i>products.length-4; i--){ %>
   
                           
                         <div class="single-wid-product">
@@ -250,17 +250,17 @@
 
                 <div class="single-product-widget">
                     <h2 class="product-wid-title">Ofertas</h2>
-                    <a href="#" class="wid-view-more">Ver todos</a>
+                    <a href="/category/6" class="wid-view-more">Ver todos</a>
 
                     <% var counter=0;
-                       for( let i=0; i<products.length ; i++){  
+                       for( let i=products.length-1 ; i>-1 ; i--){  
                         if(products[i].subcategory.name=="OFERTAS POPULARES" && counter<3) {
                         counter++; %>
   
                          
                        <div class="single-wid-product">
                           
-                              <script> console.log("productos"+<%=counter%>) </script>
+                            
                             <a href="productos/detail/<%=products[i].id%>" >   
                                 <img src="/images/uploadProducts/<%=products[i].images[0].name %>" alt="" class="product-thumb">
                                 <h2><a href="productos/detail/<%=products[i].id%>"> <h2> <%= products[i].name %></h2> </a></h2>  
