@@ -5,9 +5,10 @@ const apisController= require("../controller/api/apisController");
 /* GET home page. */
 router.get('/users', apisController.usersList);
 router.get("/orders", apisController.amountOrder);
+router.get("/categories", apisController.categoriesList);
+router.get("/subcategories", apisController.subcategoryList);
 router.get('/products', apisController.productsList);
 router.get("/users/:id" , apisController.userDetail);
-router.get("/categories", apisController.categoriesList);
 router.get("/products/:id", apisController.productDetail);
 router.post("/cart/update", apisController.updateCart);
 router.post("/users/checkPassword", apisController.checkPassword)
