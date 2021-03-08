@@ -12,8 +12,10 @@ index={
 
         category: function(req,res,next){
                 let category_id= req.params.category_id;
-                db.Product.findAll(  { oder:[['id', 'DESC']],
-                        include: ["images", "subcategory"]})
+                db.Product.findAll({ 
+                        oder:[['id', 'DESC']],
+                        include: ["images", "subcategory"]
+                })
                 .then(function(products){
                         res.render("category", {products:products, category_id:category_id})
                 })

@@ -38,7 +38,7 @@ producto={
         
         let errors =validationResult(req);
 
-       if (errors.isEmpty()){
+       if(errors.isEmpty()){
         let productCreate = await db.Product.create({
             code: req.body.code,
             name: req.body.name,
