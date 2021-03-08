@@ -3,10 +3,10 @@ const db = require('../database/models');
 index={
         inicio: function(req,res,next){
                 db.Product.findAll( 
-                        {oder:[['id','DESC'],],
-                        include: ["images","subcategory"]})
+                        {include: ["images","subcategory"]})
                 .then(function(products){
-                        res.render("home", {products:products })
+                        console.log(products);
+                res.render("home", {products:products })
                 })
         },
 
