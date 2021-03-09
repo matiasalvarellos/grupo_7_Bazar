@@ -87,10 +87,10 @@ margin-top:0;}
    }
    .userAccount-section div{
      min-height:100%;
-     display:flex;
+     display:table-row;
      flex-direction:column; 
-     
-   
+     flex-wrap: wrap;
+        
    }
   
    .verticalMenu{
