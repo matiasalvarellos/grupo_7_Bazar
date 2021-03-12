@@ -22,14 +22,24 @@
                        
                         <% if (usuario) { %>
                           
-                     <li></li>                           
+                            <li>
+                                <form action="/users/logout" method="POST">
+                                    <i class="fa fa-user">
+                                        <button type="submit" class="logout">
+                                            Salir
+                                        </button>
+                                    </i>
+                                </form>
+                            </li>                           
                
-                        <li><a href="/users/account"><i class="fa fa-user"></i> Mi Cuenta</a></li>                     
-                       
-                     
+                            <li>
+                                <a href="/users/account">
+                                    <i class="fa fa-user"></i> Mi Cuenta
+                                </a>
+                            </li>                     
                         <% } else { %>
-                        <li><a href="/users/login"><i class="fa fa-user"></i> Login</a></li>            
-                        <li><a href="/users/register"><i class="fas fa-clipboard-list"></i> Registrarse</a></li>
+                            <li><a href="/users/login"><i class="fa fa-user"></i> Login</a></li>            
+                            <li><a href="/users/register"><i class="fas fa-clipboard-list"></i> Registrarse</a></li>
                         <% } %>
                         
                     </ul>
