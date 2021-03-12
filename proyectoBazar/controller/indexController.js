@@ -5,7 +5,7 @@ index={
                 db.Product.findAll( 
                         {include: ["images","subcategory"]})
                 .then(function(products){
-                        console.log(products);
+                        
                 res.render("home", {products:products })
                 })
         },

@@ -13,7 +13,6 @@
     <!--ESTILOS-->
     <link rel="stylesheet" href="/stylesheets/header.css">
     <link rel="stylesheet" href="/stylesheets/footer.css">
-    <script src="/js/open-menu.js"></script>
     <link rel="stylesheet" href="/stylesheets/productDetail.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   </head>
@@ -85,7 +84,9 @@
               <% if (productFound.discount == "0") { %>
                 <h2><%= "$ " + precio + " " %>Precio</h2>
               <% } else { %>
-              <h2 class = "precioOff"><%= "$ " + precio + " " %>Precio</h2><h2 class = "descuento"><%="% " + productFound.discount + " " %>Descuento</h2><h2 class = "precioOn"><%= "$ " + precioDescuento + " " %>Precio con descuento</h2>
+              <h2 class = "precioOff"><%= "$ " + precio + " " %>Precio</h2>
+              <h2 class = "descuento"><%="% " + productFound.discount + " " %>Descuento</h2>
+              <h2 class = "precioOn"><%= "$ " + precioDescuento + " " %>Precio con descuento</h2>
               <% } %>
             <form action="/cart/add/<%= productFound.id %>" method="POST" id="formulario">
               <p class="label"><label for="compra"></label>Cantidad</p>
