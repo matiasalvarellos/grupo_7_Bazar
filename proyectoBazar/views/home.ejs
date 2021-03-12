@@ -84,10 +84,13 @@
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
-                <div class="single-promo promo2">
-                    <i class="fas fa-heart"></i>
-                    <p>Ofertas</p>
-                </div>
+                <a href="/ofertas">
+                    <div class="single-promo promo2">
+                        <i class="fas fa-heart"></i>
+                        <p>Ofertas</p>
+                    </div>
+                </a>
+                
             </div>
             <div class="col-md-3 col-sm-6">
                 <div class="single-promo promo3">
@@ -114,7 +117,7 @@
                     <h2 class="section-title">Ultimos ingresos</h2>
                     <div class="product-carousel">
                        
-                        <% for( let i=0; i<9; i++){ %>
+                        <% for( let i=0; i<8; i++){ %>
                         <div class="single-product">
                           
                             <div class="product-f-image">
@@ -171,39 +174,39 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="single-product-widget">
-                    <h2 class="product-wid-title"> Novedades </h2>
-                    <a href="/category/7" class="wid-view-more">Ver todos</a>
-                  <%
-                    var counter=0;
-                    for( let i=products.length-1; i>-1 ; i--){  
-                        if(products[i].subcategory.name=="Especiales" && counter<3) {
-                        counter++; 
-                         %>
-                          
-                            <div class="single-wid-product">
-                                <a href="productos/detail/<%=products[i].id%>" >   
-                                    <img src="/images/uploadProducts/<%=products[i].images[0].name %>" alt="" class="product-thumb">
-                                    <h2><a href="productos/detail/<%=products[i].id%>"> <h2> <%= products[i].name %></h2> </a></h2>  
-                                <div class="product-wid-rating"> 
+                    <h2 class="product-wid-title"> Ofertas </h2>
+                    <a href="/ofertas" class="wid-view-more">Ver todos</a>
+                    <% sales.forEach(product =>{ %>
+                        <div class="single-wid-product">
+                            <a href="productos/detail/<%=product.id%>">
+                                <img src="/images/uploadProducts/<%=product.images[0].name %>" alt="" class="product-thumb">
+                                <h2>
+                                    <a href="productos/detail/<%=product.id%>">
+                                        <p>
+                                            <%= product.name %>
+                                        </p>
+                                    </a>
+                                </h2>
+                                <div class="product-wid-rating">
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
-
-                                  </div>
-                                  <div class="product-wid-price">
-                                    <ins> <%=products[i].name %> </ins> <span> <%=products[i].price%>   </span>
-                                    
-
+                        
                                 </div>
-                            </div>
-
-
-                               
-                        <% }} %>
+                                <div class="product-wid-price">
+                                    <ins>
+                                        <%=product.name %>
+                                    </ins>
+                                    <span>
+                                        <%=product.price%>
+                                    </span>
+                                </div>
                         </div>
-                        </div>
+                    <% }) %> 
+                </div>
+            </div>
 
             <div class="col-md-4">
                 <div class="single-product-widget">
@@ -236,48 +239,6 @@
                     <% } %>
                      
               
-                
-                </div>
-            </div>
-            <div class="col-md-4">
-            
-           
-
-                <div class="single-product-widget">
-                    <h2 class="product-wid-title">Ofertas</h2>
-                    <a href="/category/6" class="wid-view-more">Ver todos</a>
-
-                    <% var counter=0;
-                       for( let i=products.length-1 ; i>-1 ; i--){  
-                        if(products[i].subcategory.name=="OFERTAS POPULARES" && counter<3) {
-                        counter++; %>
-  
-                         
-                       <div class="single-wid-product">
-                          
-                            
-                            <a href="productos/detail/<%=products[i].id%>" >   
-                                <img src="/images/uploadProducts/<%=products[i].images[0].name %>" alt="" class="product-thumb">
-                                <h2><a href="productos/detail/<%=products[i].id%>"> <h2> <%= products[i].name %></h2> </a></h2>  
-                            <div class="product-wid-rating"> 
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-
-                              </div>
-                              <div class="product-wid-price">
-                                <ins> <%=products[i].name %> </ins> <span> <%=products[i].price%>   </span>
-                                
-
-                            </div>
-                        </div>
-
-
-                           
-                    <% } } %>
-  
                 
                 </div>
             </div>

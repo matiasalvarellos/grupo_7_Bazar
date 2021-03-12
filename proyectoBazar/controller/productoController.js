@@ -49,6 +49,7 @@ producto={
             markup: req.body.markup,
             discount: req.body.discount,
             price: price(req.body.cost, req.body.markup),
+            offer: 0,
             subcategory_id: req.body.subcategories       
         })
         let imagesTocreate = req.files.map(file => {

@@ -28,7 +28,7 @@ module.exports = {
             image: productFound.images[0].name,
             user_id: req.session.usuarioLogueado.id
         })
-        return res.redirect("/") 
+        return res.redirect("/cart") 
 
     },
     destroyItem: async (req, res) =>{

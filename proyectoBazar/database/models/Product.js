@@ -10,6 +10,7 @@ module.exports=function(sequelize, dataTypes){
         markup: dataTypes.INTEGER,
         discount: dataTypes.INTEGER,
         price: dataTypes.INTEGER,
+        offer: dataTypes.BOOLEAN,
         subcategory_id: dataTypes.INTEGER,
     });
 
