@@ -1,19 +1,18 @@
 window.onload= function () {
 
-    fetch("https://apis.datos.gob.ar/georef/api/provincias").
-    then(function(response){ return response.json() }).
-    then( function(dataDecode) { 
-
-  
+    fetch("https://apis.datos.gob.ar/georef/api/provincias")
+    .then(function(response){ 
+        return response.json() 
+    })
+    .then( function(data){ 
             // crea un nuevo div
             // y añade contenido
             //añade texto al div creado.
-          
-   
-
-        console.log(dataDecode.provincias[1].nombre)
-        document.querySelector(".provincias").innerHTML= dataDecode.provincias[6].nombre;
-        for(let i=0; i<dataDecode.provincias.length; i++)
-        {   let item= dataDecode.provincias[i].nombre;       
-            document.querySelector(".provincias").insertAdjacentHTML('beforeend', '<option name="provincia" value="'+item+'">'+item+'</option>'); }
-    } ); }
+        document.querySelector(".provincias").innerHTML= data.provincias[6].nombre;
+        for(let i=0; i<data.provincias.length; i++){
+            let item = data.provincias[i].nombre;       
+            
+            document.querySelector(".provincias").insertAdjacentHTML('beforeend', '<option value="'+item+'">'+item+'</option>'); 
+        }
+    }); 
+}

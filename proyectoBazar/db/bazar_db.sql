@@ -16,6 +16,7 @@ CREATE TABLE users(
     address varchar(100) DEFAULT NULL,
     dni varchar(100) DEFAULT NULL,
     post_code varchar(100) DEFAULT NULL, 
+    province varchar(225) DEFAULT NULL, 
     avatar VARCHAR(255) NOT NULL,
     admin TINYINT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,

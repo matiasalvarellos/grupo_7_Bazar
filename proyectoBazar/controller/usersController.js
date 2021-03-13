@@ -80,7 +80,8 @@ const users = {
             address: req.body.address ,
             phone: req.body.phone ,
             dni: req.body.dni ,
-            post_code: req.body.post_code
+            post_code: req.body.post_code,
+            province: req.body.province
         },{
             where:{
                 id: req.session.usuarioLogueado.id

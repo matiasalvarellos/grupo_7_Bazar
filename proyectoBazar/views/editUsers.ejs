@@ -3,6 +3,7 @@
         <%- include('partials/head') %>
         <link rel="stylesheet" href="/stylesheets/loginRegistro.css">
         <script src="/js/registro.js"></script>
+        <script src="/js/api.js"></script>
         <script src="/js/checkPassword.js"></script>
     </head>
     <body>
@@ -55,6 +56,13 @@
                                 <input type="number" name="post_code" value="<%= usuario.post_code ? usuario.post_code : "" %>">
                                 
                             </div>
+                            <div class="datos">
+                                <p><label>Provincia</label></p>
+                                <select name="province" class="provincias">
+                                        
+                                </select>
+                            </div>
+
                             <div class="datos">
                                 <p><label>Cliente:</label></p>
                                 <select name="type_customer">
