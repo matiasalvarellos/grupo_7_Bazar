@@ -12,6 +12,13 @@
         <div class="login1">
             <main>
                 <div class="ventanaFormulario">
+                    <% if (typeof errors !='undefined'){%>
+                        <ul> <% for (i=0; i<errors.length; i++) { %>
+                            <li> <%=errors[i].msg%> </li>
+                            <% } }  %>
+
+                          
+                        </ul>
                     <form action="/users/edit" class="regi" enctype="multipart/form-data" method="POST">
                         <div class="titulo">
                             <label for="name">
