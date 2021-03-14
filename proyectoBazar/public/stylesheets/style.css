@@ -50,7 +50,7 @@ body {
   flex-direction: row!important;}
   .form-search input[type=submit] {background-color: #7E675F}
 
-  .site-branding-area{background-color:#F49974;}
+  .site-branding-area{background-color: #E5E5E5}
 .header-area {
     background: none repeat scroll 0 0 #7e675f;
 }
@@ -97,7 +97,7 @@ body {
     text-align: center;
 }
 
-.mainmenu-area {background: none repeat scroll 0 0 #dea288;
+.mainmenu-area {background: none repeat scroll 0 0 #7e675f;
 font-family: "Roboto Condensed",sans-serif;
 text-transform: uppercase;
 width: 100%;
