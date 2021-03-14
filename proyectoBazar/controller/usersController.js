@@ -71,6 +71,9 @@ const users = {
         res.render("editUsers")         
     },
     processEdit: async(req, res) => {
+
+        const errors=validationResult(req);
+        if (errors.isEmpty()){
         await db.User.update({
             name: req.body.name,
             last_name: req.body.last_name,
@@ -90,7 +93,9 @@ const users = {
         let userFound = await db.User.findByPk(req.session.usuarioLogueado.id)
         req.session.usuarioLogueado = userFound;
         res.redirect("/");
-    },
+    } else { res.render("editUsers", {errors: errors.errors});
+
+    }},
     userView: (req, res) => {
         res.render("userView")         
     },    

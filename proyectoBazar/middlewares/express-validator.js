@@ -43,6 +43,22 @@ const validar = {
             })
             .withMessage("archivo no valido")
     ],
+
+    edit : [
+
+        body("name") .isAlpha().withMessage("Debes introducir un nombre válido"),
+        body("last_name").isAlpha().withMessage("Debes introducir un apellido válido"),
+        body("email").isEmail().withMessage("Debes introducir un e-mail válido"),
+        body("adress").isAlphanumeric().withMessage("La dirección sólo debe incluir números y letras"),
+        body("phone").isNumeric({no_symbols:true}).withMessage("Debes incluir exclusivamente números"),
+        body("dni").isNumeric({no_symbols:true}).withMessage("Debes incluir sólo números"),
+        body("post_code").isAlphanumeric().withMessage("El código postal debe contener letras o números"),
+        body("province").isAlpha().withMessage("Debes introducir letras"),
+        body("type_customer").isAlpha(),    
+    
+
+
+    ],
     login:[
         body("email")
             .notEmpty()
