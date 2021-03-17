@@ -58,11 +58,13 @@ const users = {
         res.redirect("/");
     },   
     account: function(req,res) {          
-        if(req.session.usuarioLogueado)
-        {console.log(req.session.usuarioLogueado);
-           if(req.session.usuarioLogueado.admin)
-        {return res.render('admin', {usuario:req.session.usuarioLogueado})}
-        else {return res.render('userAccount', {usuario:req.session.usuarioLogueado})} }
+        if(req.session.usuarioLogueado){;
+           if(req.session.usuarioLogueado.admin){
+               return res.render('admin', {usuario:req.session.usuarioLogueado})
+            }else{
+                return res.render('userAccount', {usuario:req.session.usuarioLogueado})
+            } 
+        }
        
        else{return res.redirect('/users/login')} 
         
