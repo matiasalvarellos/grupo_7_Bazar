@@ -139,6 +139,7 @@ CREATE TABLE items(
     subtotal INT UNSIGNED NOT NULL,
     quantity INT UNSIGNED NOT NULL,
     image VARCHAR(255) NOT NULL,
+    color varchar(200) NOT NULL,
     user_id INT UNSIGNED NOT NULL,
     order_id INT UNSIGNED DEFAULT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
