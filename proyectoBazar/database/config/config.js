@@ -2,7 +2,7 @@ module.exports = {
   "development": {
     "username": "root",
     "password": "",
-    "database": "bazarnew_db",
+    "database": "bazar_db",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "port": "3306",
@@ -13,7 +13,7 @@ module.exports = {
   "test": {
     "username": "root",
     "password": "",
-    "database": "bazarnew_db",
+    "database": "bazar_db",
     "host": "127.0.0.1",
     "port":"3306",
     "dialect": "mysql"
@@ -21,7 +21,7 @@ module.exports = {
   "production": {
     "username": "root",
     "password": "",
-    "database": "bazarnew_db",
+    "database": "bazar_db",
     "host": "127.0.0.1",
     "port":"3306",
     "dialect": "mysql"
